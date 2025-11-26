@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NCU 智慧選課模擬 (完整版)</title>
+    <title>NCU 智慧選課模擬 (多選學程版)</title>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     
@@ -56,7 +56,30 @@
 
         .form-group { margin-bottom: 8px; flex: 1; }
         .form-group label { display: block; font-size: 11px; color: #666; margin-bottom: 2px; font-weight: 600; }
-        .form-group select, .form-group input { width: 100%; padding: 6px; border: 1px solid #ddd; border-radius: 4px; font-size: 13px; box-sizing: border-box; background: white; }
+        
+        /* 一般 Select 與 Input */
+        .form-group select, .form-group input[type="text"] { width: 100%; padding: 6px; border: 1px solid #ddd; border-radius: 4px; font-size: 13px; box-sizing: border-box; background: white; }
+        
+        /* --- [新] 多選學程區塊樣式 --- */
+        .multi-select-box {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            height: 100px; /* 固定高度，內部捲動 */
+            overflow-y: auto;
+            background: white;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            padding: 2px 0;
+            cursor: pointer;
+        }
+        .checkbox-item:hover { background: #f5f5f5; }
+        .checkbox-item input { margin: 0 6px 0 2px; width: auto; cursor: pointer; }
+        .checkbox-item span { font-size: 13px; color: #333; user-select: none; }
+        /* -------------------------- */
+
         .row { display: flex; gap: 8px; }
         .btn-autofill { width: 100%; background: var(--secondary); color: white; padding: 10px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; transition: 0.2s; margin-top: 5px; display: flex; justify-content: center; align-items: center; gap: 5px; }
         .btn-autofill:hover { background: var(--primary); }
@@ -189,10 +212,13 @@
                         <label>系所</label>
                         <select id="userDept" onchange="saveAndRefresh()"></select>
                     </div>
+                    
                     <div class="form-group">
-                        <label>學程 / 第二專長</label>
-                        <select id="userProgram" onchange="saveAndRefresh()"><option value="">(無)</option></select>
+                        <label>學程 / 第二專長 (可多選)</label>
+                        <div id="userProgramContainer" class="multi-select-box">
+                            </div>
                     </div>
+
                     <div class="row">
                         <div class="form-group">
                             <label>年級</label>
@@ -244,7 +270,9 @@
             </div>
             
             <ul class="course-list" id="courseList"></ul>
-        </div> <div class="content" id="captureArea">
+        </div> 
+        
+        <div class="content" id="captureArea">
             <div class="timetable-container">
                 <div class="timetable-header">
                     <span style="font-size:20px;">114-2 學期課表</span>
@@ -253,7 +281,9 @@
                 <div class="timetable" id="timetableGrid"></div>
             </div>
         </div>
-    </div> <div class="modal-overlay" id="selectionModal">
+    </div> 
+    
+    <div class="modal-overlay" id="selectionModal">
         <div class="modal-box">
             <div class="modal-title">請選擇一門課程 (選老師)</div>
             <div class="choice-list" id="modalChoices"></div>
@@ -296,7 +326,7 @@
         let myWishlist = [];
         let currentTab = 'available';
         let currentPlaceholder = null; 
-        let currentFilterType = 'all'; // 用於記錄目前的篩選條件
+        let currentFilterType = 'all'; 
 
         // === 新增功能：切換個人設定收折 ===
         function toggleProfile() {
@@ -332,11 +362,10 @@
         window.onload = async () => {
             initGridHTML();
             initDepartmentSelect();
-            loadProfileFromLocal();
+            loadProfileFromLocal(); // 會在讀取資料前先載入選項
             loadWishlistFromLocal();
             
             try {
-                // [重要] 請確保您有啟動 Live Server，否則無法讀取 json
                 const res = await fetch('./courses_processed.json');
                 if (!res.ok) throw new Error("Load failed");
                 
@@ -344,14 +373,17 @@
                 updateStatus(`已連線 (${allCourses.length}筆)`, '#27ae60');
                 document.getElementById('loadingOverlay').style.display = 'none';
                 
-                initProgramSelect();
+                initProgramSelect(); // 產生 Checkbox
+                // initProgramSelect 執行完後，需再次從 LocalStorage 勾選已存的項目
+                loadProfileFromLocal(); 
+                
                 loadScheduleFromLocal();
                 renderTimetable();
                 renderCourseList();
             } catch (e) {
                 console.error(e);
                 updateStatus("讀取失敗", '#e74c3c');
-                alert("讀取失敗！如果您是直接點開 HTML 檔案，請改用 VS Code 的 Live Server 開啟。");
+                alert("讀取 courses_processed.json 失敗。請確認檔案存在且透過 Local Server 執行。");
                 document.getElementById('loadingOverlay').style.display = 'none';
             }
         };
@@ -410,8 +442,9 @@
             saveAndRefresh();
         }
 
+        // [修改] 改為生成 Checkbox List
         function initProgramSelect() {
-            const progSel = document.getElementById('userProgram');
+            const container = document.getElementById('userProgramContainer');
             const programSet = new Set();
             
             allCourses.forEach(course => {
@@ -429,21 +462,39 @@
             });
             
             const sortedProgs = Array.from(programSet).sort();
-            sortedProgs.forEach(p => {
-                const opt = document.createElement('option');
-                opt.value = p;
-                opt.innerText = p;
-                progSel.appendChild(opt);
-            });
+            container.innerHTML = ""; // 清空
             
-            const saved = localStorage.getItem('ncu_profile');
-            if (saved) {
-                const p = JSON.parse(saved);
-                if (p.program) progSel.value = p.program;
-            }
+            sortedProgs.forEach(p => {
+                const div = document.createElement('div');
+                div.className = 'checkbox-item';
+                div.onclick = (e) => {
+                    // 讓點擊文字也能切換
+                    if(e.target.tagName !== 'INPUT') {
+                        const chk = div.querySelector('input');
+                        chk.checked = !chk.checked;
+                        saveAndRefresh();
+                    }
+                };
+                
+                const input = document.createElement('input');
+                input.type = 'checkbox';
+                input.value = p;
+                input.onchange = (e) => { e.stopPropagation(); saveAndRefresh(); }; // 避免冒泡重複觸發
+                
+                const span = document.createElement('span');
+                span.innerText = p;
+                
+                div.appendChild(input);
+                div.appendChild(span);
+                container.appendChild(div);
+            });
         }
 
+        // [修改] 讀取多選值
         function getUserProfile() {
+            // 抓取所有被勾選的學程
+            const checkedProgs = Array.from(document.querySelectorAll('#userProgramContainer input:checked')).map(cb => cb.value);
+            
             return {
                 system: document.getElementById('userSystem').value,
                 dept: document.getElementById('userDept').value,
@@ -451,7 +502,7 @@
                 class: document.getElementById('userClass').value,
                 identity: document.getElementById('userIdentity').value,
                 parity: document.getElementById('userParity').value,
-                program: document.getElementById('userProgram').value
+                program: checkedProgs // 回傳陣列
             };
         }
 
@@ -488,20 +539,31 @@
                     if (['prerequisite', 'limit'].includes(k)) return true;
                     
                     const rule = r[k];
+                    
+                    // 對於 program，我們需要特殊處理 (因為 user[k] 是陣列)
+                    if (k === 'program') return true; // Program check is merged into 'dept' rule usually in NCU data structure
+
                     let uVal = user[k] || "";
                     
-                    if (k !== 'identity' && k !== 'program' && uVal === "") return false;
+                    if (k !== 'identity' && uVal === "") return false;
                     if (k === 'parity') return rule.value === 'all' || rule.value === uVal;
 
                     if (k === 'dept') {
                         const userDept = user.dept;
-                        const userProg = user.program;
+                        const userProgs = user.program || []; // Array
+
+                        // 1. 檢查系所
                         const strictMatch = rule.values.some(v => userDept === v || userDept.includes(v));
-                        const programMatch = userProg && rule.values.some(v => userProg === v || userProg.includes(v));
+                        
+                        // 2. [修改] 檢查學程 (多選)：只要有任一個學程符合規則即可
+                        const programMatch = userProgs.some(up => rule.values.includes(up));
+                        
+                        // 3. 檢查學院
                         const collegeMatch = rule.values.some(v => {
                             const deptsInCollege = NCU_STRUCTURE[v];
                             return deptsInCollege && deptsInCollege.includes(userDept);
                         });
+                        
                         const isMatch = strictMatch || programMatch || collegeMatch;
                         return rule.mode === 'include' ? isMatch : !isMatch;
                     }
@@ -523,7 +585,6 @@
             const deptName = course.dept_name || "";
             if (deptName.includes("體育") || deptName.includes("通識") || deptName.includes("軍訓") ||
                 deptName.includes("語言中心") || deptName.includes("服務學習")) {
-                // Exception logic
             }
 
             let isSourceMatch = false;
@@ -870,11 +931,15 @@
 
             const targetGradeName = GRADE_MAP_REV[user.grade];
             
+            // [修改] 增加學程邏輯：如果使用者的任一學程在課程的分發條件中，也算符合來源
             let sourceFiltered = allCourses.filter(c => {
                 const isOwnDept = (c.dept_name === user.dept);
                 const isTargetClass = (c.class_name === '不分類' || c.class_name === targetGradeName);
                 const isGeneralUnit = GENERAL_UNITS.includes(c.dept_name);
-                const isProgramCourse = user.program && (c['分發條件'] && c['分發條件'].includes(user.program));
+                
+                // 檢查分發條件是否包含使用者已勾選的任一學程
+                const isProgramCourse = (user.program && user.program.length > 0) && (c['分發條件'] && user.program.some(up => c['分發條件'].includes(up)));
+                
                 return (isOwnDept && isTargetClass) || isGeneralUnit || isProgramCourse;
             });
 
@@ -988,7 +1053,17 @@
                 if (p.class) document.getElementById('userClass').value = p.class;
                 if (p.identity) document.getElementById('userIdentity').value = p.identity;
                 if (p.parity) document.getElementById('userParity').value = p.parity;
-                if (p.program) document.getElementById('userProgram').value = p.program;
+                // [修改] Checkbox 的回復邏輯
+                if (p.program && Array.isArray(p.program)) {
+                    // 稍等 initProgramSelect 生成完畢後，再勾選
+                    setTimeout(() => {
+                        const chks = document.querySelectorAll('#userProgramContainer input');
+                        chks.forEach(chk => {
+                            if(p.program.includes(chk.value)) chk.checked = true;
+                        });
+                        renderCourseList(); // 重新渲染
+                    }, 100); 
+                }
             }
         }
 
@@ -1035,7 +1110,11 @@
         }
 
         function downloadImage() {
-            html2canvas(document.getElementById('captureArea'), { scale: 2 }).then(c => {
+            const element = document.querySelector('.timetable-container'); 
+            html2canvas(element, { 
+                scale: 2, 
+                backgroundColor: '#ffffff' 
+            }).then(c => {
                 const a = document.createElement('a');
                 a.download = 'schedule.png';
                 a.href = c.toDataURL();
