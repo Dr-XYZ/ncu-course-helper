@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NCU 智慧選課模擬</title>
     
-    <script src="https://cdnjs.lare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     
     <style>
         /* =========================================
-           1. CSS Variables & Global Resets (維持原版)
+           1. CSS Variables & Global Resets
            ========================================= */
         :root {
             --primary: #2c3e50;
@@ -1028,7 +1028,7 @@
             setTimeout(() => n.classList.remove('show'), 2000);
         }
 
-        // [FIX 2] Completely rewritten download function for Better Aspect Ratio
+        // [FIXED] Compatible with iOS Safari using Web Share API & Blob
         function downloadImage() {
             updateStatus("正在產生圖片...", "#34495e");
             
@@ -1036,7 +1036,7 @@
             const original = document.querySelector('.timetable-container');
             const clone = original.cloneNode(true);
             
-            // 2. Configure the clone to force Desktop proportions (Landscape)
+            // 2. Configure the clone to force Desktop proportions
             clone.classList.add('export-mode');
             clone.style.position = 'fixed';
             clone.style.top = '-10000px'; 
@@ -1045,28 +1045,76 @@
             
             document.body.appendChild(clone);
 
-            // 3. Capture with forced width
+            // 3. Capture
             html2canvas(clone, { 
                 scale: 2, 
                 backgroundColor: '#ffffff',
-                width: 1024, // Force desktop width
+                width: 1024,
                 windowWidth: 1024
             }).then(canvas => {
-                const a = document.createElement('a');
                 const timestamp = new Date().toISOString().slice(0,10);
-                a.download = `NCU_Schedule_${timestamp}.png`;
-                a.href = canvas.toDataURL('image/png');
-                a.click();
-                
-                document.body.removeChild(clone);
-                updateStatus("圖片已下載", "#27ae60");
-                setTimeout(() => updateStatus("就緒", "#555"), 2000);
+                const fileName = `NCU_Schedule_${timestamp}.png`;
+
+                // Convert canvas to Blob (Better for memory and mobile support)
+                canvas.toBlob(function(blob) {
+                    // Clean up DOM immediately
+                    document.body.removeChild(clone);
+
+                    if (!blob) {
+                        alert("圖片產生失敗");
+                        updateStatus("錯誤", "#e74c3c");
+                        return;
+                    }
+
+                    // [Strategy A] Web Share API (Best for iOS / Android)
+                    // Checks if browser supports sharing files
+                    const file = new File([blob], fileName, { type: 'image/png' });
+                    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                        navigator.share({
+                            files: [file],
+                            title: 'NCU 課表模擬',
+                            text: '我的 114-2 學期課表'
+                        }).then(() => {
+                            updateStatus("已分享/儲存", "#27ae60");
+                        }).catch((err) => {
+                            console.log("分享取消或不支援:", err);
+                            // If share is cancelled or fails, try fallback
+                            downloadBlob(blob, fileName); 
+                        });
+                    } 
+                    // [Strategy B] Desktop / Fallback
+                    else {
+                        downloadBlob(blob, fileName);
+                    }
+                    
+                    setTimeout(() => updateStatus("就緒", "#555"), 2000);
+
+                }, 'image/png');
+
             }).catch(err => {
                 console.error(err);
                 alert("圖片產生失敗");
-                document.body.removeChild(clone);
+                if (document.body.contains(clone)) document.body.removeChild(clone);
                 updateStatus("錯誤", "#e74c3c");
             });
+        }
+
+        // Helper function for classic download
+        function downloadBlob(blob, fileName) {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = url;
+            a.download = fileName;
+            document.body.appendChild(a);
+            a.click();
+            
+            // Cleanup
+            setTimeout(() => {
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                updateStatus("下載完成", "#27ae60");
+            }, 100);
         }
     </script>
 </body>
