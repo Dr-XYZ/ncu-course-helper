@@ -40,7 +40,7 @@ jobs:
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "docs: 自動更新課程資料"
+          commit_message: "docs: Automatically update course data"
           file_pattern: courses_processed.json
     # 可選：避免同時多個執行衝突
     concurrency:
