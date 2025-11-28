@@ -127,14 +127,17 @@
         .course-block.wish-mode { background: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85) 10px, rgba(230, 230, 230, 0.85) 10px, rgba(230, 230, 230, 0.85) 20px); border: 2px dashed #999; color: #555; z-index: 4; opacity: 0.9; text-shadow: none; }
         .course-block.wish-mode:hover { z-index: 25; background: white; border-color: var(--accent); }
 
-        /* EXPORT MODE for Download (Fix Mobile Ratio) */
+        /* [EDITED] EXPORT MODE: Adjusted for ~1720px width (Sun-Sat Layout) */
         .timetable-container.export-mode {
-            width: 1024px !important;
-            max-width: none !important;
-            padding: 30px !important;
+            width: 860px !important; /* 860px * 2 (scale) = 1720px */
+            min-width: 860px !important;
+            max-width: 860px !important;
+            
+            padding: 40px 30px !important; /* 上下加寬 padding 讓高度更適當 */
             border-radius: 0 !important;
             box-shadow: none !important;
             background: white !important;
+            margin: 0 auto !important;
         }
 
         /* =========================================
@@ -267,7 +270,8 @@
 
     <script>
         const PERIOD_ORDER = ['1', '2', '3', '4', 'Z', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D'];
-        const DAYS = ['一', '二', '三', '四', '五', '六', '日'];
+        // [EDITED] UI Header Order: Sunday First
+        const DAYS = ['日', '一', '二', '三', '四', '五', '六'];
         const NCU_STRUCTURE = { "文學院": ["中國文學系", "英美語文學系", "法國語文學系", "哲學研究所", "歷史研究所", "藝術學研究所", "學習與教學研究所", "文學院學士班"], "理學院": ["數學系", "物理學系", "化學學系", "光電科學與工程學系", "統計研究所", "天文研究所", "理學院學士班"], "工學院": ["化學工程與材料工程學系", "土木工程學系", "機械工程學系", "能源工程研究所", "環境工程研究所", "營建管理研究所", "材料科學與工程研究所", "工學院學士班"], "管理學院": ["企業管理學系", "資訊管理學系", "財務金融學系", "經濟學系", "會計研究所", "產業經濟研究所", "人力資源管理研究所", "工業管理研究所"], "資訊電機學院": ["電機工程學系", "資訊工程學系", "通訊工程學系", "網路學習科技研究所", "資訊電機學院學士班"], "地球科學學院": ["大氣科學學系", "地球科學學系", "太空科學與工程學系", "應用地質研究所", "水文與海洋科學研究所", "地球科學學院學士班"], "客家學院": ["客家語文暨社會科學學系", "法律與政府研究所"], "生醫理工學院": ["生命科學系", "生醫科學與工程學系", "認知神經科學研究所"] };
         const GENERAL_UNITS = ["體育室", "軍訓室", "學務處-服務學習發展中心", "通識教育中心", "語言中心", "總教學中心", "學務處-職涯發展中心", "遙測科技碩士學位學程", "環境科技博士學位學程(台灣聯合大學系統)"];
         const GRADE_MAP_REV = { '1': '一年級', '2': '二年級', '3': '三年級', '4': '四年級' };
@@ -770,19 +774,17 @@
             return layoutResult;
         }
 
+        // [EDITED] Render with Sunday-First Logic
         function renderTimetable() {
             document.querySelectorAll('.course-block').forEach(e => e.remove());
             const grid = document.getElementById('timetableGrid');
             let total = 0;
             const allRenderItems = [];
 
-            // [FIX 1] Color Mapping Logic
-            // 1. Collect all unique Course IDs currently visible
+            // Color Mapping Setup
             const uniqueIDs = new Set();
             mySchedule.forEach(c => uniqueIDs.add(c['課程編號']));
             myWishlist.forEach(c => uniqueIDs.add(c['課程編號']));
-            
-            // 2. Assign unique color to each ID sequentially from MORANDI_PALETTE
             const colorMap = {};
             let colorIdx = 0;
             uniqueIDs.forEach(id => {
@@ -790,6 +792,7 @@
                 colorIdx++;
             });
 
+            // Collect Items (Data is 0=Mon, ... 6=Sun)
             myWishlist.forEach((c, idx) => {
                 if (mySchedule.some(s => s['課程編號'] === c['課程編號'])) return;
                 (c.time_parsed || []).forEach((t, tIdx) => {
@@ -804,15 +807,23 @@
                 });
             });
 
+            // Loop through DATA days (0=Mon ... 6=Sun)
             for (let d = 0; d < 7; d++) {
                 const dayItems = allRenderItems.filter(i => i.day === d);
                 if (dayItems.length === 0) continue;
                 const layoutConfig = getLayoutConfig(dayItems);
+                
                 dayItems.forEach(item => {
                     const c = item.course;
                     const div = document.createElement('div');
                     const style = layoutConfig.get(item.id);
-                    const col = item.day + 2;
+
+                    // [KEY CHANGE] Re-map Data Index (0=Mon) to Visual Column
+                    // Data: 0(Mon) -> Vis: 1 | Data: 6(Sun) -> Vis: 0
+                    // Formula: (day + 1) % 7
+                    const visualDayIndex = (item.day + 1) % 7;
+                    const col = visualDayIndex + 2; // +2 for Grid Header offset
+
                     const rowStart = item.start + 2;
                     const rowEnd = item.end + 3;
                     div.style.gridColumn = `${col} / ${col + 1}`;
@@ -826,7 +837,6 @@
                     } else {
                         div.className = `course-block ${c.is_placeholder ? 'pending' : ''}`;
                         if (!c.is_placeholder) {
-                            // Apply assigned color
                             const bgColor = colorMap[c['課程編號']];
                             div.style.backgroundColor = bgColor;
                             div.style.color = getContrastColor(bgColor);
@@ -945,9 +955,14 @@
             if (displayList.length === 0) ul.innerHTML = '<li style="padding:20px; text-align:center; color:#999;">無符合課程</li>';
         }
 
+        // [EDITED] Helper to extract room name
         function getRoomForBlock(fullStr, dayIdx) {
             if (!fullStr) return '';
-            const dayChar = DAYS[dayIdx];
+            // Data Mapping: 0=Mon, ... 6=Sun. 
+            // We must use a fixed array for Regex matching, ignoring the UI DAYS array change.
+            const PARSE_CHARS = ['一', '二', '三', '四', '五', '六', '日'];
+            const dayChar = PARSE_CHARS[dayIdx];
+            
             const regex = new RegExp(`${dayChar}[0-9A-Z,\-~]+[\(\[\{](.+?)[\)\]\}]`);
             const match = fullStr.match(regex);
             if (match) return match[1];
@@ -1028,7 +1043,7 @@
             setTimeout(() => n.classList.remove('show'), 2000);
         }
 
-        // [FIXED] Compatible with iOS Safari using Web Share API & Blob
+        // [FIXED] Hybrid Solution: DataURL for Desktop (Stable), Web Share for Mobile (iOS Fix)
         function downloadImage() {
             updateStatus("正在產生圖片...", "#34495e");
             
@@ -1036,7 +1051,7 @@
             const original = document.querySelector('.timetable-container');
             const clone = original.cloneNode(true);
             
-            // 2. Configure the clone to force Desktop proportions
+            // 2. Configure the clone
             clone.classList.add('export-mode');
             clone.style.position = 'fixed';
             clone.style.top = '-10000px'; 
@@ -1045,51 +1060,55 @@
             
             document.body.appendChild(clone);
 
-            // 3. Capture
+            // [EDITED] 3. Capture (CSS controls width/height now)
             html2canvas(clone, { 
                 scale: 2, 
-                backgroundColor: '#ffffff',
-                width: 1024,
-                windowWidth: 1024
+                backgroundColor: '#ffffff'
             }).then(canvas => {
+                // Cleanup DOM immediately
+                document.body.removeChild(clone);
+
                 const timestamp = new Date().toISOString().slice(0,10);
                 const fileName = `NCU_Schedule_${timestamp}.png`;
 
-                // Convert canvas to Blob (Better for memory and mobile support)
-                canvas.toBlob(function(blob) {
-                    // Clean up DOM immediately
-                    document.body.removeChild(clone);
+                // 4. Detect Environment
+                // Check if it's a mobile device or if the browser supports file sharing natively
+                const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                const canShare = navigator.canShare && navigator.share;
 
-                    if (!blob) {
-                        alert("圖片產生失敗");
-                        updateStatus("錯誤", "#e74c3c");
-                        return;
-                    }
+                if (isMobile && canShare) {
+                    // === MOBILE STRATEGY (Blob + Share API) ===
+                    canvas.toBlob(function(blob) {
+                        if (!blob) {
+                            // Fallback to Desktop strategy if Blob fails
+                            downloadAsDataURL(canvas, fileName);
+                            return;
+                        }
+                        const file = new File([blob], fileName, { type: 'image/png' });
 
-                    // [Strategy A] Web Share API (Best for iOS / Android)
-                    // Checks if browser supports sharing files
-                    const file = new File([blob], fileName, { type: 'image/png' });
-                    if (navigator.canShare && navigator.canShare({ files: [file] })) {
-                        navigator.share({
-                            files: [file],
-                            title: 'NCU 課表模擬',
-                            text: '我的 114-2 學期課表'
-                        }).then(() => {
-                            updateStatus("已分享/儲存", "#27ae60");
-                        }).catch((err) => {
-                            console.log("分享取消或不支援:", err);
-                            // If share is cancelled or fails, try fallback
-                            downloadBlob(blob, fileName); 
-                        });
-                    } 
-                    // [Strategy B] Desktop / Fallback
-                    else {
-                        downloadBlob(blob, fileName);
-                    }
-                    
-                    setTimeout(() => updateStatus("就緒", "#555"), 2000);
-
-                }, 'image/png');
+                        // Check if specifically capable of sharing FILES
+                        if (navigator.canShare({ files: [file] })) {
+                            navigator.share({
+                                files: [file],
+                                title: 'NCU 課表模擬',
+                                text: '我的 114-2 學期課表'
+                            }).then(() => {
+                                updateStatus("已分享/儲存", "#27ae60");
+                                setTimeout(() => updateStatus("就緒", "#555"), 2000);
+                            }).catch((err) => {
+                                console.log("分享取消:", err);
+                                updateStatus("就緒", "#555");
+                            });
+                        } else {
+                            // Can't share files? Fallback to DataURL
+                            downloadAsDataURL(canvas, fileName);
+                        }
+                    }, 'image/png');
+                } else {
+                    // === DESKTOP STRATEGY (Classic DataURL) ===
+                    // This is the most stable method for PC/Mac
+                    downloadAsDataURL(canvas, fileName);
+                }
 
             }).catch(err => {
                 console.error(err);
@@ -1099,22 +1118,18 @@
             });
         }
 
-        // Helper function for classic download
-        function downloadBlob(blob, fileName) {
-            const url = URL.createObjectURL(blob);
+        // Helper: Classic Desktop Download
+        function downloadAsDataURL(canvas, fileName) {
+            const dataUrl = canvas.toDataURL('image/png');
             const a = document.createElement('a');
-            a.style.display = 'none';
-            a.href = url;
+            a.href = dataUrl;
             a.download = fileName;
-            document.body.appendChild(a);
+            document.body.appendChild(a); // Required for Firefox
             a.click();
+            document.body.removeChild(a);
             
-            // Cleanup
-            setTimeout(() => {
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-                updateStatus("下載完成", "#27ae60");
-            }, 100);
+            updateStatus("下載完成", "#27ae60");
+            setTimeout(() => updateStatus("就緒", "#555"), 2000);
         }
     </script>
 </body>
