@@ -232,8 +232,15 @@ def main():
     
     # 輸出
     data = df.to_dict(orient="records")
+    
+    # [Added] 建立包含時間戳記的最終輸出物件
+    output_data = {
+        "last_update": time.strftime("%Y-%m-%d %H:%M:%S"),
+        "courses": data
+    }
+    
     with open(OUT_JSON, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+        json.dump(output_data, f, ensure_ascii=False, indent=2)
     print("完成！")
 
 if __name__ == "__main__":

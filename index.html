@@ -184,7 +184,7 @@
     </div>
 
     <header>
-        <h1>🎓 NCU 智慧選課模擬 <span id="dataStatus" class="status-badge">連線中...</span></h1>
+        <h1>🎓 NCU 智慧選課模擬 <span id="dataStatus" class="status-badge">連線中...</span><span id="lastUpdateTime" class="status-badge" style="background-color: #7f8c8d; margin-left: 10px; font-weight: normal;"></span></h1>
         <div class="header-controls">
             <button class="btn btn-refresh" onclick="resetData()">🔄 重新整理</button>
             <button class="btn btn-clear" onclick="clearSchedule()">🗑️ 清空課表</button>
@@ -332,7 +332,14 @@
             try {
                 const res = await fetch('./courses_processed.json');
                 if (!res.ok) throw new Error("Load failed");
-                allCourses = await res.json();
+                const jsonData = await res.json();
+                
+                // [MODIFIED] Handle new JSON structure
+                allCourses = jsonData.courses; 
+                if (jsonData.last_update) {
+                    document.getElementById('lastUpdateTime').innerText = '資料更新: ' + jsonData.last_update;
+                }
+
                 updateStatus(`已連線 (${allCourses.length}筆)`, '#27ae60');
                 document.getElementById('loadingOverlay').style.display = 'none';
                 initProgramSelect(); 
