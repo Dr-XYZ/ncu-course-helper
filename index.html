@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NCU 智慧選課模擬 (多選學程版)</title>
+    <title>NCU 智慧選課模擬</title>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.lare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     
     <style>
         /* =========================================
-           1. CSS Variables & Global Resets
+           1. CSS Variables & Global Resets (維持原版)
            ========================================= */
         :root {
             --primary: #2c3e50;
@@ -41,9 +41,9 @@
            3. Layout & Sidebar
            ========================================= */
         .main-container { display: flex; flex: 1; overflow: hidden; }
-        .sidebar { width: 380px; background: white; border-right: 1px solid var(--border); display: flex; flex-direction: column; z-index: 10; box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05); flex-shrink: 0; }
+        .sidebar { width: 380px; background: white; border-right: 1px solid var(--border); display: flex; flex-direction: column; z-index: 10; box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05); flex-shrink: 0; resize: horizontal; overflow: hidden; min-width: 300px; max-width: 800px; }
 
-        /* 個人設定收折樣式 */
+        /* 個人設定收折 */
         .profile-section { padding: 0; background: #fafafa; border-bottom: 1px solid var(--border); }
         .profile-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: 10px 15px; background: #f0f2f5; border-bottom: 1px solid #ddd; transition: 0.2s; }
         .profile-header:hover { background: #e1e4e8; }
@@ -56,46 +56,29 @@
 
         .form-group { margin-bottom: 8px; flex: 1; }
         .form-group label { display: block; font-size: 11px; color: #666; margin-bottom: 2px; font-weight: 600; }
+        .form-group select, .form-group input { width: 100%; padding: 6px; border: 1px solid #ddd; border-radius: 4px; font-size: 13px; box-sizing: border-box; background: white; }
         
-        /* 一般 Select 與 Input */
-        .form-group select, .form-group input[type="text"] { width: 100%; padding: 6px; border: 1px solid #ddd; border-radius: 4px; font-size: 13px; box-sizing: border-box; background: white; }
-        
-        /* --- [新] 多選學程區塊樣式 --- */
-        .multi-select-box {
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: 5px;
-            height: 100px; /* 固定高度，內部捲動 */
-            overflow-y: auto;
-            background: white;
-        }
-        .checkbox-item {
-            display: flex;
-            align-items: center;
-            padding: 2px 0;
-            cursor: pointer;
-        }
+        .multi-select-box { border: 1px solid #ddd; border-radius: 4px; padding: 5px; height: 100px; overflow-y: auto; background: white; }
+        .checkbox-item { display: flex; align-items: center; padding: 2px 0; cursor: pointer; }
         .checkbox-item:hover { background: #f5f5f5; }
         .checkbox-item input { margin: 0 6px 0 2px; width: auto; cursor: pointer; }
         .checkbox-item span { font-size: 13px; color: #333; user-select: none; }
-        /* -------------------------- */
 
         .row { display: flex; gap: 8px; }
         .btn-autofill { width: 100%; background: var(--secondary); color: white; padding: 10px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; transition: 0.2s; margin-top: 5px; display: flex; justify-content: center; align-items: center; gap: 5px; }
         .btn-autofill:hover { background: var(--primary); }
 
         /* Tabs */
-        .tabs { display: flex; border-bottom: 1px solid var(--border); background: #f8f9fa; }
+        .tabs { display: flex; border-bottom: 1px solid var(--border); background: #f8f9fa; flex-shrink: 0; }
         .tab { flex: 1; text-align: center; padding: 12px 5px; cursor: pointer; font-size: 13px; color: #666; transition: 0.2s; border-bottom: 3px solid transparent; font-weight: 600; white-space: nowrap; }
         .tab:hover { background: #e9ecef; }
         .tab.active { background: white; border-bottom-color: var(--accent); color: var(--accent); }
         .tab-count { background: #ddd; font-size: 10px; padding: 2px 6px; border-radius: 10px; margin-left: 3px; color: #555; }
         .tab.active .tab-count { background: var(--accent); color: white; }
 
-        /* Search & Filter Chips */
+        /* Search & Chips */
         .search-box { padding: 10px; border-bottom: 1px solid #eee; }
         .search-box input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 20px; box-sizing: border-box; padding-left: 15px; outline: none; }
-        
         .filter-chips { display: flex; gap: 6px; padding: 8px 10px; border-bottom: 1px solid #eee; background: white; overflow-x: auto; white-space: nowrap; }
         .chip { padding: 4px 12px; border-radius: 15px; font-size: 12px; background: #f1f2f6; color: #555; cursor: pointer; border: 1px solid transparent; transition: 0.2s; user-select: none; }
         .chip:hover { background: #e4e6eb; }
@@ -111,9 +94,7 @@
         .course-item.added { background: #e8f8f5; border-left: 4px solid var(--success); }
         .course-item.added::after { content: "✓"; position: absolute; right: 15px; top: 12px; font-size: 16px; color: var(--success); font-weight: bold; }
         .course-item.conflict-item { opacity: 0.8; background: #fff5f5; border-left: 4px solid var(--danger); }
-        .course-item.conflict-item:hover { background: #ffecec; }
-
-        /* Tags & Icons */
+        
         .tag { font-size: 10px; padding: 2px 6px; border-radius: 4px; color: white; margin-left: 6px; font-weight: bold; vertical-align: middle; }
         .tag.req { background: var(--danger); }
         .tag.elec { background: var(--accent); }
@@ -121,9 +102,7 @@
         .tag.pri { background: #34495e; }
         .c-name { font-weight: bold; color: var(--secondary); font-size: 14px; display: block; margin-bottom: 4px; }
         .c-info { font-size: 12px; color: #7f8c8d; }
-        .btn-wish { display: inline-block; cursor: pointer; font-size: 18px; margin-right: 10px; color: #ccc; transition: 0.2s; z-index: 10; position: relative; vertical-align: middle; margin-top: 2px; }
-        .btn-wish:hover { transform: scale(1.2); color: #aaa; }
-        .btn-wish.active { color: var(--danger); }
+        .btn-wish { display: none; } 
 
         /* =========================================
            4. Timetable Grid Area
@@ -133,37 +112,61 @@
         .timetable-header { display: flex; justify-content: space-between; margin-bottom: 15px; align-items: center; border-bottom: 2px solid #eee; padding-bottom: 10px; }
         .credits-info { font-size: 16px; font-weight: bold; color: var(--secondary); }
         .credits-num { color: var(--accent); font-size: 20px; margin-left: 5px; }
-        
         .timetable { display: grid; grid-template-columns: 60px repeat(7, 1fr); grid-auto-rows: minmax(55px, auto); border: 1px solid #e0e0e0; background: #e0e0e0; gap: 1px; position: relative; }
         .cell { background: white; min-height: 55px; display: flex; align-items: center; justify-content: center; font-size: 13px; padding: 2px; text-align: center; color: #555; }
         .cell.header-row { background: #f8f9fa; font-weight: bold; color: var(--primary); height: 45px; }
         .cell.period-col { background: #f8f9fa; font-weight: bold; color: var(--primary); flex-direction: column; font-family: 'Consolas', sans-serif; }
 
-        .course-block { width: 100%; height: 100%; background: var(--accent); color: white; font-size: 12px; display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: pointer; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); z-index: 5; padding: 4px; box-sizing: border-box; text-align: center; overflow: hidden; transition: transform 0.15s ease-in-out, box-shadow 0.15s; border-radius: 2px; }
+        /* Course Blocks */
+        .course-block { width: 100%; height: 100%; background: var(--accent); color: white; font-size: 12px; display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: pointer; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); z-index: 5; padding: 4px; box-sizing: border-box; text-align: center; overflow: hidden; transition: transform 0.15s ease-in-out, box-shadow 0.15s; border-radius: 2px; text-shadow: 0 1px 2px rgba(0,0,0,0.1); }
         .course-block:hover { transform: scale(1.03); z-index: 20; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); }
         .course-block .cb-name { font-weight: bold; line-height: 1.3; margin-bottom: 2px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
         .course-block .cb-room { font-size: 10px; opacity: 0.9; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
-        .course-block.pending { background: #f39c12 !important; animation: pulse 2s infinite; border: 2px dashed #d35400; }
-        .course-block.wish-mode { background: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85) 10px, rgba(230, 230, 230, 0.85) 10px, rgba(230, 230, 230, 0.85) 20px); border: 2px dashed #999; color: #555; z-index: 4; opacity: 0.9; }
+        
+        .course-block.pending { background: #f39c12 !important; animation: pulse 2s infinite; border: 2px dashed #d35400; text-shadow: none; color: #333; }
+        .course-block.wish-mode { background: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85) 10px, rgba(230, 230, 230, 0.85) 10px, rgba(230, 230, 230, 0.85) 20px); border: 2px dashed #999; color: #555; z-index: 4; opacity: 0.9; text-shadow: none; }
         .course-block.wish-mode:hover { z-index: 25; background: white; border-color: var(--accent); }
 
-        .c-0 { background: #3498db; } .c-1 { background: #e67e22; } .c-2 { background: #9b59b6; } .c-3 { background: #1abc9c; } .c-4 { background: #e74c3c; } .c-5 { background: #34495e; } .c-6 { background: #f1c40f; color: #333; }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(243, 156, 18, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(243, 156, 18, 0); } 100% { box-shadow: 0 0 0 0 rgba(243, 156, 18, 0); } }
+        /* EXPORT MODE for Download (Fix Mobile Ratio) */
+        .timetable-container.export-mode {
+            width: 1024px !important;
+            max-width: none !important;
+            padding: 30px !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            background: white !important;
+        }
 
         /* =========================================
-           5. Modals & Overlay
+           5. Modals (詳細資訊彈窗)
            ========================================= */
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center; }
-        .modal-box { background: white; width: 400px; max-width: 90%; border-radius: 8px; padding: 20px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); }
-        .modal-title { font-size: 18px; font-weight: bold; margin-bottom: 15px; color: var(--primary); border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .modal-box { background: white; width: 500px; max-width: 90%; border-radius: 8px; padding: 25px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); display: flex; flex-direction: column; max-height: 85vh; }
+        .modal-title { font-size: 20px; font-weight: bold; margin-bottom: 15px; color: var(--primary); border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .modal-body { overflow-y: auto; flex: 1; padding-right: 5px; }
+        
+        .detail-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 20px; }
+        .detail-table td { padding: 8px; border-bottom: 1px solid #eee; }
+        .detail-table td.label { width: 100px; font-weight: bold; color: #555; background: #f9f9f9; }
+        
+        .modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 15px; }
+        .btn-action { padding: 10px 20px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 14px; transition: 0.2s; }
+        .btn-close { background: #eee; color: #333; }
+        .btn-close:hover { background: #ddd; }
+        .btn-add { background: var(--success); color: white; }
+        .btn-add:hover { filter: brightness(0.9); }
+        .btn-wishlist { background: var(--wish); color: white; }
+        .btn-wishlist:hover { filter: brightness(0.9); }
+        .btn-remove { background: var(--danger); color: white; }
+        .btn-remove:hover { filter: brightness(0.9); }
+
         .choice-list { max-height: 300px; overflow-y: auto; }
-        .choice-item { padding: 10px; border: 1px solid #eee; margin-bottom: 5px; border-radius: 4px; cursor: pointer; transition: 0.2s; }
+        .choice-item { padding: 12px; border: 1px solid #eee; margin-bottom: 8px; border-radius: 6px; cursor: pointer; transition: 0.2s; }
         .choice-item:hover { background: #f0f8ff; border-color: var(--accent); }
-        .close-modal { margin-top: 10px; width: 100%; padding: 10px; background: #eee; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
 
         #notification { position: fixed; bottom: 30px; right: 30px; background: #333; color: white; padding: 12px 24px; border-radius: 8px; opacity: 0; transition: 0.3s; pointer-events: none; z-index: 999; transform: translateY(20px); font-weight: bold; }
         #notification.show { opacity: 1; transform: translateY(0); }
-
+        
         #loadingOverlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.95); z-index: 999; display: flex; flex-direction: column; justify-content: center; align-items: center; }
         .spinner { border: 4px solid #f3f3f3; border-top: 4px solid var(--accent); border-radius: 50%; width: 50px; height: 50px; animation: spin 0.8s linear infinite; margin-bottom: 15px; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
@@ -190,77 +193,37 @@
         <div class="sidebar">
             <div class="profile-section" id="profileSection">
                 <div class="profile-header" onclick="toggleProfile()">
-                    <div class="profile-title" style="margin:0; border:none; padding:0;">
-                        個人身分設定 
-                        <span id="profileSummary" class="profile-info-summary"></span>
+                    <div class="profile-title">
+                        個人身分設定 <span id="profileSummary" class="profile-info-summary"></span>
                     </div>
                     <span class="toggle-icon">▼</span>
                 </div>
-                
                 <div class="profile-content">
                     <div class="row">
-                        <div class="form-group">
-                            <label>學制</label>
-                            <select id="userSystem" onchange="saveAndRefresh()"><option value="學士班">學士班</option><option value="碩士班">碩士班</option><option value="博士班">博士班</option></select>
-                        </div>
-                        <div class="form-group">
-                            <label>學院</label>
-                            <select id="userCollege" onchange="updateDeptOptions()"></select>
-                        </div>
+                        <div class="form-group"><label>學制</label><select id="userSystem" onchange="saveAndRefresh()"><option value="學士班">學士班</option><option value="碩士班">碩士班</option><option value="博士班">博士班</option></select></div>
+                        <div class="form-group"><label>學院</label><select id="userCollege" onchange="updateDeptOptions()"></select></div>
                     </div>
-                    <div class="form-group">
-                        <label>系所</label>
-                        <select id="userDept" onchange="saveAndRefresh()"></select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>學程 / 第二專長 (可多選)</label>
-                        <div id="userProgramContainer" class="multi-select-box">
-                            </div>
-                    </div>
-
+                    <div class="form-group"><label>系所</label><select id="userDept" onchange="saveAndRefresh()"></select></div>
+                    <div class="form-group"><label>學程 / 第二專長 (可多選)</label><div id="userProgramContainer" class="multi-select-box"></div></div>
                     <div class="row">
-                        <div class="form-group">
-                            <label>年級</label>
-                            <select id="userGrade" onchange="saveAndRefresh()"><option value="1">一年級</option><option value="2">二年級</option><option value="3">三年級</option><option value="4">四年級</option></select>
-                        </div>
-                        <div class="form-group">
-                            <label>班級</label>
-                            <select id="userClass" onchange="saveAndRefresh()"><option value="A">A班</option><option value="B">B班</option><option value="C">C班</option></select>
-                        </div>
+                        <div class="form-group"><label>年級</label><select id="userGrade" onchange="saveAndRefresh()"><option value="1">一年級</option><option value="2">二年級</option><option value="3">三年級</option><option value="4">四年級</option></select></div>
+                        <div class="form-group"><label>班級</label><select id="userClass" onchange="saveAndRefresh()"><option value="A">A班</option><option value="B">B班</option><option value="C">C班</option></select></div>
                     </div>
                     <div class="row">
-                        <div class="form-group">
-                            <label>身份</label>
-                            <select id="userIdentity" onchange="saveAndRefresh()"><option value="一般生">一般生</option><option value="交換生">交換生</option></select>
-                        </div>
-                        <div class="form-group">
-                            <label>單雙號</label>
-                            <select id="userParity" onchange="saveAndRefresh()"><option value="odd">單號</option><option value="even">雙號</option></select>
-                        </div>
+                        <div class="form-group"><label>身份</label><select id="userIdentity" onchange="saveAndRefresh()"><option value="一般生">一般生</option><option value="交換生">交換生</option></select></div>
+                        <div class="form-group"><label>單雙號</label><select id="userParity" onchange="saveAndRefresh()"><option value="odd">單號</option><option value="even">雙號</option></select></div>
                     </div>
-                    <button class="btn-autofill" onclick="autoFillRequired()">
-                        ⚡ 自動帶入必修 (限系定)
-                    </button>
+                    <button class="btn-autofill" onclick="autoFillRequired()">⚡ 自動帶入必修 (限系定)</button>
                 </div>
             </div>
 
             <div class="tabs">
-                <div class="tab active" onclick="setTab('available')">
-                    能選的課 <span id="count-available" class="tab-count">0</span>
-                </div>
-                <div class="tab" onclick="setTab('wishlist')">
-                    待選清單 <span id="count-wishlist" class="tab-count" style="background:var(--wish); color:white;">0</span>
-                </div>
-                <div class="tab" onclick="setTab('conflict')">
-                    衝堂 <span id="count-conflict" class="tab-count" style="background:var(--danger); color:white;">0</span>
-                </div>
+                <div class="tab active" onclick="setTab('available')">能選的課 <span id="count-available" class="tab-count">0</span></div>
+                <div class="tab" onclick="setTab('wishlist')">待選清單 <span id="count-wishlist" class="tab-count" style="background:var(--wish); color:white;">0</span></div>
+                <div class="tab" onclick="setTab('conflict')">衝堂 <span id="count-conflict" class="tab-count" style="background:var(--danger); color:white;">0</span></div>
             </div>
 
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="搜尋課名、老師、代碼..." oninput="renderCourseList()">
-            </div>
-            
+            <div class="search-box"><input type="text" id="searchInput" placeholder="搜尋課名、老師、代碼..." oninput="renderCourseList()"></div>
             <div class="filter-chips">
                 <div class="chip active" onclick="setFilter('all', this)">全部</div>
                 <div class="chip" data-type="req" onclick="setFilter('required', this)">必修</div>
@@ -268,10 +231,9 @@
                 <div class="chip" data-type="gen" onclick="setFilter('general', this)">通識</div>
                 <div class="chip" data-type="pe" onclick="setFilter('pe', this)">體育</div>
             </div>
-            
             <ul class="course-list" id="courseList"></ul>
-        </div> 
-        
+        </div>
+
         <div class="content" id="captureArea">
             <div class="timetable-container">
                 <div class="timetable-header">
@@ -281,8 +243,18 @@
                 <div class="timetable" id="timetableGrid"></div>
             </div>
         </div>
-    </div> 
-    
+    </div>
+
+    <div class="modal-overlay" id="courseDetailModal">
+        <div class="modal-box">
+            <div class="modal-title" id="detailTitle">課程標題</div>
+            <div class="modal-body" id="detailBody">
+                </div>
+            <div class="modal-actions" id="detailActions">
+                </div>
+        </div>
+    </div>
+
     <div class="modal-overlay" id="selectionModal">
         <div class="modal-box">
             <div class="modal-title">請選擇一門課程 (選老師)</div>
@@ -294,61 +266,41 @@
     <div id="notification">Message</div>
 
     <script>
-        // =========================================
-        // 1. Constants & Configuration
-        // =========================================
         const PERIOD_ORDER = ['1', '2', '3', '4', 'Z', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D'];
         const DAYS = ['一', '二', '三', '四', '五', '六', '日'];
-        
-        const NCU_STRUCTURE = {
-            "文學院": ["中國文學系", "英美語文學系", "法國語文學系", "哲學研究所", "歷史研究所", "藝術學研究所", "學習與教學研究所", "文學院學士班"],
-            "理學院": ["數學系", "物理學系", "化學學系", "光電科學與工程學系", "統計研究所", "天文研究所", "理學院學士班"],
-            "工學院": ["化學工程與材料工程學系", "土木工程學系", "機械工程學系", "能源工程研究所", "環境工程研究所", "營建管理研究所", "材料科學與工程研究所", "工學院學士班"],
-            "管理學院": ["企業管理學系", "資訊管理學系", "財務金融學系", "經濟學系", "會計研究所", "產業經濟研究所", "人力資源管理研究所", "工業管理研究所"],
-            "資訊電機學院": ["電機工程學系", "資訊工程學系", "通訊工程學系", "網路學習科技研究所", "資訊電機學院學士班"],
-            "地球科學學院": ["大氣科學學系", "地球科學學系", "太空科學與工程學系", "應用地質研究所", "水文與海洋科學研究所", "地球科學學院學士班"],
-            "客家學院": ["客家語文暨社會科學學系", "法律與政府研究所"],
-            "生醫理工學院": ["生命科學系", "生醫科學與工程學系", "認知神經科學研究所"]
-        };
-        
-        const GENERAL_UNITS = [
-            "體育室", "軍訓室", "學務處-服務學習發展中心", "通識教育中心", "語言中心", "總教學中心", 
-            "學務處-職涯發展中心", "遙測科技碩士學位學程", "環境科技博士學位學程(台灣聯合大學系統)"
-        ];
-        
+        const NCU_STRUCTURE = { "文學院": ["中國文學系", "英美語文學系", "法國語文學系", "哲學研究所", "歷史研究所", "藝術學研究所", "學習與教學研究所", "文學院學士班"], "理學院": ["數學系", "物理學系", "化學學系", "光電科學與工程學系", "統計研究所", "天文研究所", "理學院學士班"], "工學院": ["化學工程與材料工程學系", "土木工程學系", "機械工程學系", "能源工程研究所", "環境工程研究所", "營建管理研究所", "材料科學與工程研究所", "工學院學士班"], "管理學院": ["企業管理學系", "資訊管理學系", "財務金融學系", "經濟學系", "會計研究所", "產業經濟研究所", "人力資源管理研究所", "工業管理研究所"], "資訊電機學院": ["電機工程學系", "資訊工程學系", "通訊工程學系", "網路學習科技研究所", "資訊電機學院學士班"], "地球科學學院": ["大氣科學學系", "地球科學學系", "太空科學與工程學系", "應用地質研究所", "水文與海洋科學研究所", "地球科學學院學士班"], "客家學院": ["客家語文暨社會科學學系", "法律與政府研究所"], "生醫理工學院": ["生命科學系", "生醫科學與工程學系", "認知神經科學研究所"] };
+        const GENERAL_UNITS = ["體育室", "軍訓室", "學務處-服務學習發展中心", "通識教育中心", "語言中心", "總教學中心", "學務處-職涯發展中心", "遙測科技碩士學位學程", "環境科技博士學位學程(台灣聯合大學系統)"];
         const GRADE_MAP_REV = { '1': '一年級', '2': '二年級', '3': '三年級', '4': '四年級' };
 
-        // =========================================
-        // 2. Global State
-        // =========================================
+        // [Updated] Morandi Color Palette for Course Blocks Only
+        const MORANDI_PALETTE = [
+            '#7B8D8E', '#BF8A88', '#8F99A6', '#C8BCA6', '#70887D', 
+            '#A88688', '#8798A5', '#D4C4B7', '#96A48B', '#B09C85', 
+            '#8D99AE', '#D8A48F', '#84A98C', '#A5A58D', '#B7B7A4', 
+            '#E29578', '#6D6875', '#E5989B', '#588157', '#3D405B', 
+            '#6B705C', '#CB997E', '#A4AC86', '#64A6BD'
+        ];
+
         let allCourses = [];
         let mySchedule = [];
         let myWishlist = [];
         let currentTab = 'available';
         let currentPlaceholder = null; 
         let currentFilterType = 'all'; 
+        let currentDetailCourse = null;
 
-        // === 新增功能：切換個人設定收折 ===
         function toggleProfile() {
             const section = document.getElementById('profileSection');
             section.classList.toggle('collapsed');
             updateProfileSummary();
         }
-
         function updateProfileSummary() {
             const dept = document.getElementById('userDept').value;
             const grade = document.getElementById('userGrade').value;
             const summary = document.getElementById('profileSummary');
             const isCollapsed = document.getElementById('profileSection').classList.contains('collapsed');
-            
-            if(isCollapsed) {
-                summary.innerText = `(${dept} / ${grade}年級)`;
-            } else {
-                summary.innerText = "";
-            }
+            summary.innerText = isCollapsed ? `(${dept} / ${grade}年級)` : "";
         }
-
-        // === 新增功能：設定篩選條件 ===
         function setFilter(type, element) {
             currentFilterType = type;
             document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
@@ -356,27 +308,31 @@
             renderCourseList(); 
         }
 
-        // =========================================
-        // 3. Initialization
-        // =========================================
+        // [FIX 1] Helper to determine if text should be white or black based on bg color
+        function getContrastColor(hex) {
+            if(!hex) return '#ffffff';
+            // Convert hex to RGB
+            const r = parseInt(hex.substr(1, 2), 16);
+            const g = parseInt(hex.substr(3, 2), 16);
+            const b = parseInt(hex.substr(5, 2), 16);
+            // YIQ equation
+            const yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+            return (yiq >= 140) ? '#333333' : '#ffffff';
+        }
+
         window.onload = async () => {
             initGridHTML();
             initDepartmentSelect();
-            loadProfileFromLocal(); // 會在讀取資料前先載入選項
+            loadProfileFromLocal(); 
             loadWishlistFromLocal();
-            
             try {
                 const res = await fetch('./courses_processed.json');
                 if (!res.ok) throw new Error("Load failed");
-                
                 allCourses = await res.json();
                 updateStatus(`已連線 (${allCourses.length}筆)`, '#27ae60');
                 document.getElementById('loadingOverlay').style.display = 'none';
-                
-                initProgramSelect(); // 產生 Checkbox
-                // initProgramSelect 執行完後，需再次從 LocalStorage 勾選已存的項目
+                initProgramSelect(); 
                 loadProfileFromLocal(); 
-                
                 loadScheduleFromLocal();
                 renderTimetable();
                 renderCourseList();
@@ -388,27 +344,20 @@
             }
         };
 
-        // =========================================
-        // 4. Setup & UI Helpers
-        // =========================================
         function updateStatus(text, color) {
             const badge = document.getElementById('dataStatus');
             badge.innerText = text;
             badge.style.background = color;
         }
-
         function initGridHTML() {
             const g = document.getElementById('timetableGrid');
             g.innerHTML = '<div class="cell header-row">節</div>';
             DAYS.forEach(d => g.innerHTML += `<div class="cell header-row">${d}</div>`);
             PERIOD_ORDER.forEach((p, i) => {
                 g.innerHTML += `<div class="cell period-col"><span>${p}</span></div>`;
-                for (let j = 0; j < 7; j++) {
-                    g.innerHTML += `<div class="cell" style="grid-row:${i + 2};grid-column:${j + 2}"></div>`;
-                }
+                for (let j = 0; j < 7; j++) g.innerHTML += `<div class="cell" style="grid-row:${i + 2};grid-column:${j + 2}"></div>`;
             });
         }
-
         function initDepartmentSelect() {
             const collegeSel = document.getElementById('userCollege');
             collegeSel.innerHTML = "";
@@ -421,13 +370,11 @@
             collegeSel.value = "工學院";
             updateDeptOptions();
         }
-
         function updateDeptOptions() {
             const college = document.getElementById('userCollege').value;
             const deptSel = document.getElementById('userDept');
             const depts = NCU_STRUCTURE[college] || [];
             const currentVal = deptSel.value;
-            
             deptSel.innerHTML = "";
             depts.forEach(d => {
                 const opt = document.createElement('option');
@@ -435,66 +382,39 @@
                 opt.innerText = d;
                 deptSel.appendChild(opt);
             });
-            
             if (depts.includes(currentVal)) deptSel.value = currentVal;
             else deptSel.selectedIndex = 0;
-            
             saveAndRefresh();
         }
-
-        // [修改] 改為生成 Checkbox List
         function initProgramSelect() {
             const container = document.getElementById('userProgramContainer');
             const programSet = new Set();
-            
             allCourses.forEach(course => {
                 const rules = course.rules_parsed || [];
                 rules.forEach(grp => {
                     const r = grp.rules;
                     if (r.dept && r.dept.values) {
                         r.dept.values.forEach(val => {
-                            if (val.includes('學程') || val.includes('專長')) {
-                                programSet.add(val);
-                            }
+                            if (val.includes('學程') || val.includes('專長')) programSet.add(val);
                         });
                     }
                 });
             });
-            
             const sortedProgs = Array.from(programSet).sort();
-            container.innerHTML = ""; // 清空
-            
+            container.innerHTML = ""; 
             sortedProgs.forEach(p => {
                 const div = document.createElement('div');
                 div.className = 'checkbox-item';
-                div.onclick = (e) => {
-                    // 讓點擊文字也能切換
-                    if(e.target.tagName !== 'INPUT') {
-                        const chk = div.querySelector('input');
-                        chk.checked = !chk.checked;
-                        saveAndRefresh();
-                    }
-                };
-                
+                div.onclick = (e) => { if(e.target.tagName !== 'INPUT') { const chk = div.querySelector('input'); chk.checked = !chk.checked; saveAndRefresh(); } };
                 const input = document.createElement('input');
-                input.type = 'checkbox';
-                input.value = p;
-                input.onchange = (e) => { e.stopPropagation(); saveAndRefresh(); }; // 避免冒泡重複觸發
-                
+                input.type = 'checkbox'; input.value = p; input.onchange = (e) => { e.stopPropagation(); saveAndRefresh(); }; 
                 const span = document.createElement('span');
                 span.innerText = p;
-                
-                div.appendChild(input);
-                div.appendChild(span);
-                container.appendChild(div);
+                div.appendChild(input); div.appendChild(span); container.appendChild(div);
             });
         }
-
-        // [修改] 讀取多選值
         function getUserProfile() {
-            // 抓取所有被勾選的學程
             const checkedProgs = Array.from(document.querySelectorAll('#userProgramContainer input:checked')).map(cb => cb.value);
-            
             return {
                 system: document.getElementById('userSystem').value,
                 dept: document.getElementById('userDept').value,
@@ -502,23 +422,14 @@
                 class: document.getElementById('userClass').value,
                 identity: document.getElementById('userIdentity').value,
                 parity: document.getElementById('userParity').value,
-                program: checkedProgs // 回傳陣列
+                program: checkedProgs 
             };
         }
+        function saveAndRefresh() { saveProfileToLocal(); updateProfileSummary(); renderCourseList(); }
 
-        function saveAndRefresh() { 
-            saveProfileToLocal(); 
-            updateProfileSummary(); 
-            renderCourseList(); 
-        }
-
-        // =========================================
-        // 5. Core Logic: Eligibility & Requirements
-        // =========================================
         function checkEligibility(course, user) {
             const rules = course.rules_parsed;
             if (!rules || rules.length === 0) return { pass: true, priority: 99 };
-
             let passedGrp = null;
             const pass = rules.some(grp => {
                 const r = grp.rules;
@@ -535,73 +446,45 @@
                         }
                         return true;
                     }
-
                     if (['prerequisite', 'limit'].includes(k)) return true;
-                    
                     const rule = r[k];
-                    
-                    // 對於 program，我們需要特殊處理 (因為 user[k] 是陣列)
-                    if (k === 'program') return true; // Program check is merged into 'dept' rule usually in NCU data structure
-
+                    if (k === 'program') return true; 
                     let uVal = user[k] || "";
-                    
                     if (k !== 'identity' && uVal === "") return false;
                     if (k === 'parity') return rule.value === 'all' || rule.value === uVal;
-
                     if (k === 'dept') {
                         const userDept = user.dept;
-                        const userProgs = user.program || []; // Array
-
-                        // 1. 檢查系所
+                        const userProgs = user.program || []; 
                         const strictMatch = rule.values.some(v => userDept === v || userDept.includes(v));
-                        
-                        // 2. [修改] 檢查學程 (多選)：只要有任一個學程符合規則即可
                         const programMatch = userProgs.some(up => rule.values.includes(up));
-                        
-                        // 3. 檢查學院
                         const collegeMatch = rule.values.some(v => {
                             const deptsInCollege = NCU_STRUCTURE[v];
                             return deptsInCollege && deptsInCollege.includes(userDept);
                         });
-                        
                         const isMatch = strictMatch || programMatch || collegeMatch;
                         return rule.mode === 'include' ? isMatch : !isMatch;
                     }
-
                     const match = rule.values.some(v => v && (uVal.includes(v) || v.includes(uVal)));
                     return rule.mode === 'include' ? match : !match;
                 });
-
                 if (ok) passedGrp = grp;
                 return ok;
             });
-
             return pass ? { pass: true, priority: passedGrp.priority } : { pass: false, priority: -1 };
         }
 
         function isTargetRequired(course, user) {
             if (!course.is_required) return false;
-
             const deptName = course.dept_name || "";
-            if (deptName.includes("體育") || deptName.includes("通識") || deptName.includes("軍訓") ||
-                deptName.includes("語言中心") || deptName.includes("服務學習")) {
-            }
-
+            if (deptName.includes("體育") || deptName.includes("通識") || deptName.includes("軍訓") || deptName.includes("語言中心") || deptName.includes("服務學習")) { }
             let isSourceMatch = false;
             if (course.sources && course.sources.length > 0) {
                 const targetGradeName = GRADE_MAP_REV[user.grade];
-                isSourceMatch = course.sources.some(src =>
-                    (src.dept === user.dept) && (src.class === targetGradeName)
-                );
-            } else {
-                isSourceMatch = (course.dept_name === user.dept);
-            }
-
+                isSourceMatch = course.sources.some(src => (src.dept === user.dept) && (src.class === targetGradeName));
+            } else { isSourceMatch = (course.dept_name === user.dept); }
             if (!isSourceMatch) return false;
-
             const rules = course.rules_parsed;
             if (!rules || rules.length === 0) return true;
-
             const p1 = rules.find(r => r.priority === 1);
             if (p1) {
                 const r = p1.rules;
@@ -613,7 +496,6 @@
                 }
                 let p1GradeMatch = true;
                 if (r.grade && r.grade.mode === 'include' && !r.grade.values.includes(user.grade)) p1GradeMatch = false;
-
                 if (p1DeptMatch && p1GradeMatch) {
                     if (r.class) {
                         if (r.class.mode === 'include' && !r.class.values.includes(user.class)) return false;
@@ -625,7 +507,6 @@
                     }
                 }
             }
-
             const matchAny = rules.some(grp => {
                 const r = grp.rules;
                 if (r.dept) {
@@ -645,7 +526,6 @@
                 }
                 return true;
             });
-
             return matchAny;
         }
 
@@ -672,9 +552,6 @@
             return true;
         }
 
-        // =========================================
-        // 6. Action Functions
-        // =========================================
         function getTimeSignature(course) {
             if (!course.time_parsed || course.time_parsed.length === 0) return "TBD";
             const sorted = [...course.time_parsed].sort((a, b) => a.day - b.day || a.start - b.start);
@@ -685,7 +562,6 @@
             const user = getUserProfile();
             mySchedule = mySchedule.filter(c => !c.is_required);
             const allCandidates = allCourses.filter(c => isTargetRequired(c, user));
-
             const groups = {};
             allCandidates.forEach(c => {
                 const name = c['課程名稱'];
@@ -694,23 +570,17 @@
                 if (!groups[uniqueKey]) groups[uniqueKey] = [];
                 groups[uniqueKey].push(c);
             });
-            
             let addedCount = 0;
             let selectionCount = 0;
-            
             Object.values(groups).forEach(candidates => {
                 candidates.sort((a, b) => {
                     const aIsP1 = isMatchP1(a, user);
                     const bIsP1 = isMatchP1(b, user);
                     return Number(bIsP1) - Number(aIsP1);
                 });
-
                 if (candidates.length === 1) {
                     const c = candidates[0];
-                    if (!isConflict(c, mySchedule)) {
-                        mySchedule.push(c);
-                        addedCount++;
-                    }
+                    if (!isConflict(c, mySchedule)) { mySchedule.push(c); addedCount++; }
                 } else if (candidates.length > 1) {
                     selectionCount++;
                     const placeholder = { ...candidates[0] };
@@ -720,41 +590,103 @@
                     mySchedule.push(placeholder);
                 }
             });
-            
             saveScheduleToLocal();
             renderTimetable();
             renderCourseList();
-            
             let msg = `已加入 ${addedCount} 門必修`;
             if (selectionCount > 0) msg += `，有 ${selectionCount} 門需選老師`;
             showNotify(msg, 'success');
         }
 
-        function toggle(c) {
-            if (c.is_placeholder) {
-                openSelectionModal(c);
+        function openDetailModal(course) {
+            if(course.is_placeholder) { openSelectionModal(course); return; } 
+            currentDetailCourse = course;
+            const modal = document.getElementById('courseDetailModal');
+            const title = document.getElementById('detailTitle');
+            const body = document.getElementById('detailBody');
+            const actions = document.getElementById('detailActions');
+            title.innerText = course['課程名稱'];
+            
+            body.innerHTML = `
+                <table class="detail-table">
+                    <tr><td class="label">課程代碼</td><td>${course['課程代碼'] || ''}</td></tr>
+                    <tr><td class="label">授課教師</td><td>${course['授課教師'] || ''}</td></tr>
+                    <tr><td class="label">學分</td><td>${course['學分']}</td></tr>
+                    <tr><td class="label">選/必修</td><td>${course.is_required ? '必修' : '選修'}</td></tr>
+                    <tr><td class="label">時間/地點</td><td>${course['上課時間/教室'] || ''}</td></tr>
+                    <tr><td class="label">限修條件</td><td>${course['限修條件'] || '無'}</td></tr>
+                    <tr><td class="label">備註</td><td>${course['備註'] || '無'}</td></tr>
+                </table>
+            `;
+
+            const isAdded = mySchedule.some(s => s['課程編號'] === course['課程編號']);
+            const isWished = myWishlist.some(w => w['課程編號'] === course['課程編號']);
+
+            let btnsHtml = `<button class="btn-action btn-close" onclick="document.getElementById('courseDetailModal').style.display='none'">關閉</button>`;
+
+            if (isAdded) {
+                btnsHtml += `<button class="btn-action btn-remove" onclick="confirmRemove('schedule')">移出課表</button>`;
+            } else {
+                btnsHtml += `<button class="btn-action btn-add" onclick="confirmAdd()">加入課表</button>`;
+                if (isWished) {
+                    btnsHtml += `<button class="btn-action btn-remove" onclick="confirmRemove('wishlist')">移出待選</button>`;
+                } else {
+                    btnsHtml += `<button class="btn-action btn-wishlist" onclick="confirmWish()">加入待選</button>`;
+                }
+            }
+            actions.innerHTML = btnsHtml;
+            modal.style.display = 'flex';
+        }
+
+        function confirmAdd() {
+            if (!currentDetailCourse) return;
+            if (isConflict(currentDetailCourse, mySchedule)) {
+                showNotify("時間衝突！無法加入", 'error');
                 return;
             }
-            const idx = mySchedule.findIndex(s => s['課程編號'] === c['課程編號']);
-            if (idx >= 0) {
-                mySchedule.splice(idx, 1);
-                showNotify("已移除", 'normal');
-            } else {
-                if (isConflict(c, mySchedule)) {
-                    showNotify("時間衝突！", 'error');
-                    return;
-                }
-                mySchedule.push(c);
-                const wIdx = myWishlist.findIndex(w => w['課程編號'] === c['課程編號']);
-                if (wIdx >= 0) {
-                    myWishlist.splice(wIdx, 1);
-                    saveWishlistToLocal();
-                }
-                showNotify("已加入", 'success');
-            }
+            mySchedule.push(currentDetailCourse);
+            const wIdx = myWishlist.findIndex(w => w['課程編號'] === currentDetailCourse['課程編號']);
+            if(wIdx >= 0) { myWishlist.splice(wIdx, 1); saveWishlistToLocal(); }
+            
             saveScheduleToLocal();
             renderTimetable();
             renderCourseList();
+            document.getElementById('courseDetailModal').style.display='none';
+            showNotify("已加入課表", 'success');
+        }
+
+        function confirmWish() {
+            if (!currentDetailCourse) return;
+            if (!myWishlist.some(w => w['課程編號'] === currentDetailCourse['課程編號'])) {
+                myWishlist.push(currentDetailCourse);
+                saveWishlistToLocal();
+                renderCourseList();
+                renderTimetable();
+                document.getElementById('courseDetailModal').style.display='none';
+                showNotify("已加入待選清單", 'success');
+            }
+        }
+
+        function confirmRemove(type) {
+            if (!currentDetailCourse) return;
+            if (type === 'schedule') {
+                const idx = mySchedule.findIndex(s => s['課程編號'] === currentDetailCourse['課程編號']);
+                if (idx >= 0) {
+                    mySchedule.splice(idx, 1);
+                    saveScheduleToLocal();
+                    showNotify("已移出課表", 'normal');
+                }
+            } else if (type === 'wishlist') {
+                const idx = myWishlist.findIndex(w => w['課程編號'] === currentDetailCourse['課程編號']);
+                if (idx >= 0) {
+                    myWishlist.splice(idx, 1);
+                    saveWishlistToLocal();
+                    showNotify("已移出待選清單", 'normal');
+                }
+            }
+            renderTimetable();
+            renderCourseList();
+            document.getElementById('courseDetailModal').style.display='none';
         }
 
         function isConflict(newC, list) {
@@ -769,9 +701,6 @@
             });
         }
 
-        // =========================================
-        // 7. Modal & Wishlist Handlers
-        // =========================================
         function openSelectionModal(placeholder) {
             currentPlaceholder = placeholder;
             const modal = document.getElementById('selectionModal');
@@ -808,22 +737,6 @@
             renderCourseList();
         }
 
-        function toggleWishlist(e, course) {
-            e.stopPropagation();
-            const idx = myWishlist.findIndex(c => c['課程編號'] === course['課程編號']);
-            if (idx >= 0) {
-                myWishlist.splice(idx, 1);
-            } else {
-                myWishlist.push(course);
-            }
-            saveWishlistToLocal();
-            renderCourseList();
-            renderTimetable();
-        }
-
-        // =========================================
-        // 8. Rendering & Layout
-        // =========================================
         function getLayoutConfig(items) {
             items.sort((a, b) => (a.start - b.start) || ((b.end - b.start) - (a.end - a.start)));
             const columns = [];
@@ -863,6 +776,20 @@
             let total = 0;
             const allRenderItems = [];
 
+            // [FIX 1] Color Mapping Logic
+            // 1. Collect all unique Course IDs currently visible
+            const uniqueIDs = new Set();
+            mySchedule.forEach(c => uniqueIDs.add(c['課程編號']));
+            myWishlist.forEach(c => uniqueIDs.add(c['課程編號']));
+            
+            // 2. Assign unique color to each ID sequentially from MORANDI_PALETTE
+            const colorMap = {};
+            let colorIdx = 0;
+            uniqueIDs.forEach(id => {
+                colorMap[id] = MORANDI_PALETTE[colorIdx % MORANDI_PALETTE.length];
+                colorIdx++;
+            });
+
             myWishlist.forEach((c, idx) => {
                 if (mySchedule.some(s => s['課程編號'] === c['課程編號'])) return;
                 (c.time_parsed || []).forEach((t, tIdx) => {
@@ -897,9 +824,15 @@
                         div.className = `course-block wish-mode`;
                         div.innerHTML = `<div class="cb-name" style="font-size:11px;">(待)${c['課程名稱']}</div>`;
                     } else {
-                        const color = c.is_placeholder ? '' : `c-${c['課程編號'].charCodeAt(c['課程編號'].length - 1) % 7}`;
-                        const extraClass = c.is_placeholder ? 'pending' : color;
-                        div.className = `course-block ${extraClass}`;
+                        div.className = `course-block ${c.is_placeholder ? 'pending' : ''}`;
+                        if (!c.is_placeholder) {
+                            // Apply assigned color
+                            const bgColor = colorMap[c['課程編號']];
+                            div.style.backgroundColor = bgColor;
+                            div.style.color = getContrastColor(bgColor);
+                            div.style.textShadow = 'none';
+                        }
+                        
                         const room = getRoomForBlock(c['上課時間/教室'], item.day);
                         let bottomText = c.is_placeholder ? '👇 請選老師' : (room || c['授課教師']);
                         const isNarrow = parseFloat(style.width) < 45;
@@ -909,7 +842,7 @@
                             div.innerHTML = `<div class="cb-name">${c['課程名稱']}</div><div class="cb-room">${bottomText}</div>`;
                         }
                     }
-                    div.onclick = () => toggle(c);
+                    div.onclick = () => openDetailModal(c);
                     grid.appendChild(div);
                 });
             }
@@ -931,15 +864,11 @@
 
             const targetGradeName = GRADE_MAP_REV[user.grade];
             
-            // [修改] 增加學程邏輯：如果使用者的任一學程在課程的分發條件中，也算符合來源
             let sourceFiltered = allCourses.filter(c => {
                 const isOwnDept = (c.dept_name === user.dept);
                 const isTargetClass = (c.class_name === '不分類' || c.class_name === targetGradeName);
                 const isGeneralUnit = GENERAL_UNITS.includes(c.dept_name);
-                
-                // 檢查分發條件是否包含使用者已勾選的任一學程
                 const isProgramCourse = (user.program && user.program.length > 0) && (c['分發條件'] && user.program.some(up => c['分發條件'].includes(up)));
-                
                 return (isOwnDept && isTargetClass) || isGeneralUnit || isProgramCourse;
             });
 
@@ -997,13 +926,9 @@
                     sourceLabel = c['class_name'];
                 }
                 sourceLabel = sourceLabel.replace('學系', '系').replace('研究所', '所');
-
-                const heartClass = c._wished ? 'btn-wish active' : 'btn-wish';
-                const heartIcon = c._wished ? '♥' : '♡';
-
+                
                 li.innerHTML = `
                     <div style="display:flex; align-items:flex-start;">
-                        <span class="${heartClass}" onclick="toggleWishlist(event, this.courseData)">${heartIcon}</span>
                         <div style="flex:1;">
                             <span class="c-name">${c['課程名稱']} ${tag}${gen}${pri}</span>
                             <div class="c-info">🕒 ${c['上課時間/教室']} | 👨‍🏫 ${c['授課教師']}</div>
@@ -1011,19 +936,15 @@
                         </div>
                     </div>
                 `;
-                li.querySelector('.btn-wish').courseData = c;
                 li.onclick = (e) => {
                     if (e.target.classList.contains('btn-wish')) return;
-                    toggle(c);
+                    openDetailModal(c);
                 };
                 ul.appendChild(li);
             });
             if (displayList.length === 0) ul.innerHTML = '<li style="padding:20px; text-align:center; color:#999;">無符合課程</li>';
         }
 
-        // =========================================
-        // 9. Utilities
-        // =========================================
         function getRoomForBlock(fullStr, dayIdx) {
             if (!fullStr) return '';
             const dayChar = DAYS[dayIdx];
@@ -1053,15 +974,13 @@
                 if (p.class) document.getElementById('userClass').value = p.class;
                 if (p.identity) document.getElementById('userIdentity').value = p.identity;
                 if (p.parity) document.getElementById('userParity').value = p.parity;
-                // [修改] Checkbox 的回復邏輯
                 if (p.program && Array.isArray(p.program)) {
-                    // 稍等 initProgramSelect 生成完畢後，再勾選
                     setTimeout(() => {
                         const chks = document.querySelectorAll('#userProgramContainer input');
                         chks.forEach(chk => {
                             if(p.program.includes(chk.value)) chk.checked = true;
                         });
-                        renderCourseList(); // 重新渲染
+                        renderCourseList(); 
                     }, 100); 
                 }
             }
@@ -1109,16 +1028,44 @@
             setTimeout(() => n.classList.remove('show'), 2000);
         }
 
+        // [FIX 2] Completely rewritten download function for Better Aspect Ratio
         function downloadImage() {
-            const element = document.querySelector('.timetable-container'); 
-            html2canvas(element, { 
+            updateStatus("正在產生圖片...", "#34495e");
+            
+            // 1. Clone the node
+            const original = document.querySelector('.timetable-container');
+            const clone = original.cloneNode(true);
+            
+            // 2. Configure the clone to force Desktop proportions (Landscape)
+            clone.classList.add('export-mode');
+            clone.style.position = 'fixed';
+            clone.style.top = '-10000px'; 
+            clone.style.left = '0';
+            clone.style.zIndex = '-1';
+            
+            document.body.appendChild(clone);
+
+            // 3. Capture with forced width
+            html2canvas(clone, { 
                 scale: 2, 
-                backgroundColor: '#ffffff' 
-            }).then(c => {
+                backgroundColor: '#ffffff',
+                width: 1024, // Force desktop width
+                windowWidth: 1024
+            }).then(canvas => {
                 const a = document.createElement('a');
-                a.download = 'schedule.png';
-                a.href = c.toDataURL();
+                const timestamp = new Date().toISOString().slice(0,10);
+                a.download = `NCU_Schedule_${timestamp}.png`;
+                a.href = canvas.toDataURL('image/png');
                 a.click();
+                
+                document.body.removeChild(clone);
+                updateStatus("圖片已下載", "#27ae60");
+                setTimeout(() => updateStatus("就緒", "#555"), 2000);
+            }).catch(err => {
+                console.error(err);
+                alert("圖片產生失敗");
+                document.body.removeChild(clone);
+                updateStatus("錯誤", "#e74c3c");
             });
         }
     </script>
