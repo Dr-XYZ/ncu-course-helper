@@ -1,0 +1,48 @@
+name: Weekly Python Job
+
+on:
+  schedule:
+    # 每週一次：UTC 星期日 00:00（可依需求調整 cron）
+    - cron: '0 0 * * 0'
+  workflow_dispatch: {}
+
+jobs:
+  run-weekly-python:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies (if any)
+        run: |
+          if [ -f requirements.txt ]; then
+            python -m pip install --upgrade pip
+            python -m pip install -r requirements.txt
+          else
+            echo "No requirements.txt found, skipping pip install."
+          fi
+
+      - name: Run main.py (preferred) or fallback
+        run: |
+          if [ -f main.py ]; then
+            python main.py
+          elif [ -f scripts/main.py ]; then
+            python scripts/main.py
+          else
+            echo "No main.py found at repo root or scripts/main.py. Nothing to run."
+          fi
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "docs: 自動更新課程資料"
+          file_pattern: courses_processed.json
+    # 可選：避免同時多個執行衝突
+    concurrency:
+      group: weekly-python-job
+      cancel-in-progress: true
