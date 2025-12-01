@@ -337,7 +337,15 @@
                 // [MODIFIED] Handle new JSON structure
                 allCourses = jsonData.courses; 
                 if (jsonData.last_update) {
-                    document.getElementById('lastUpdateTime').innerText = '資料更新: ' + jsonData.last_update;
+                    // [FIX] 將 UTC 時間轉換為 UTC+8 (台灣時間) 顯示
+                    const utcDate = new Date(jsonData.last_update);
+                    const localDateString = utcDate.toLocaleString('zh-TW', {
+                        timeZone: 'Asia/Taipei',
+                        year: 'numeric',
+                        month: '2-digit',
+                        day: '2-digit'
+                    });
+                    document.getElementById('lastUpdateTime').innerText = '資料更新: ' + localDateString + ` 00:00`;
                 }
 
                 updateStatus(`已連線 (${allCourses.length}筆)`, '#27ae60');
