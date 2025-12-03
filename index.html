@@ -252,7 +252,7 @@
                         <div class="form-group"><label>學院</label><select id="userCollege" onchange="updateDeptOptions()"></select></div>
                     </div>
                     <div class="form-group"><label>系所</label><select id="userDept" onchange="saveAndRefresh()"></select></div>
-                    <div class="form-group"><label>學程 / 第二專長 (可多選)</label><div id="userProgramContainer" class="multi-select-box"></div></div>
+                    <div class="form-group"><label>學程 / 第二專長 (可多選)</label><div id="userProgramContainer" class="multi-select-box" onchange="saveAndRefresh()"></div></div>
                     <div class="row">
                         <div class="form-group"><label>年級</label><select id="userGrade" onchange="saveAndRefresh()"><option value="1">一年級</option><option value="2">二年級</option><option value="3">三年級</option><option value="4">四年級</option></select></div>
                         <div class="form-group"><label>班級</label><select id="userClass" onchange="saveAndRefresh()"><option value="A">A班</option><option value="B">B班</option><option value="C">C班</option></select></div>
@@ -447,8 +447,8 @@
                 deptSel.appendChild(opt);
             });
             if (depts.includes(currentVal)) deptSel.value = currentVal;
-            else deptSel.selectedIndex = 0;
-            saveAndRefresh();
+            else if (depts.length > 0) deptSel.selectedIndex = 0;
+            saveAndRefresh(); // 確保在所有選項更新後再刷新列表
         }
         function initProgramSelect() {
             const container = document.getElementById('userProgramContainer');
@@ -477,6 +477,39 @@
                 div.appendChild(input); div.appendChild(span); container.appendChild(div);
             });
         }
+        // [NEW] Function to dynamically update class options based on selected department
+        function updateClassOptions() {
+            const dept = document.getElementById('userDept').value;
+            const classSel = document.getElementById('userClass');
+            const currentVal = classSel.value;
+            classSel.innerHTML = "";
+
+            if (!dept || allCourses.length === 0) {
+                classSel.innerHTML = '<option value="">-</option>';
+                return;
+            }
+
+            const classSet = new Set();
+            // [REVISED] The class information is inside `rules_parsed`.
+            // We need to iterate through all courses and their rules to find the classes for a given department.
+            allCourses.forEach(course => {
+                if (!course.rules_parsed || course.rules_parsed.length === 0) return;
+
+                course.rules_parsed.forEach(group => {
+                    const r = group.rules;
+                    // Check if the rule is for the selected department
+                    const isDeptMatch = r.dept && r.dept.values.includes(dept);
+                    if (isDeptMatch && r.class && r.class.values) {
+                        r.class.values.forEach(classVal => classSet.add(classVal));
+                    }
+                });
+            });
+
+            const sortedClasses = Array.from(classSet).sort();
+            sortedClasses.forEach(c => classSel.innerHTML += `<option value="${c}">${c}班</option>`);
+            if (sortedClasses.length === 0) classSel.innerHTML = '<option value="">不分班</option>';
+            if (sortedClasses.includes(currentVal)) classSel.value = currentVal;
+        }
         function getUserProfile() {
             const checkedProgs = Array.from(document.querySelectorAll('#userProgramContainer input:checked')).map(cb => cb.value);
             return {
@@ -489,7 +522,11 @@
                 program: checkedProgs 
             };
         }
-        function saveAndRefresh() { saveProfileToLocal(); updateProfileSummary(); renderCourseList(); }
+        function saveAndRefresh() { 
+            updateClassOptions(); // 當任何設定變動時，都重新檢查班級選項
+            saveProfileToLocal(); 
+            updateProfileSummary(); 
+            renderCourseList(); }
 
         function checkEligibility(course, user) {
             const rules = course.rules_parsed;
@@ -1038,7 +1075,8 @@
             if (saved) {
                 const p = JSON.parse(saved);
                 if (p.system) document.getElementById('userSystem').value = p.system;
-                if (p.college) { document.getElementById('userCollege').value = p.college; updateDeptOptions(); }
+                if (p.college) { document.getElementById('userCollege').value = p.college; }
+                updateDeptOptions(); // 確保在設定學院後執行
                 if (p.dept) document.getElementById('userDept').value = p.dept;
                 if (p.grade) document.getElementById('userGrade').value = p.grade;
                 if (p.class) document.getElementById('userClass').value = p.class;
@@ -1053,6 +1091,7 @@
                         renderCourseList(); 
                     }, 100); 
                 }
+                updateClassOptions(); // 載入設定後，根據系所更新班級選項
             }
         }
 
