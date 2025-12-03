@@ -1108,12 +1108,12 @@
             
             // 2. Configure the clone
             clone.classList.add('export-mode');
-            clone.style.position = 'fixed';
-            clone.style.top = '-10000px'; 
+            // [FIX] To prevent a blank image, render the clone on-screen but out of sight
+            // by placing it at the top-left corner and ensuring it's on top.
+            clone.style.position = 'absolute';
+            clone.style.top = '0';
             clone.style.left = '0';
-            clone.style.zIndex = '-1';
-            clone.style.opacity = '0'; // [FIX] Make the clone invisible to prevent flickering
-            
+            clone.style.zIndex = '9999';
             document.body.appendChild(clone);
 
             // [EDITED] 3. Capture (CSS controls width/height now)
