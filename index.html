@@ -1071,28 +1071,15 @@
         }
 
         function loadProfileFromLocal() {
-            const saved = localStorage.getItem('ncu_profile');
-            if (saved) {
-                const p = JSON.parse(saved);
-                if (p.system) document.getElementById('userSystem').value = p.system;
-                if (p.college) { document.getElementById('userCollege').value = p.college; }
-                updateDeptOptions(); // 確保在設定學院後執行
-                if (p.dept) document.getElementById('userDept').value = p.dept;
-                if (p.grade) document.getElementById('userGrade').value = p.grade;
-                if (p.class) document.getElementById('userClass').value = p.class;
-                if (p.identity) document.getElementById('userIdentity').value = p.identity;
-                if (p.parity) document.getElementById('userParity').value = p.parity;
-                if (p.program && Array.isArray(p.program)) {
-                    setTimeout(() => {
-                        const chks = document.querySelectorAll('#userProgramContainer input');
-                        chks.forEach(chk => {
-                            if(p.program.includes(chk.value)) chk.checked = true;
-                        });
-                        renderCourseList(); 
-                    }, 100); 
-                }
-                updateClassOptions(); // 載入設定後，根據系所更新班級選項
-            }
+            // [REVISED] Always set a fixed default profile on page load, ignoring localStorage.
+            document.getElementById('userCollege').value = '工學院';
+            updateDeptOptions();
+            document.getElementById('userDept').value = '機械工程學系';
+            document.getElementById('userGrade').value = '1';
+            document.getElementById('userClass').value = 'B';
+            document.getElementById('userParity').value = 'odd';
+            // Do not call saveAndRefresh() here to avoid circular calls on init.
+            // The initial render will be triggered after course data is loaded.
         }
 
         function saveScheduleToLocal() { localStorage.setItem('ncu_schedule', JSON.stringify(mySchedule)); }
