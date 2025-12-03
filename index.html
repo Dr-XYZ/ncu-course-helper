@@ -141,6 +141,51 @@
         }
 
         /* =========================================
+           [NEW] 6. Mobile & Responsive Design
+           ========================================= */
+        @media (max-width: 768px) {
+            body { height: auto; overflow: auto; } /* Allow body to scroll on mobile */
+            .main-container { flex-direction: column; height: auto; overflow: visible; }
+
+            /* Sidebar becomes top section */
+            .sidebar { 
+                width: 100%; 
+                max-width: 100%;
+                height: 60vh; /* Give sidebar a fixed portion of the screen height */
+                resize: none; /* Disable resizing on mobile */
+                border-right: none;
+                border-bottom: 2px solid var(--border);
+            }
+
+            /* Content area adjustments */
+            .content { padding: 10px; overflow-x: hidden; }
+            .timetable-container { 
+                padding: 10px; 
+                width: 100%; 
+                overflow-x: hidden; /* No horizontal scroll */
+            }
+            /* [MODIFIED] Keep grid, but shrink it */
+            .timetable { 
+                grid-template-columns: 35px repeat(7, 1fr); /* Shrink period col */
+                grid-auto-rows: minmax(45px, auto); /* Shrink rows */
+                gap: 1px;
+            }
+            .cell { font-size: 10px; min-height: 45px; }
+            .cell.period-col { font-size: 11px; }
+
+            /* Header adjustments */
+            h1 { font-size: 16px; }
+            .header-controls button { padding: 5px 8px; font-size: 12px; }
+
+            /* Modal adjustments */
+            .modal-box { width: 95%; max-width: 95%; }
+
+            /* [MODIFIED] Adjust course block for smaller grid */
+            .course-block { font-size: 9px; padding: 2px; -webkit-line-clamp: 3; }
+            .course-block .cb-room { display: none; } /* Hide room to save space */
+        }
+
+        /* =========================================
            5. Modals (詳細資訊彈窗)
            ========================================= */
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center; }
@@ -792,6 +837,8 @@
         // [EDITED] Render with Sunday-First Logic
         function renderTimetable() {
             document.querySelectorAll('.course-block').forEach(e => e.remove());
+            initGridHTML();
+
             const grid = document.getElementById('timetableGrid');
             let total = 0;
             const allRenderItems = [];
@@ -826,19 +873,17 @@
             for (let d = 0; d < 7; d++) {
                 const dayItems = allRenderItems.filter(i => i.day === d);
                 if (dayItems.length === 0) continue;
+
                 const layoutConfig = getLayoutConfig(dayItems);
                 
                 dayItems.forEach(item => {
                     const c = item.course;
                     const div = document.createElement('div');
                     const style = layoutConfig.get(item.id);
-
-                    // [KEY CHANGE] Re-map Data Index (0=Mon) to Visual Column
-                    // Data: 0(Mon) -> Vis: 1 | Data: 6(Sun) -> Vis: 0
-                    // Formula: (day + 1) % 7
                     const visualDayIndex = (item.day + 1) % 7;
-                    const col = visualDayIndex + 2; // +2 for Grid Header offset
 
+                    // Desktop Grid Logic (original) - now used for all sizes
+                    const col = visualDayIndex + 2;
                     const rowStart = item.start + 2;
                     const rowEnd = item.end + 3;
                     div.style.gridColumn = `${col} / ${col + 1}`;
@@ -848,7 +893,7 @@
 
                     if (item.type === 'wish') {
                         div.className = `course-block wish-mode`;
-                        div.innerHTML = `<div class="cb-name" style="font-size:11px;">(待)${c['課程名稱']}</div>`;
+                        div.innerHTML = `<div class="cb-name" style="font-size:10px;">(待)${c['課程名稱']}</div>`;
                     } else {
                         div.className = `course-block ${c.is_placeholder ? 'pending' : ''}`;
                         if (!c.is_placeholder) {
@@ -857,16 +902,11 @@
                             div.style.color = getContrastColor(bgColor);
                             div.style.textShadow = 'none';
                         }
-                        
                         const room = getRoomForBlock(c['上課時間/教室'], item.day);
                         let bottomText = c.is_placeholder ? '👇 請選老師' : (room || c['授課教師']);
-                        const isNarrow = parseFloat(style.width) < 45;
-                        if (isNarrow) {
-                            div.innerHTML = `<div class="cb-name" style="font-size:10px;">${c['課程名稱'].substring(0, 4)}..</div>`;
-                        } else {
-                            div.innerHTML = `<div class="cb-name">${c['課程名稱']}</div><div class="cb-room">${bottomText}</div>`;
-                        }
+                        div.innerHTML = `<div class="cb-name">${c['課程名稱']}</div><div class="cb-room">${bottomText}</div>`;
                     }
+
                     div.onclick = () => openDetailModal(c);
                     grid.appendChild(div);
                 });
@@ -1072,6 +1112,7 @@
             clone.style.top = '-10000px'; 
             clone.style.left = '0';
             clone.style.zIndex = '-1';
+            clone.style.opacity = '0'; // [FIX] Make the clone invisible to prevent flickering
             
             document.body.appendChild(clone);
 
