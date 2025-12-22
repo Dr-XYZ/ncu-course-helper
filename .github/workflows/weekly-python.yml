@@ -3,7 +3,7 @@ name: Automatically update course data
 on:
   schedule:
     # 每日更新：UTC 16:00 (對應台北時間 00:00)
-    - cron: '0 16 * * *'
+    - cron: '0 16 */3 * *'
   workflow_dispatch: {}
 
 jobs:
