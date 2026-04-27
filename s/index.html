@@ -258,12 +258,12 @@
     async function fetchInitialCSV() {
         try {
             // Fetch 1.csv (上學期)
-            const response1 = await fetch('1.csv');
+            const response1 = await fetch('./1.csv');
             const csv1 = await response1.text();
             Papa.parse(csv1, { header: true, skipEmptyLines: true, complete: (res) => { fallCourses = res.data; filterCourses(); } });
 
             // Fetch 2.csv (下學期)
-            const response2 = await fetch('2.csv');
+            const response2 = await fetch('./2.csv');
             const csv2 = await response2.text();
             Papa.parse(csv2, { header: true, skipEmptyLines: true, complete: (res) => { springCourses = res.data; filterCourses(); } });
             
