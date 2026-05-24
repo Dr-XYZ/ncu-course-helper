@@ -7,133 +7,814 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         /* =========================================
            1. CSS Variables & Global Resets
            ========================================= */
         :root {
-            --primary: #2c3e50;
-            --secondary: #34495e;
-            --accent: #3498db;
-            --danger: #e74c3c;
-            --success: #27ae60;
-            --warning: #f39c12;
-            --wish: #9b59b6;
-            --bg: #f4f7f6;
-            --border: #bdc3c7;
-            --text: #333;
+            --bg-base: #f8fafc;
+            --bg-surface: #ffffff;
+            --bg-header: rgba(15, 23, 42, 0.95);
+            --border-light: #f1f5f9;
+            --border-medium: #e2e8f0;
+            --border-hover: #cbd5e1;
+            
+            /* Typography Colors */
+            --text-main: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --text-on-header: #f8fafc;
+
+            /* Brand Accent & Functional Colors */
+            --accent: #3b82f6;       /* Indigo Blue */
+            --accent-hover: #2563eb;
+            --accent-light: #eff6ff;
+            --danger: #ef4444;       /* Rose Red */
+            --danger-hover: #dc2626;
+            --danger-light: #fef2f2;
+            --success: #10b981;      /* Emerald Green */
+            --success-hover: #059669;
+            --success-light: #ecfdf5;
+            --warning: #f59e0b;      /* Warm Amber */
+            --warning-hover: #d97706;
+            --warning-light: #fef3c7;
+            --wish: #8b5cf6;         /* Orchid Purple */
+            --wish-hover: #7c3aed;
+            --wish-light: #f5f3ff;
+            
+            /* Visual Effects */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.05), 0 4px 6px -4px rgba(15, 23, 42, 0.05);
+            --shadow-premium: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.08);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        body { font-family: "Microsoft JhengHei", "Segoe UI", sans-serif; margin: 0; background: var(--bg); height: 100vh; display: flex; flex-direction: column; overflow: hidden; color: var(--text); }
+        body { 
+            font-family: 'Outfit', 'Noto Sans TC', "Microsoft JhengHei", "Segoe UI", sans-serif; 
+            margin: 0; 
+            background: var(--bg-base); 
+            height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            overflow: hidden; 
+            color: var(--text-main); 
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Custom Scrollbars */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
         /* =========================================
-           2. Header Styling
+           2. Header Styling (Glassmorphism)
            ========================================= */
-        header { background: var(--primary); color: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); z-index: 100; flex-shrink: 0; }
-        h1 { margin: 0; font-size: 20px; display: flex; align-items: center; gap: 10px; letter-spacing: 1px; }
-        .status-badge { font-size: 12px; padding: 3px 10px; border-radius: 12px; background: #555; font-weight: normal; }
-        .header-controls button { padding: 6px 15px; cursor: pointer; border: none; border-radius: 4px; font-weight: bold; font-size: 13px; transition: 0.2s; margin-left: 10px; }
-        .btn-refresh { background: var(--warning); color: #333; }
-        .btn-download { background: var(--success); color: white; }
-        .btn-clear { background: var(--danger); color: white; }
+        header { 
+            background: var(--bg-header); 
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            color: var(--text-on-header); 
+            padding: 14px 28px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: var(--shadow-md); 
+            z-index: 100; 
+            flex-shrink: 0; 
+        }
+        
+        h1 { 
+            margin: 0; 
+            font-size: 22px; 
+            font-weight: 700;
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+            letter-spacing: 0.5px; 
+        }
+        
+        .status-badge { 
+            font-size: 11px; 
+            padding: 4px 12px; 
+            border-radius: 9999px; 
+            background: rgba(255, 255, 255, 0.1); 
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            font-weight: 500; 
+            display: inline-flex;
+            align-items: center;
+            letter-spacing: 0.5px;
+            transition: var(--transition-fast);
+        }
+
+        .header-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .header-controls button { 
+            padding: 8px 16px; 
+            cursor: pointer; 
+            border: 1px solid transparent; 
+            border-radius: var(--radius-sm); 
+            font-weight: 600; 
+            font-size: 13px; 
+            transition: var(--transition-fast); 
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .btn-refresh { 
+            background: rgba(245, 158, 11, 0.15); 
+            color: var(--warning); 
+            border: 1px solid rgba(245, 158, 11, 0.25) !important;
+        }
+        .btn-refresh:hover { 
+            background: var(--warning);
+            color: #1e1b4b;
+            transform: translateY(-1px);
+        }
+        
+        .btn-download { 
+            background: var(--accent); 
+            color: white; 
+        }
+        .btn-download:hover { 
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+        
+        .btn-clear { 
+            background: rgba(239, 68, 68, 0.1); 
+            color: var(--danger); 
+            border: 1px solid rgba(239, 68, 68, 0.2) !important;
+        }
+        .btn-clear:hover { 
+            background: var(--danger); 
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+        }
 
         /* =========================================
            3. Layout & Sidebar
            ========================================= */
-        .main-container { display: flex; flex: 1; overflow: hidden; }
-        .sidebar { width: 380px; background: white; border-right: 1px solid var(--border); display: flex; flex-direction: column; z-index: 10; box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05); flex-shrink: 0; resize: horizontal; overflow: hidden; min-width: 300px; max-width: 800px; }
-
-        /* 個人設定收折 */
-        .profile-section { padding: 0; background: #fafafa; border-bottom: 1px solid var(--border); }
-        .profile-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: 10px 15px; background: #f0f2f5; border-bottom: 1px solid #ddd; transition: 0.2s; }
-        .profile-header:hover { background: #e1e4e8; }
-        .profile-title { font-size: 14px; font-weight: bold; color: var(--primary); border-left: 4px solid var(--accent); padding-left: 8px; margin: 0; }
-        .profile-info-summary { font-size: 12px; color: #666; font-weight: normal; margin-left: 10px;}
-        .toggle-icon { transition: transform 0.3s; font-size: 12px; color: #888; }
-        .profile-section.collapsed .toggle-icon { transform: rotate(-90deg); }
-        .profile-section.collapsed .profile-content { display: none; }
-        .profile-content { padding: 15px; }
-
-        .form-group { margin-bottom: 8px; flex: 1; }
-        .form-group label { display: block; font-size: 11px; color: #666; margin-bottom: 2px; font-weight: 600; }
-        .form-group select, .form-group input { width: 100%; padding: 6px; border: 1px solid #ddd; border-radius: 4px; font-size: 13px; box-sizing: border-box; background: white; }
+        .main-container { 
+            display: flex; 
+            flex: 1; 
+            overflow: hidden; 
+        }
         
-        .multi-select-box { border: 1px solid #ddd; border-radius: 4px; padding: 5px; height: 100px; overflow-y: auto; background: white; }
-        .checkbox-item { display: flex; align-items: center; padding: 2px 0; cursor: pointer; }
-        .checkbox-item:hover { background: #f5f5f5; }
-        .checkbox-item input { margin: 0 6px 0 2px; width: auto; cursor: pointer; }
-        .checkbox-item span { font-size: 13px; color: #333; user-select: none; }
+        .sidebar { 
+            width: 380px; 
+            background: var(--bg-surface); 
+            border-right: 1px solid var(--border-medium); 
+            display: flex; 
+            flex-direction: column; 
+            z-index: 10; 
+            box-shadow: 4px 0 20px rgba(15, 23, 42, 0.02); 
+            flex-shrink: 0; 
+            resize: horizontal; 
+            overflow: hidden; 
+            min-width: 330px; 
+            max-width: 500px; 
+            transition: width 0.1s;
+        }
 
-        .row { display: flex; gap: 8px; }
-        .btn-autofill { width: 100%; background: var(--secondary); color: white; padding: 10px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; transition: 0.2s; margin-top: 5px; display: flex; justify-content: center; align-items: center; gap: 5px; }
-        .btn-autofill:hover { background: var(--primary); }
+        /* 個人設定卡片化 */
+        .profile-section { 
+            padding: 0; 
+            background: #fafbfc; 
+            border-bottom: 1px solid var(--border-medium); 
+        }
+        
+        .profile-header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            cursor: pointer; 
+            padding: 14px 20px; 
+            background: var(--bg-surface); 
+            border-bottom: 1px solid var(--border-light); 
+            transition: var(--transition-fast); 
+        }
+        .profile-header:hover { 
+            background: #f8fafc; 
+        }
+        
+        .profile-title { 
+            font-size: 14px; 
+            font-weight: 700; 
+            color: var(--text-main); 
+            border-left: 4px solid var(--accent); 
+            padding-left: 10px; 
+            margin: 0; 
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.5px;
+        }
+        
+        .profile-info-summary { 
+            font-size: 12px; 
+            color: var(--text-muted); 
+            font-weight: 500; 
+            margin-left: 8px;
+        }
+        
+        .toggle-icon { 
+            transition: var(--transition-smooth); 
+            font-size: 11px; 
+            color: var(--text-secondary); 
+        }
+        .profile-section.collapsed .toggle-icon { 
+            transform: rotate(-90deg); 
+        }
+        .profile-section.collapsed .profile-content { 
+            max-height: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .profile-content { 
+            padding: 20px; 
+            max-height: 500px;
+            overflow-y: auto;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 1;
+        }
 
-        /* Tabs */
-        .tabs { display: flex; border-bottom: 1px solid var(--border); background: #f8f9fa; flex-shrink: 0; }
-        .tab { flex: 1; text-align: center; padding: 12px 5px; cursor: pointer; font-size: 13px; color: #666; transition: 0.2s; border-bottom: 3px solid transparent; font-weight: 600; white-space: nowrap; }
-        .tab:hover { background: #e9ecef; }
-        .tab.active { background: white; border-bottom-color: var(--accent); color: var(--accent); }
-        .tab-count { background: #ddd; font-size: 10px; padding: 2px 6px; border-radius: 10px; margin-left: 3px; color: #555; }
-        .tab.active .tab-count { background: var(--accent); color: white; }
+        .form-group { 
+            margin-bottom: 12px; 
+            flex: 1; 
+        }
+        
+        .form-group label { 
+            display: block; 
+            font-size: 11px; 
+            color: var(--text-secondary); 
+            margin-bottom: 4px; 
+            font-weight: 700; 
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        .form-group select, 
+        .form-group input { 
+            width: 100%; 
+            padding: 8px 12px; 
+            border: 1.5px solid var(--border-medium); 
+            border-radius: var(--radius-sm); 
+            font-size: 13px; 
+            font-weight: 500;
+            color: var(--text-main);
+            box-sizing: border-box; 
+            background: var(--bg-surface); 
+            transition: var(--transition-fast);
+            outline: none;
+        }
+        .form-group select:focus, 
+        .form-group input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+        }
+        
+        .multi-select-box { 
+            border: 1.5px solid var(--border-medium); 
+            border-radius: var(--radius-sm); 
+            padding: 8px 12px; 
+            height: 90px; 
+            overflow-y: auto; 
+            background: var(--bg-surface); 
+            transition: var(--transition-fast);
+        }
+        .multi-select-box:focus-within {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+        }
+        
+        .checkbox-item { 
+            display: flex; 
+            align-items: center; 
+            padding: 4px 6px; 
+            cursor: pointer; 
+            border-radius: 4px;
+            transition: var(--transition-fast);
+        }
+        .checkbox-item:hover { 
+            background: #f1f5f9; 
+        }
+        .checkbox-item input { 
+            margin: 0 8px 0 2px; 
+            width: 14px; 
+            height: 14px;
+            cursor: pointer; 
+            accent-color: var(--accent);
+        }
+        .checkbox-item span { 
+            font-size: 12px; 
+            font-weight: 500;
+            color: var(--text-secondary); 
+            user-select: none; 
+        }
+
+        .row { 
+            display: flex; 
+            gap: 12px; 
+        }
+        
+        .btn-autofill { 
+            width: 100%; 
+            background: var(--accent); 
+            color: white; 
+            padding: 10px; 
+            border: none; 
+            border-radius: var(--radius-sm); 
+            cursor: pointer; 
+            font-weight: 700; 
+            font-size: 13px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-fast); 
+            margin-top: 10px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 6px; 
+        }
+        .btn-autofill:hover { 
+            background: var(--accent-hover); 
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+        }
+
+        /* Tabs with Underline Effect */
+        .tabs { 
+            display: flex; 
+            border-bottom: 1px solid var(--border-medium); 
+            background: #fafbfc; 
+            flex-shrink: 0; 
+        }
+        
+        .tab { 
+            flex: 1; 
+            text-align: center; 
+            padding: 14px 4px; 
+            cursor: pointer; 
+            font-size: 13px; 
+            color: var(--text-secondary); 
+            transition: var(--transition-fast); 
+            border-bottom: 2px solid transparent; 
+            font-weight: 700; 
+            white-space: nowrap; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+        }
+        .tab:hover { 
+            background: #f1f5f9; 
+            color: var(--text-main);
+        }
+        .tab.active { 
+            background: var(--bg-surface); 
+            border-bottom: 3px solid var(--accent); 
+            color: var(--accent); 
+        }
+        
+        .tab-count { 
+            background: #e2e8f0; 
+            font-size: 10px; 
+            font-family: 'Outfit', sans-serif;
+            padding: 2px 6px; 
+            border-radius: 999px; 
+            color: var(--text-secondary); 
+            font-weight: 700;
+        }
+        .tab.active .tab-count { 
+            background: var(--accent-light); 
+            color: var(--accent); 
+        }
 
         /* Search & Chips */
-        .search-box { padding: 10px; border-bottom: 1px solid #eee; }
-        .search-box input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 20px; box-sizing: border-box; padding-left: 15px; outline: none; }
-        .filter-chips { display: flex; gap: 6px; padding: 8px 10px; border-bottom: 1px solid #eee; background: white; overflow-x: auto; white-space: nowrap; }
-        .chip { padding: 4px 12px; border-radius: 15px; font-size: 12px; background: #f1f2f6; color: #555; cursor: pointer; border: 1px solid transparent; transition: 0.2s; user-select: none; }
-        .chip:hover { background: #e4e6eb; }
-        .chip.active { background: var(--accent); color: white; font-weight: bold; box-shadow: 0 2px 5px rgba(52, 152, 219, 0.3); }
-        .chip[data-type="req"].active { background: var(--danger); }
-        .chip[data-type="gen"].active { background: var(--warning); color: #333; }
-        .chip[data-type="pe"].active { background: #27ae60; }
-
-        /* Course List */
-        .course-list { flex: 1; overflow-y: auto; padding: 0; list-style: none; margin: 0; background: #fff; }
-        .course-item { padding: 12px 15px; border-bottom: 1px solid #f0f0f0; cursor: pointer; transition: 0.1s; position: relative; }
-        .course-item:hover { background: #f8f9fa; }
-        .course-item.added { background: #e8f8f5; border-left: 4px solid var(--success); }
-        .course-item.added::after { content: "✓"; position: absolute; right: 15px; top: 12px; font-size: 16px; color: var(--success); font-weight: bold; }
-        .course-item.conflict-item { opacity: 0.8; background: #fff5f5; border-left: 4px solid var(--danger); }
+        .search-box { 
+            padding: 14px 16px; 
+            border-bottom: 1px solid var(--border-light); 
+            background: var(--bg-surface);
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
         
-        .tag { font-size: 10px; padding: 2px 6px; border-radius: 4px; color: white; margin-left: 6px; font-weight: bold; vertical-align: middle; }
+        .search-box input { 
+            width: 100%; 
+            padding: 10px 36px 10px 36px; 
+            border: 1.5px solid var(--border-medium); 
+            border-radius: 9999px; 
+            box-sizing: border-box; 
+            outline: none; 
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-main);
+            transition: var(--transition-fast);
+            box-shadow: var(--shadow-sm);
+        }
+        .search-box input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12), var(--shadow-sm);
+        }
+        
+        .filter-chips { 
+            display: flex; 
+            gap: 8px; 
+            padding: 8px 16px 14px 16px; 
+            border-bottom: 1px solid var(--border-light); 
+            background: var(--bg-surface); 
+            overflow-x: auto; 
+            white-space: nowrap; 
+        }
+        
+        .chip { 
+            padding: 6px 14px; 
+            border-radius: 9999px; 
+            font-size: 12px; 
+            font-weight: 600;
+            background: var(--bg-base); 
+            color: var(--text-secondary); 
+            cursor: pointer; 
+            border: 1px solid var(--border-medium); 
+            transition: var(--transition-fast); 
+            user-select: none; 
+            display: inline-flex;
+            align-items: center;
+        }
+        .chip:hover { 
+            background: #e2e8f0; 
+            color: var(--text-main);
+        }
+        .chip.active { 
+            background: var(--accent); 
+            color: white; 
+            border-color: var(--accent);
+            font-weight: 700; 
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.2); 
+        }
+        .chip[data-type="dept_required"].active { 
+            background: var(--danger); 
+            border-color: var(--danger);
+            box-shadow: 0 4px 10px rgba(239, 68, 68, 0.2); 
+        }
+        .chip[data-type="common_required"].active { 
+            background: var(--wish); 
+            border-color: var(--wish);
+            box-shadow: 0 4px 10px rgba(139, 92, 246, 0.2); 
+        }
+        .chip[data-type="dept_elective"].active { 
+            background: var(--warning); 
+            border-color: var(--warning);
+            color: white;
+            box-shadow: 0 4px 10px rgba(245, 158, 11, 0.25); 
+        }
+        .chip[data-type="other_elective"].active { 
+            background: var(--accent); 
+            border-color: var(--accent);
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.2); 
+        }
+        .chip[data-type="general"].active { 
+            background: var(--success); 
+            border-color: var(--success);
+            box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2); 
+        }
+        .chip[data-type="others"].active { 
+            background: var(--text-secondary); 
+            border-color: var(--text-secondary);
+            box-shadow: 0 4px 10px rgba(71, 85, 105, 0.2); 
+        }
+
+        .chip-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 6px;
+            vertical-align: middle;
+            transition: var(--transition-fast);
+        }
+        .chip.active .chip-dot {
+            background: white !important;
+        }
+
+        /* Course List Card Design */
+        .course-list { 
+            flex: 1; 
+            overflow-y: auto; 
+            padding: 10px 16px; 
+            list-style: none; 
+            margin: 0; 
+            background: #fafbfc; 
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .course-item { 
+            background: var(--bg-surface);
+            padding: 14px 16px; 
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-medium); 
+            cursor: pointer; 
+            transition: var(--transition-smooth); 
+            position: relative; 
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            flex-shrink: 0; /* 防止被 flex 容器壓縮 */
+        }
+        .course-item:hover { 
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--border-hover);
+        }
+        
+        .course-item.added { 
+            background: var(--success-light); 
+            border-color: rgba(16, 185, 129, 0.2); 
+        }
+        .course-item.added::after { 
+            content: "✓"; 
+            position: absolute; 
+            right: 18px; 
+            top: 14px; 
+            font-size: 18px; 
+            color: var(--success); 
+            font-weight: 800; 
+        }
+        .course-item.added:hover {
+            border-color: var(--success);
+        }
+        
+        .course-item.conflict-item { 
+            opacity: 0.85; 
+            background: var(--danger-light); 
+            border-color: rgba(239, 68, 68, 0.15); 
+        }
+        .course-item.conflict-item:hover {
+            border-color: var(--danger);
+        }
+        
+        .tag { 
+            font-size: 9px; 
+            padding: 2px 8px; 
+            border-radius: 4px; 
+            color: white; 
+            margin-left: 6px; 
+            font-weight: 700; 
+            vertical-align: middle; 
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
         .tag.req { background: var(--danger); }
         .tag.elec { background: var(--accent); }
-        .tag.gen { background: var(--warning); color: #333; }
-        .tag.pri { background: #34495e; }
-        .c-name { font-weight: bold; color: var(--secondary); font-size: 14px; display: block; margin-bottom: 4px; }
-        .c-info { font-size: 12px; color: #7f8c8d; }
+        .tag.gen { background: var(--warning); color: white; }
+        .tag.pri { background: var(--text-secondary); }
+        
+        .c-name { 
+            font-weight: 700; 
+            color: var(--text-main); 
+            font-size: 14px; 
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 6px; 
+            line-height: 1.4;
+        }
+        .c-name-text {
+            line-height: 1.4;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .c-info { 
+            font-size: 12px; 
+            color: var(--text-secondary); 
+            font-weight: 500;
+            margin-top: 3px;
+        }
         .btn-wish { display: none; } 
 
         /* =========================================
            4. Timetable Grid Area
            ========================================= */
-        .content { flex: 1; padding: 20px; overflow-y: auto; background: #ecf0f1; display: flex; flex-direction: column; align-items: center; }
-        .timetable-container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); width: 100%; max-width: 1100px; margin-bottom: 20px; }
-        .timetable-header { display: flex; justify-content: space-between; margin-bottom: 15px; align-items: center; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        .credits-info { font-size: 16px; font-weight: bold; color: var(--secondary); }
-        .credits-num { color: var(--accent); font-size: 20px; margin-left: 5px; }
-        .timetable { display: grid; grid-template-columns: 60px repeat(7, 1fr); grid-auto-rows: minmax(55px, auto); border: 1px solid #e0e0e0; background: #e0e0e0; gap: 1px; position: relative; }
-        .cell { background: white; min-height: 55px; display: flex; align-items: center; justify-content: center; font-size: 13px; padding: 2px; text-align: center; color: #555; }
-        .cell.header-row { background: #f8f9fa; font-weight: bold; color: var(--primary); height: 45px; }
-        .cell.period-col { background: #f8f9fa; font-weight: bold; color: var(--primary); flex-direction: column; font-family: 'Consolas', sans-serif; }
-
-        /* Course Blocks */
-        .course-block { width: 100%; height: 100%; background: var(--accent); color: white; font-size: 12px; display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: pointer; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); z-index: 5; padding: 4px; box-sizing: border-box; text-align: center; overflow: hidden; transition: transform 0.15s ease-in-out, box-shadow 0.15s; border-radius: 2px; text-shadow: 0 1px 2px rgba(0,0,0,0.1); }
-        .course-block:hover { transform: scale(1.03); z-index: 20; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); }
-        .course-block .cb-name { font-weight: bold; line-height: 1.3; margin-bottom: 2px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-        .course-block .cb-room { font-size: 10px; opacity: 0.9; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+        .content { 
+            flex: 1; 
+            padding: 24px; 
+            overflow-y: auto; 
+            background: var(--bg-base); 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+        }
         
-        .course-block.pending { background: #f39c12 !important; animation: pulse 2s infinite; border: 2px dashed #d35400; text-shadow: none; color: #333; }
-        .course-block.wish-mode { background: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85) 10px, rgba(230, 230, 230, 0.85) 10px, rgba(230, 230, 230, 0.85) 20px); border: 2px dashed #999; color: #555; z-index: 4; opacity: 0.9; text-shadow: none; }
-        .course-block.wish-mode:hover { z-index: 25; background: white; border-color: var(--accent); }
+        .timetable-container { 
+            background: var(--bg-surface); 
+            padding: 24px; 
+            border-radius: var(--radius-lg); 
+            box-shadow: var(--shadow-premium); 
+            border: 1px solid var(--border-light);
+            width: 100%; 
+            max-width: 1100px; 
+            margin-bottom: 20px; 
+            box-sizing: border-box;
+        }
+        
+        .timetable-header { 
+            display: flex; 
+            justify-content: space-between; 
+            margin-bottom: 20px; 
+            align-items: center; 
+            border-bottom: 1.5px solid var(--border-light); 
+            padding-bottom: 14px; 
+        }
+        .timetable-header span {
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: 0.5px;
+        }
+        
+        .credits-info { 
+            font-size: 14px; 
+            font-weight: 600; 
+            color: var(--text-secondary); 
+            background: var(--bg-base);
+            padding: 6px 14px;
+            border-radius: 999px;
+            border: 1px solid var(--border-medium);
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .credits-num { 
+            color: var(--accent); 
+            font-size: 18px; 
+            font-weight: 700;
+            margin-left: 6px; 
+            font-family: 'Outfit', sans-serif;
+        }
+        
+        .timetable { 
+            display: grid; 
+            grid-template-columns: 60px repeat(7, 1fr); 
+            grid-auto-rows: minmax(58px, auto); 
+            border: 1.5px solid var(--border-medium); 
+            background: var(--border-medium); 
+            border-radius: var(--radius-md);
+            gap: 1px; 
+            position: relative; 
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .cell { 
+            background: var(--bg-surface); 
+            min-height: 58px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 12px; 
+            font-weight: 500;
+            padding: 4px; 
+            text-align: center; 
+            color: var(--text-secondary); 
+        }
+        
+        .cell.header-row { 
+            background: #fafbfc; 
+            font-weight: 700; 
+            color: var(--text-main); 
+            height: 48px; 
+            font-size: 13px;
+            letter-spacing: 0.5px;
+        }
+        
+        .cell.period-col { 
+            background: #fafbfc; 
+            font-weight: 700; 
+            color: var(--text-main); 
+            flex-direction: column; 
+            font-family: 'Outfit', 'Consolas', sans-serif; 
+            font-size: 13px;
+        }
+
+        /* Premium Course Blocks */
+        .course-block { 
+            width: 100%; 
+            height: 100%; 
+            background: var(--accent); 
+            color: white; 
+            font-size: 11px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            cursor: pointer; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08); 
+            z-index: 5; 
+            padding: 6px; 
+            box-sizing: border-box; 
+            text-align: center; 
+            overflow: hidden; 
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s, filter 0.15s; 
+            border-radius: 6px; 
+            text-shadow: none; 
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            font-weight: 600;
+        }
+        
+        .course-block:hover { 
+            transform: scale(1.05); 
+            z-index: 20; 
+            box-shadow: 0 12px 20px -5px rgba(15, 23, 42, 0.25); 
+            filter: brightness(1.05);
+        }
+        
+        .course-block .cb-name { 
+            font-weight: 700; 
+            line-height: 1.3; 
+            margin-bottom: 3px; 
+            display: -webkit-box; 
+            -webkit-line-clamp: 2; 
+            -webkit-box-orient: vertical; 
+            overflow: hidden; 
+            font-size: 11.5px;
+            letter-spacing: 0.2px;
+        }
+        
+        .course-block .cb-room { 
+            font-size: 9px; 
+            opacity: 0.9; 
+            font-weight: 500;
+            white-space: nowrap; 
+            overflow: hidden; 
+            text-overflow: ellipsis; 
+            max-width: 100%; 
+            background: rgba(0, 0, 0, 0.08);
+            padding: 1px 6px;
+            border-radius: 4px;
+            margin-top: 1px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .course-block.pending { 
+            background: var(--warning-light) !important; 
+            animation: pulse 2.5s infinite; 
+            border: 2px dashed rgba(245, 158, 11, 0.5); 
+            text-shadow: none; 
+            color: var(--warning-hover); 
+            box-shadow: var(--shadow-sm);
+        }
+        .course-block.pending:hover {
+            color: #78350f;
+            border-color: var(--warning);
+        }
+        
+        .course-block.wish-mode { 
+            background: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9) 10px, rgba(241, 245, 249, 0.9) 10px, rgba(241, 245, 249, 0.9) 20px); 
+            border: 2px dashed var(--border-hover); 
+            color: var(--text-secondary); 
+            z-index: 4; 
+            opacity: 0.95; 
+            text-shadow: none; 
+            box-shadow: var(--shadow-sm);
+        }
+        .course-block.wish-mode:hover { 
+            z-index: 25; 
+            background: var(--wish-light); 
+            border-color: var(--wish); 
+            color: var(--wish-hover);
+        }
 
         /* [EDITED] EXPORT MODE: Adjusted for ~1720px width (Sun-Sat Layout) */
         .timetable-container.export-mode {
-            width: 860px !important; /* 860px * 2 (scale) = 1720px */
+            width: 860px !important; 
             min-width: 860px !important;
             max-width: 860px !important;
-            
-            padding: 40px 30px !important; /* 上下加寬 padding 讓高度更適當 */
+            padding: 40px 30px !important; 
             border-radius: 0 !important;
             box-shadow: none !important;
             background: white !important;
@@ -141,82 +822,333 @@
         }
 
         /* =========================================
-           [NEW] 6. Mobile & Responsive Design
+           5. Mobile & Responsive Design
            ========================================= */
         @media (max-width: 768px) {
-            body { height: auto; overflow: auto; } /* Allow body to scroll on mobile */
+            body { height: auto; overflow: auto; } 
             .main-container { flex-direction: column; height: auto; overflow: visible; }
 
-            /* Sidebar becomes top section */
             .sidebar { 
                 width: 100%; 
                 max-width: 100%;
-                height: 60vh; /* Give sidebar a fixed portion of the screen height */
-                resize: none; /* Disable resizing on mobile */
+                height: 55vh; 
+                resize: none; 
                 border-right: none;
-                border-bottom: 2px solid var(--border);
+                border-bottom: 1.5px solid var(--border-medium);
             }
 
-            /* Content area adjustments */
-            .content { padding: 10px; overflow-x: hidden; }
+            .content { padding: 12px; overflow-x: hidden; }
             .timetable-container { 
-                padding: 10px; 
+                padding: 12px; 
                 width: 100%; 
-                overflow-x: hidden; /* No horizontal scroll */
+                overflow-x: hidden; 
+                border-radius: var(--radius-md);
             }
-            /* [MODIFIED] Keep grid, but shrink it */
             .timetable { 
-                grid-template-columns: 35px repeat(7, 1fr); /* Shrink period col */
-                grid-auto-rows: minmax(45px, auto); /* Shrink rows */
-                gap: 1px;
+                grid-template-columns: 35px repeat(7, 1fr); 
+                grid-auto-rows: minmax(48px, auto); 
             }
-            .cell { font-size: 10px; min-height: 45px; }
+            .cell { font-size: 10px; min-height: 48px; }
             .cell.period-col { font-size: 11px; }
 
-            /* Header adjustments */
-            h1 { font-size: 16px; }
-            .header-controls button { padding: 5px 8px; font-size: 12px; }
+            h1 { font-size: 17px; }
+            .header-controls button { padding: 6px 10px; font-size: 12px; }
 
-            /* Modal adjustments */
-            .modal-box { width: 95%; max-width: 95%; }
+            .modal-box { width: 92%; max-width: 92%; padding: 20px; }
 
-            /* [MODIFIED] Adjust course block for smaller grid */
-            .course-block { font-size: 9px; padding: 2px; -webkit-line-clamp: 3; }
+            .course-block { font-size: 9px; padding: 2px; }
+            .course-block .cb-name { font-size: 9.5px; -webkit-line-clamp: 3; }
+            .course-block .cb-room { font-size: 7.5px; padding: 0px 3px; }
         }
 
         /* =========================================
-           5. Modals (詳細資訊彈窗)
+           6. Modals (Blur Backdrops & Slide-In Animation)
            ========================================= */
-        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center; }
-        .modal-box { background: white; width: 500px; max-width: 90%; border-radius: 8px; padding: 25px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); display: flex; flex-direction: column; max-height: 85vh; }
-        .modal-title { font-size: 20px; font-weight: bold; margin-bottom: 15px; color: var(--primary); border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        .modal-body { overflow-y: auto; flex: 1; padding-right: 5px; }
+        .modal-overlay { 
+            display: none; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(15, 23, 42, 0.4); 
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 1000; 
+            justify-content: center; 
+            align-items: center; 
+            animation: fadeIn 0.25s ease-out;
+        }
         
-        .detail-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 20px; }
-        .detail-table td { padding: 8px; border-bottom: 1px solid #eee; }
-        .detail-table td.label { width: 100px; font-weight: bold; color: #555; background: #f9f9f9; }
+        .modal-box { 
+            background: var(--bg-surface); 
+            width: 500px; 
+            max-width: 90%; 
+            border-radius: var(--radius-lg); 
+            padding: 28px; 
+            box-shadow: var(--shadow-premium); 
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            display: flex; 
+            flex-direction: column; 
+            max-height: 85vh; 
+            animation: slideIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
         
-        .modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 15px; }
-        .btn-action { padding: 10px 20px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 14px; transition: 0.2s; }
-        .btn-close { background: #eee; color: #333; }
-        .btn-close:hover { background: #ddd; }
-        .btn-add { background: var(--success); color: white; }
-        .btn-add:hover { filter: brightness(0.9); }
-        .btn-wishlist { background: var(--wish); color: white; }
-        .btn-wishlist:hover { filter: brightness(0.9); }
-        .btn-remove { background: var(--danger); color: white; }
-        .btn-remove:hover { filter: brightness(0.9); }
+        .modal-title { 
+            font-size: 20px; 
+            font-weight: 700; 
+            margin-bottom: 20px; 
+            color: var(--text-main); 
+            border-bottom: 2.5px solid var(--border-light); 
+            padding-bottom: 12px; 
+            letter-spacing: 0.5px;
+        }
+        
+        .modal-body { 
+            overflow-y: auto; 
+            flex: 1; 
+            padding-right: 6px; 
+        }
+        
+        .detail-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            font-size: 13.5px; 
+            margin-bottom: 20px; 
+        }
+        
+        .detail-table td { 
+            padding: 10px 12px; 
+            border-bottom: 1px solid var(--border-light); 
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        
+        .detail-table td.label { 
+            width: 110px; 
+            font-weight: 700; 
+            color: var(--text-main); 
+            background: #fafbfc; 
+            border-right: 1px solid var(--border-light);
+            letter-spacing: 0.5px;
+        }
+        
+        .modal-actions { 
+            display: flex; 
+            gap: 10px; 
+            justify-content: flex-end; 
+            margin-top: 20px; 
+        }
+        
+        .btn-action { 
+            padding: 10px 20px; 
+            border: 1px solid transparent; 
+            border-radius: var(--radius-sm); 
+            font-weight: 700; 
+            cursor: pointer; 
+            font-size: 13.5px; 
+            transition: var(--transition-fast); 
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .btn-close { 
+            background: var(--bg-base); 
+            color: var(--text-secondary); 
+            border-color: var(--border-medium);
+        }
+        .btn-close:hover { 
+            background: #e2e8f0; 
+            color: var(--text-main);
+        }
+        
+        .btn-add { 
+            background: var(--success); 
+            color: white; 
+        }
+        .btn-add:hover { 
+            background: var(--success-hover); 
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
+        }
+        
+        .btn-wishlist { 
+            background: var(--wish); 
+            color: white; 
+        }
+        .btn-wishlist:hover { 
+            background: var(--wish-hover); 
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(139, 92, 246, 0.2);
+        }
+        
+        .btn-remove { 
+            background: var(--danger); 
+            color: white; 
+        }
+        .btn-remove:hover { 
+            background: var(--danger-hover); 
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(239, 68, 68, 0.2);
+        }
 
-        .choice-list { max-height: 300px; overflow-y: auto; }
-        .choice-item { padding: 12px; border: 1px solid #eee; margin-bottom: 8px; border-radius: 6px; cursor: pointer; transition: 0.2s; }
-        .choice-item:hover { background: #f0f8ff; border-color: var(--accent); }
-
-        #notification { position: fixed; bottom: 30px; right: 30px; background: #333; color: white; padding: 12px 24px; border-radius: 8px; opacity: 0; transition: 0.3s; pointer-events: none; z-index: 999; transform: translateY(20px); font-weight: bold; }
-        #notification.show { opacity: 1; transform: translateY(0); }
+        /* Choice Selectors */
+        .choice-list { 
+            max-height: 280px; 
+            overflow-y: auto; 
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
         
-        #loadingOverlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.95); z-index: 999; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-        .spinner { border: 4px solid #f3f3f3; border-top: 4px solid var(--accent); border-radius: 50%; width: 50px; height: 50px; animation: spin 0.8s linear infinite; margin-bottom: 15px; }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .choice-item { 
+            padding: 14px 16px; 
+            border: 1.5px solid var(--border-medium); 
+            background: var(--bg-surface);
+            border-radius: var(--radius-sm); 
+            cursor: pointer; 
+            transition: var(--transition-smooth); 
+            box-shadow: var(--shadow-sm);
+        }
+        .choice-item:hover { 
+            background: var(--accent-light); 
+            border-color: var(--accent); 
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .close-modal {
+            width: 100%;
+            background: var(--bg-base);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-medium);
+            padding: 10px;
+            font-weight: 700;
+            font-size: 13.5px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: var(--transition-fast);
+            margin-top: 14px;
+        }
+        .close-modal:hover {
+            background: #e2e8f0;
+            color: var(--text-main);
+        }
+
+        /* Float Notifications */
+        #notification { 
+            position: fixed; 
+            bottom: 30px; 
+            right: 30px; 
+            background: var(--bg-header); 
+            backdrop-filter: blur(8px);
+            color: white; 
+            padding: 14px 28px; 
+            border-radius: var(--radius-md); 
+            box-shadow: var(--shadow-premium);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0; 
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            pointer-events: none; 
+            z-index: 999; 
+            transform: translateY(20px) scale(0.9); 
+            font-weight: 700; 
+            font-size: 13.5px;
+            letter-spacing: 0.5px;
+        }
+        #notification.show { 
+            opacity: 1; 
+            transform: translateY(0) scale(1); 
+        }
+        
+        /* Blur Loading Overlay */
+        #loadingOverlay { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(248, 250, 252, 0.95); 
+            backdrop-filter: blur(10px);
+            z-index: 999; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+        }
+        
+        .spinner { 
+            border: 3.5px solid var(--border-medium); 
+            border-top: 3.5px solid var(--accent); 
+            border-radius: 50%; 
+            width: 44px; 
+            height: 44px; 
+            animation: spin 0.8s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite; 
+            margin-bottom: 16px; 
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Animations */
+        @keyframes spin { 
+            0% { transform: rotate(0deg); } 
+            100% { transform: rotate(360deg); } 
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4); }
+            70% { transform: scale(1.02); box-shadow: 0 0 0 8px rgba(245, 158, 11, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* =========================================
+           7. Custom Confirm Dialog
+           ========================================= */
+        #confirmModal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.45);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.2s ease-out;
+        }
+        #confirmModal.show { display: flex; }
+        .confirm-box {
+            background: var(--bg-surface);
+            border-radius: var(--radius-lg);
+            padding: 32px 28px 24px;
+            width: 380px;
+            max-width: 92%;
+            box-shadow: var(--shadow-premium);
+            border: 1px solid rgba(255,255,255,0.6);
+            animation: slideIn 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+            text-align: center;
+        }
+        .confirm-icon { 
+            width: 48px; 
+            height: 48px; 
+            border-radius: 50%; 
+            background: var(--warning-light); 
+            color: var(--warning-hover); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 22px; 
+            font-weight: 700; 
+            margin: 0 auto 16px; 
+            border: 1.5px solid rgba(245, 158, 11, 0.25);
+        }
+
     </style>
 </head>
 
@@ -228,11 +1160,11 @@
     </div>
 
     <header>
-        <h1>🎓 NCU 智慧選課模擬 <span id="dataStatus" class="status-badge">連線中...</span><span id="lastUpdateTime" class="status-badge" style="background-color: #7f8c8d; margin-left: 10px; font-weight: normal;"></span></h1>
+        <h1>NCU 智慧選課模擬 <span id="dataStatus" class="status-badge">連線中...</span><span id="lastUpdateTime" class="status-badge" style="background-color: #7f8c8d; margin-left: 10px; font-weight: normal;"></span></h1>
         <div class="header-controls">
-            <button class="btn btn-refresh" onclick="resetData()">🔄 重新整理</button>
-            <button class="btn btn-clear" onclick="clearSchedule()">🗑️ 清空課表</button>
-            <button class="btn btn-download" onclick="downloadImage()">📷 下載圖片</button>
+            <button class="btn btn-refresh" onclick="resetData()">重新整理</button>
+            <button class="btn btn-clear" onclick="clearSchedule()">清空課表</button>
+            <button class="btn btn-download" onclick="downloadImage()">下載圖片</button>
         </div>
     </header>
 
@@ -260,7 +1192,7 @@
                         <div class="form-group"><label>身份</label><select id="userIdentity" onchange="saveAndRefresh()"><option value="一般生">一般生</option><option value="交換生">交換生</option></select></div>
                         <div class="form-group"><label>單雙號</label><select id="userParity" onchange="saveAndRefresh()"><option value="odd">單號</option><option value="even">雙號</option></select></div>
                     </div>
-                    <button class="btn-autofill" onclick="autoFillRequired()">⚡ 自動帶入必修 (限系定)</button>
+                    <button class="btn-autofill" onclick="autoFillRequired()">自動帶入必修 (限系定)</button>
                 </div>
             </div>
 
@@ -270,13 +1202,25 @@
                 <div class="tab" onclick="setTab('conflict')">衝堂 <span id="count-conflict" class="tab-count" style="background:var(--danger); color:white;">0</span></div>
             </div>
 
-            <div class="search-box"><input type="text" id="searchInput" placeholder="搜尋課名、老師、代碼..." oninput="renderCourseList()"></div>
+            <div class="search-box">
+                <svg style="position: absolute; left: 28px; width: 14px; height: 14px; color: var(--text-muted); fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" id="searchInput" placeholder="搜尋課名、老師、代碼..." oninput="renderCourseList()">
+                <span id="searchClearBtn" onclick="clearSearch()" style="position: absolute; right: 28px; cursor: pointer; color: var(--text-muted); font-weight: 700; display: none; font-size: 13px;">✕</span>
+            </div>
+            <div style="padding: 0 16px 10px 16px; background: var(--bg-surface); display: flex; align-items: center; border-bottom: 1px solid var(--border-light);">
+                <label class="checkbox-item" style="padding: 0;">
+                    <input type="checkbox" id="searchAllSchool" onchange="renderCourseList()">
+                    <span>搜尋全校課程 (忽略學系限制)</span>
+                </label>
+            </div>
             <div class="filter-chips">
-                <div class="chip active" onclick="setFilter('all', this)">全部</div>
-                <div class="chip" data-type="req" onclick="setFilter('required', this)">必修</div>
-                <div class="chip" data-type="elec" onclick="setFilter('elective', this)">選修</div>
-                <div class="chip" data-type="gen" onclick="setFilter('general', this)">通識</div>
-                <div class="chip" data-type="pe" onclick="setFilter('pe', this)">體育</div>
+                <div class="chip active" onclick="setFilter('all', this)"><span class="chip-dot" style="background: var(--text-secondary);"></span>全部</div>
+                <div class="chip" data-type="dept_required" onclick="setFilter('dept_required', this)"><span class="chip-dot" style="background: var(--danger);"></span>本系必修</div>
+                <div class="chip" data-type="common_required" onclick="setFilter('common_required', this)"><span class="chip-dot" style="background: var(--wish);"></span>大一共同必修</div>
+                <div class="chip" data-type="dept_elective" onclick="setFilter('dept_elective', this)"><span class="chip-dot" style="background: var(--warning);"></span>本系選修</div>
+                <div class="chip" data-type="other_elective" onclick="setFilter('other_elective', this)"><span class="chip-dot" style="background: var(--accent);"></span>外系選修</div>
+                <div class="chip" data-type="general" onclick="setFilter('general', this)"><span class="chip-dot" style="background: var(--success);"></span>通識</div>
+                <div class="chip" data-type="others" onclick="setFilter('others', this)"><span class="chip-dot" style="background: var(--text-secondary);"></span>體育/其他</div>
             </div>
             <ul class="course-list" id="courseList"></ul>
         </div>
@@ -310,9 +1254,62 @@
         </div>
     </div>
 
+    <div class="modal-overlay" id="confirmModal">
+        <div class="confirm-box">
+            <div class="confirm-icon" id="confirmIcon">!</div>
+            <div class="modal-title" style="border:none;margin-bottom:10px;font-size:18px;" id="confirmTitle">標題</div>
+            <div style="font-size:13.5px;color:var(--text-secondary);margin-bottom:24px;line-height:1.5;" id="confirmMessage">內容</div>
+            <div style="display:flex;gap:10px;justify-content:center;">
+                <button class="btn-action btn-close" onclick="closeConfirmModal()">取消</button>
+                <button class="btn-action" id="confirmOkBtn" style="color:white;">確認</button>
+            </div>
+        </div>
+    </div>
     <div id="notification">Message</div>
 
     <script>
+        // Custom search field helper
+        function clearSearch() {
+            const input = document.getElementById('searchInput');
+            input.value = '';
+            const clearBtn = document.getElementById('searchClearBtn');
+            if (clearBtn) clearBtn.style.display = 'none';
+            renderCourseList();
+        }
+
+        // Custom Confirm Dialog helpers
+        let confirmCallback = null;
+        function showConfirmModal(iconType, title, message, okLabel, okStyle, callback) {
+            const icon = document.getElementById('confirmIcon');
+            if (icon) {
+                icon.innerText = iconType === 'danger' ? '!' : (iconType === 'warning' ? '!' : '?');
+                icon.style.background = iconType === 'danger' ? 'var(--danger-light)' : 'var(--warning-light)';
+                icon.style.color = iconType === 'danger' ? 'var(--danger)' : 'var(--warning-hover)';
+                icon.style.borderColor = iconType === 'danger' ? 'rgba(239, 68, 68, 0.25)' : 'rgba(245, 158, 11, 0.25)';
+            }
+            document.getElementById('confirmTitle').innerText = title;
+            document.getElementById('confirmMessage').innerText = message;
+            const okBtn = document.getElementById('confirmOkBtn');
+            okBtn.innerText = okLabel;
+            okBtn.style.background = okStyle === 'danger' ? 'var(--danger)' : 'var(--accent)';
+            okBtn.style.borderColor = okStyle === 'danger' ? 'var(--danger)' : 'var(--accent)';
+            confirmCallback = callback;
+            document.getElementById('confirmModal').classList.add('show');
+        }
+        function closeConfirmModal() {
+            document.getElementById('confirmModal').classList.remove('show');
+            confirmCallback = null;
+        }
+        window.addEventListener('DOMContentLoaded', () => {
+            const okBtn = document.getElementById('confirmOkBtn');
+            if (okBtn) {
+                okBtn.onclick = () => {
+                    if (confirmCallback) confirmCallback();
+                    closeConfirmModal();
+                };
+            }
+        });
+
         const PERIOD_ORDER = ['1', '2', '3', '4', 'Z', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D'];
         // [EDITED] UI Header Order: Sunday First
         const DAYS = ['日', '一', '二', '三', '四', '五', '六'];
@@ -392,7 +1389,7 @@
                     document.getElementById('lastUpdateTime').innerText = '資料更新: ' + localDateString + ` 00:00`;
                 }
 
-                updateStatus(`已連線 (${allCourses.length}筆)`, '#27ae60');
+                updateStatus(`已連線 (${allCourses.length}筆)`, 'success');
                 document.getElementById('loadingOverlay').style.display = 'none';
                 initProgramSelect(); 
                 loadProfileFromLocal(); 
@@ -401,16 +1398,37 @@
                 renderCourseList();
             } catch (e) {
                 console.error(e);
-                updateStatus("讀取失敗", '#e74c3c');
-                alert("讀取 courses_processed.json 失敗。請確認檔案存在且透過 Local Server 執行。");
+                updateStatus("讀取失敗", 'error');
+                showNotify("讀取 courses_processed.json 失敗。請確認檔案存在且透過 Local Server 執行。", 'error');
                 document.getElementById('loadingOverlay').style.display = 'none';
             }
         };
 
-        function updateStatus(text, color) {
+        function updateStatus(text, statusType = 'ready') {
             const badge = document.getElementById('dataStatus');
+            if (!badge) return;
             badge.innerText = text;
-            badge.style.background = color;
+            if (statusType.startsWith('#') || statusType.startsWith('var')) {
+                badge.style.background = statusType;
+                badge.style.color = 'white';
+                badge.style.borderColor = 'transparent';
+            } else if (statusType === 'success') {
+                badge.style.background = 'var(--success)';
+                badge.style.color = 'white';
+                badge.style.borderColor = 'rgba(16, 185, 129, 0.25)';
+            } else if (statusType === 'error') {
+                badge.style.background = 'var(--danger)';
+                badge.style.color = 'white';
+                badge.style.borderColor = 'rgba(239, 68, 68, 0.25)';
+            } else if (statusType === 'pending') {
+                badge.style.background = 'var(--warning)';
+                badge.style.color = '#1e1b4b';
+                badge.style.borderColor = 'rgba(245, 158, 11, 0.25)';
+            } else {
+                badge.style.background = 'rgba(255, 255, 255, 0.1)';
+                badge.style.color = 'var(--text-on-header)';
+                badge.style.borderColor = 'rgba(255, 255, 255, 0.15)';
+            }
         }
         function initGridHTML() {
             const g = document.getElementById('timetableGrid');
@@ -658,38 +1676,108 @@
             return sorted.map(t => `${t.day}-${t.start}-${t.end}`).join('|');
         }
 
+        function normalizeStr(str) {
+            if (!str) return '';
+            return str.replace(/[\uFF01-\uFF5E]/g, function(ch) {
+                return String.fromCharCode(ch.charCodeAt(0) - 0xfee0);
+            }).replace(/\s+/g, '').trim();
+        }
+
+        function getBaseName(name) {
+            if (!name) return '';
+            const norm = normalizeStr(name);
+            if (norm.includes('國文') && norm.includes('經典閱讀')) {
+                return '國文經典閱讀';
+            }
+            const idx = norm.indexOf('：');
+            if (idx > 0) return norm.substring(0, idx).trim();
+            const idx2 = norm.indexOf(':');
+            if (idx2 > 0) return norm.substring(0, idx2).trim();
+            return norm;
+        }
+
         function autoFillRequired() {
             const user = getUserProfile();
             mySchedule = mySchedule.filter(c => !c.is_required);
             const allCandidates = allCourses.filter(c => isTargetRequired(c, user));
+            
             const groups = {};
             allCandidates.forEach(c => {
-                const name = c['課程名稱'];
+                // 用「基底名」+ 時段簽名作為分組鍵
+                const baseName = getBaseName(c['課程名稱']);
                 const timeSig = getTimeSignature(c);
-                const uniqueKey = `${name}::${timeSig}`;
+                const uniqueKey = `${baseName}::${timeSig}`;
                 if (!groups[uniqueKey]) groups[uniqueKey] = [];
                 groups[uniqueKey].push(c);
             });
+
+            // 計算課程對於當前使用者的限制精確度得分，用於解決衝突時的優先順序
+            const getSpecificity = (course) => {
+                const rules = course.rules_parsed || [];
+                let maxScore = 0;
+                rules.forEach(grp => {
+                    const r = grp.rules;
+                    const ok = Object.keys(r).every(k => {
+                        if (k === 'other') return true;
+                        if (['prerequisite', 'limit', 'program'].includes(k)) return true;
+                        const rule = r[k];
+                        let uVal = user[k] || "";
+                        if (k !== 'identity' && uVal === "") return false;
+                        if (k === 'parity') return rule.value === 'all' || rule.value === uVal;
+                        if (k === 'dept') {
+                            const userDept = user.dept;
+                            const userProgs = user.program || [];
+                            const strictMatch = rule.values.some(v => userDept === v || userDept.includes(v));
+                            const programMatch = userProgs.some(up => rule.values.includes(up));
+                            const collegeMatch = rule.values.some(v => {
+                                const deptsInCollege = NCU_STRUCTURE[v];
+                                return deptsInCollege && deptsInCollege.includes(userDept);
+                            });
+                            const isMatch = strictMatch || programMatch || collegeMatch;
+                            return rule.mode === 'include' ? isMatch : !isMatch;
+                        }
+                        const match = rule.values.some(v => v && (uVal.includes(v) || v.includes(uVal)));
+                        return rule.mode === 'include' ? match : !match;
+                    });
+                    if (ok) {
+                        let score = (10 - grp.priority) * 10; // priority 1 -> 90, priority 2 -> 80
+                        if (r.class) score += 50;
+                        if (r.parity && r.parity.value !== 'all') score += 40;
+                        if (r.grade) score += 30;
+                        if (score > maxScore) maxScore = score;
+                    }
+                });
+                return maxScore;
+            };
+
+            // 將所有群組依照最大精確度由高到低排序，以優先佔用時段
+            const groupList = Object.values(groups).map(candidates => {
+                candidates.sort((a, b) => getSpecificity(b) - getSpecificity(a));
+                const maxSpec = getSpecificity(candidates[0]);
+                return { candidates, maxSpec };
+            });
+
+            groupList.sort((a, b) => b.maxSpec - a.maxSpec);
+
             let addedCount = 0;
             let selectionCount = 0;
-            Object.values(groups).forEach(candidates => {
-                candidates.sort((a, b) => {
-                    const aIsP1 = isMatchP1(a, user);
-                    const bIsP1 = isMatchP1(b, user);
-                    return Number(bIsP1) - Number(aIsP1);
-                });
+            groupList.forEach(({ candidates }) => {
                 if (candidates.length === 1) {
                     const c = candidates[0];
-                    if (!isConflict(c, mySchedule)) { mySchedule.push(c); addedCount++; }
+                    if (!isConflict(c, mySchedule)) {
+                        mySchedule.push(c);
+                        addedCount++;
+                    }
                 } else if (candidates.length > 1) {
                     selectionCount++;
                     const placeholder = { ...candidates[0] };
                     placeholder.is_placeholder = true;
                     placeholder.candidates = candidates;
-                    placeholder['授課教師'] = "👇 請點擊選老師";
+                    placeholder['授課教師'] = "請選擇老師";
                     mySchedule.push(placeholder);
                 }
             });
+
             saveScheduleToLocal();
             renderTimetable();
             renderCourseList();
@@ -804,15 +1892,48 @@
         function openSelectionModal(placeholder) {
             currentPlaceholder = placeholder;
             const modal = document.getElementById('selectionModal');
+            const modalTitle = modal.querySelector('.modal-title');
             const list = document.getElementById('modalChoices');
-            list.innerHTML = "";
-            placeholder.candidates.forEach(c => {
-                const div = document.createElement('div');
-                div.className = 'choice-item';
-                div.innerHTML = `<div style="font-weight:bold;">${c['授課教師']}</div><div style="font-size:12px; color:#666;">${c['上課時間/教室']}</div>`;
-                div.onclick = () => selectCandidate(c);
-                list.appendChild(div);
-            });
+            list.innerHTML = '';
+
+            const candidates = placeholder.candidates;
+            // 判斷是否為「同基底名、不同副標題」的選課情境
+            const firstBase = getBaseName(candidates[0]['課程名稱']);
+            const allSameBase = candidates.every(c => getBaseName(c['課程名稱']) === firstBase);
+
+            if (allSameBase && firstBase !== normalizeStr(candidates[0]['課程名稱'])) {
+                // 智慧標題顯示原有的課程首碼（例如：請選擇 國文（A）經典閱讀 的班級）
+                const rawName = candidates[0]['課程名稱'];
+                const titlePrefix = rawName.split(/：|:/)[0] || rawName;
+                modalTitle.innerHTML = `請選擇 <span style="color:var(--accent);">${titlePrefix}</span> 的班級`;
+                
+                candidates.forEach(c => {
+                    const normName = normalizeStr(c['課程名稱']);
+                    // 使用冒號分割提取副標題
+                    const parts = c['課程名稱'].split(/：|:/);
+                    const subtitle = parts.length > 1 ? parts.slice(1).join('：').trim() : c['課程名稱'];
+                    
+                    const div = document.createElement('div');
+                    div.className = 'choice-item';
+                    div.innerHTML = `
+                        <div style="font-weight:700;font-size:13.5px;color:var(--text-main);margin-bottom:4px;">${subtitle}</div>
+                        <div style="font-size:12px;color:var(--text-secondary);">教師：${c['授課教師']}</div>
+                        <div style="font-size:11.5px;color:var(--text-muted);margin-top:2px;">時間：${c['上課時間/教室']}</div>
+                    `;
+                    div.onclick = () => selectCandidate(c);
+                    list.appendChild(div);
+                });
+            } else {
+                // 一般選老師
+                modalTitle.textContent = '請選擇一門課程 (選老師)';
+                candidates.forEach(c => {
+                    const div = document.createElement('div');
+                    div.className = 'choice-item';
+                    div.innerHTML = `<div style="font-weight:bold;">${c['授課教師']}</div><div style="font-size:12px; color:var(--text-secondary);">時間：${c['上課時間/教室']}</div>`;
+                    div.onclick = () => selectCandidate(c);
+                    list.appendChild(div);
+                });
+            }
             modal.style.display = 'flex';
         }
 
@@ -821,11 +1942,11 @@
             currentPlaceholder = null;
         }
 
-        function selectCandidate(course) {
+                function selectCandidate(course) {
             const idx = mySchedule.indexOf(currentPlaceholder);
             if (idx > -1) mySchedule.splice(idx, 1);
             if (isConflict(course, mySchedule)) {
-                alert("選擇的時段有衝堂！");
+                showNotify("時段衝堂！無法加入該時段", "error");
                 mySchedule.push(currentPlaceholder);
             } else {
                 mySchedule.push(course);
@@ -939,7 +2060,7 @@
                             div.style.textShadow = 'none';
                         }
                         const room = getRoomForBlock(c['上課時間/教室'], item.day);
-                        let bottomText = c.is_placeholder ? '👇 請選老師' : (room || c['授課教師']);
+                        let bottomText = c.is_placeholder ? '請選擇老師' : (room || c['授課教師']);
                         div.innerHTML = `<div class="cb-name">${c['課程名稱']}</div><div class="cb-room">${bottomText}</div>`;
                     }
 
@@ -963,34 +2084,87 @@
             const user = getUserProfile();
             ul.innerHTML = "";
 
-            const targetGradeName = GRADE_MAP_REV[user.grade];
-            
-            let sourceFiltered = allCourses.filter(c => {
-                const isOwnDept = (c.dept_name === user.dept);
-                const isTargetClass = (c.class_name === '不分類' || c.class_name === targetGradeName);
-                const isGeneralUnit = GENERAL_UNITS.includes(c.dept_name);
-                const isProgramCourse = (user.program && user.program.length > 0) && (c['分發條件'] && user.program.some(up => c['分發條件'].includes(up)));
-                return (isOwnDept && isTargetClass) || isGeneralUnit || isProgramCourse;
-            });
+            // Toggle clear button dynamically
+            const clearBtn = document.getElementById('searchClearBtn');
+            if (clearBtn) {
+                clearBtn.style.display = key ? 'inline' : 'none';
+            }
 
-            if (key) {
-                sourceFiltered = allCourses.filter(c => 
-                    c['課程名稱'].toLowerCase().includes(key) || 
-                    c['授課教師'].toLowerCase().includes(key) ||
-                    c['課程代碼'].toLowerCase().includes(key)
+            const targetGradeName = GRADE_MAP_REV[user.grade];
+
+            // 1. Determine Search Pool (Ignoring or applying department restrictions)
+            const searchAllCheckbox = document.getElementById('searchAllSchool');
+            const isSearchAll = (searchAllCheckbox && searchAllCheckbox.checked) || key.startsWith('#');
+            const cleanKey = key.startsWith('#') ? key.slice(1) : key;
+
+            let pool;
+            if (isSearchAll) {
+                pool = allCourses;
+            } else {
+                pool = allCourses.filter(c => {
+                    const isOwnDept = (c.dept_name === user.dept);
+                    const isTargetClass = (c.class_name === '不分類' || c.class_name === targetGradeName);
+                    const isGeneralUnit = GENERAL_UNITS.includes(c.dept_name);
+                    const isProgramCourse = (user.program && user.program.length > 0) && (c['分發條件'] && user.program.some(up => c['分發條件'].includes(up)));
+                    return (isOwnDept && isTargetClass) || isGeneralUnit || isProgramCourse;
+                });
+            }
+
+            // 2. Filter by Keyword
+            let sourceFiltered = pool;
+            if (cleanKey) {
+                sourceFiltered = pool.filter(c => 
+                    (c['課程名稱'] || '').toLowerCase().includes(cleanKey) || 
+                    (c['授課教師'] || '').toLowerCase().includes(cleanKey) ||
+                    (c['課程代碼'] || '').toLowerCase().includes(cleanKey) ||
+                    (c['課程編號'] || '').toLowerCase().includes(cleanKey)
                 );
             }
 
+            // Helpers to categorize courses dynamically for NCU curriculum structure
+            const isGeneralCourse = (c) => {
+                const dept = c.dept_name || "";
+                return dept.includes("通識") || c['課程名稱'].includes("通識");
+            };
+            
+            const isPeOrOthers = (c) => {
+                const dept = c.dept_name || "";
+                return dept.includes("體育") || c['課程名稱'].includes("體育") ||
+                       dept.includes("軍訓") || c['課程名稱'].includes("軍訓") ||
+                       dept.includes("服務學習") || c['課程名稱'].includes("服務學習") ||
+                       dept.includes("語言") || c['課程名稱'].includes("英文");
+            };
+
+            // 3. Filter by Type Chip
             if (currentFilterType !== 'all') {
                 sourceFiltered = sourceFiltered.filter(c => {
-                    if (currentFilterType === 'required') return c.is_required;
-                    if (currentFilterType === 'elective') return !c.is_required;
-                    if (currentFilterType === 'general') return c['課程名稱'].includes('通識') || c['dept_name'].includes('通識');
-                    if (currentFilterType === 'pe') return c['課程名稱'].includes('體育') || c['dept_name'].includes('體育');
+                    const isOwnDept = (c.dept_name === user.dept);
+                    const isGen = isGeneralCourse(c);
+                    const isOthers = isPeOrOthers(c);
+                    
+                    if (currentFilterType === 'dept_required') {
+                        return c.is_required && isOwnDept;
+                    }
+                    if (currentFilterType === 'common_required') {
+                        return c.is_required && !isOwnDept;
+                    }
+                    if (currentFilterType === 'dept_elective') {
+                        return !c.is_required && isOwnDept;
+                    }
+                    if (currentFilterType === 'other_elective') {
+                        return !c.is_required && !isOwnDept && !isGen && !isOthers;
+                    }
+                    if (currentFilterType === 'general') {
+                        return isGen;
+                    }
+                    if (currentFilterType === 'others') {
+                        return isOthers;
+                    }
                     return true;
                 });
             }
 
+            // 4. Compute eligibility
             let eligibleList = sourceFiltered.map(c => {
                 const res = checkEligibility(c, user);
                 const conflict = isConflict(c, mySchedule);
@@ -999,6 +2173,7 @@
                 return { ...c, _pass: res.pass, _p: res.priority, _conflict: conflict, _added: added, _wished: wished };
             }).filter(c => c._pass);
 
+            // 5. Tab filtering
             let displayList = [];
             if (currentTab === 'available') {
                 displayList = eligibleList.filter(c => !c._conflict || c._added);
@@ -1008,42 +2183,49 @@
                 displayList = eligibleList.filter(c => c._conflict && !c._added);
             }
 
+            // 6. Update counts
             document.getElementById('count-available').innerText = eligibleList.filter(c => !c._conflict || c._added).length;
             document.getElementById('count-conflict').innerText = eligibleList.filter(c => c._conflict && !c._added).length;
             document.getElementById('count-wishlist').innerText = myWishlist.length;
 
-            displayList.sort((a, b) => (a._p - b._p) || a['課程編號'].localeCompare(b['課程編號']));
+            // 7. Sort
+            displayList.sort((a, b) => {
+                if (a._added && !b._added) return -1;
+                if (!a._added && b._added) return 1;
+                return (a._p - b._p) || a['課程編號'].localeCompare(b['課程編號']);
+            });
 
+            // 8. Render Limit: max 100 for responsiveness
             displayList.slice(0, 100).forEach(c => {
                 const li = document.createElement('li');
-                li.className = `course-item ${c._added ? 'added' : ''} ${c._conflict ? 'conflict-item' : ''}`;
+                li.className = `course-item ${c._added ? 'added' : ''} ${c._conflict && !c._added ? 'conflict-item' : ''}`;
 
                 const tag = c.is_required ? '<span class="tag req">必修</span>' : '<span class="tag elec">選修</span>';
-                const gen = c['課程名稱'].includes('通識') ? '<span class="tag gen">通識</span>' : '';
-                const pri = (c._p !== 99) ? `<span class="tag pri" style="background:#555; color:white;">順位${c._p}</span>` : '';
+                const gen = isGeneralCourse(c) ? '<span class="tag gen">通識</span>' : '';
+                const wishTag = c._wished ? '<span class="tag" style="background:var(--wish);">待選</span>' : '';
+                const pri = (c._p !== 99) ? `<span class="tag pri">順位${c._p}</span>` : '';
 
                 let sourceLabel = c['dept_name'] || "";
                 if (sourceLabel.includes('通識') || sourceLabel.includes('體育') || sourceLabel.includes('語言')) {
-                    sourceLabel = c['class_name'];
+                    sourceLabel = c['class_name'] || sourceLabel;
                 }
                 sourceLabel = sourceLabel.replace('學系', '系').replace('研究所', '所');
                 
                 li.innerHTML = `
-                    <div style="display:flex; align-items:flex-start;">
-                        <div style="flex:1;">
-                            <span class="c-name">${c['課程名稱']} ${tag}${gen}${pri}</span>
-                            <div class="c-info">🕒 ${c['上課時間/教室']} | 👨‍🏫 ${c['授課教師']}</div>
-                            <div class="c-info" style="color:#2980b9; font-weight:bold; margin-top:2px;">🏫 ${sourceLabel}</div>
-                        </div>
-                    </div>
-                `;
+                    <span class="c-name"><span class="c-name-text">${c['課程名稱']}</span>${tag}${gen}${wishTag}${pri}</span>
+                    <div class="c-info">時間：${c['上課時間/教室'] || '時間未定'} &nbsp;|&nbsp; 教師：${c['授課教師'] || '—'}</div>
+                    <div class="c-info" style="color: var(--accent); font-weight: 600; margin-top: 2px;">開課系所：${sourceLabel}</div>
+`;
                 li.onclick = (e) => {
                     if (e.target.classList.contains('btn-wish')) return;
                     openDetailModal(c);
                 };
                 ul.appendChild(li);
             });
-            if (displayList.length === 0) ul.innerHTML = '<li style="padding:20px; text-align:center; color:#999;">無符合課程</li>';
+            
+            if (displayList.length === 0) {
+                ul.innerHTML = '<li style="padding: 32px 20px; text-align: center; color: var(--text-muted); font-size: 14px; font-weight: 500; list-style: none;"><div style="font-size: 40px; margin-bottom: 12px; color: var(--text-muted);">!</div><div>無符合課程</div><div style="font-size: 12px; color: var(--text-muted); margin-top: 6px;">請嘗試調整篩選條件或個人設定</div></li>';
+            }
         }
 
         // [EDITED] Helper to extract room name
@@ -1069,16 +2251,42 @@
             localStorage.setItem('ncu_profile', JSON.stringify(p));
         }
 
-        function loadProfileFromLocal() {
-            // [REVISED] Always set a fixed default profile on page load, ignoring localStorage.
+                function loadProfileFromLocal() {
+            const saved = localStorage.getItem('ncu_profile');
+            if (saved) {
+                try {
+                    const p = JSON.parse(saved);
+                    // Restore college first so dept options populate correctly
+                    if (p.college && document.querySelector(`#userCollege option[value="${p.college}"]`)) {
+                        document.getElementById('userCollege').value = p.college;
+                    }
+                    updateDeptOptions();
+                    if (p.dept && document.querySelector(`#userDept option[value="${p.dept}"]`)) {
+                        document.getElementById('userDept').value = p.dept;
+                    }
+                    if (p.grade) document.getElementById('userGrade').value = p.grade;
+                    if (p.class && document.querySelector(`#userClass option[value="${p.class}"]`)) {
+                        document.getElementById('userClass').value = p.class;
+                    }
+                    if (p.identity) document.getElementById('userIdentity').value = p.identity;
+                    if (p.parity) document.getElementById('userParity').value = p.parity;
+                    if (p.system) document.getElementById('userSystem').value = p.system;
+                    // Restore checked programs after initProgramSelect runs
+                    if (p.program && p.program.length > 0) {
+                        document.querySelectorAll('#userProgramContainer input').forEach(cb => {
+                            cb.checked = p.program.includes(cb.value);
+                        });
+                    }
+                    return;
+                } catch(e) { /* fall through to defaults */ }
+            }
+            // No saved profile -> set sensible defaults
             document.getElementById('userCollege').value = '工學院';
             updateDeptOptions();
             document.getElementById('userDept').value = '機械工程學系';
             document.getElementById('userGrade').value = '1';
             document.getElementById('userClass').value = 'B';
             document.getElementById('userParity').value = 'odd';
-            // Do not call saveAndRefresh() here to avoid circular calls on init.
-            // The initial render will be triggered after course data is loaded.
         }
 
         function saveScheduleToLocal() { localStorage.setItem('ncu_schedule', JSON.stringify(mySchedule)); }
@@ -1103,16 +2311,21 @@
         }
 
         function resetData() { location.reload(); }
-        function clearSchedule() {
-            if (confirm("確定要清空所有課程 (包含正式課表與待選清單) 嗎？")) {
-                mySchedule = [];
-                myWishlist = [];
-                saveScheduleToLocal();
-                saveWishlistToLocal();
-                renderTimetable();
-                renderCourseList();
-                showNotify("已全部清空", 'normal');
-            }
+                function clearSchedule() {
+            showConfirmModal(
+                'danger', '清空全部課表',
+                '確定要清空所有已加入的課程（包含正式課表與待選清單）嗎？此操作無法復原。',
+                '確認清空', 'danger',
+                () => {
+                    mySchedule = [];
+                    myWishlist = [];
+                    saveScheduleToLocal();
+                    saveWishlistToLocal();
+                    renderTimetable();
+                    renderCourseList();
+                    showNotify('已全部清空', 'normal');
+                }
+            );
         }
 
         function showNotify(msg, type = 'normal') {
@@ -1125,7 +2338,7 @@
 
         // [FIXED] Hybrid Solution: DataURL for Desktop (Stable), Web Share for Mobile (iOS Fix)
         function downloadImage() {
-            updateStatus("正在產生圖片...", "#34495e");
+            updateStatus("正在產生圖片...", "pending");
             
             // 1. Clone the node
             const original = document.querySelector('.timetable-container');
@@ -1174,11 +2387,11 @@
                                 title: 'NCU 課表模擬',
                                 text: '我的 114-2 學期課表'
                             }).then(() => {
-                                updateStatus("已分享/儲存", "#27ae60");
-                                setTimeout(() => updateStatus("就緒", "#555"), 2000);
+                                updateStatus("已分享/儲存", "success");
+                                setTimeout(() => updateStatus("就緒", "ready"), 2000);
                             }).catch((err) => {
                                 console.log("分享取消:", err);
-                                updateStatus("就緒", "#555");
+                                updateStatus("就緒", "ready");
                             });
                         } else {
                             // Can't share files? Fallback to DataURL
@@ -1193,9 +2406,9 @@
 
             }).catch(err => {
                 console.error(err);
-                alert("圖片產生失敗");
+                showNotify('圖片產生失敗，請重試', 'error');
                 if (document.body.contains(clone)) document.body.removeChild(clone);
-                updateStatus("錯誤", "#e74c3c");
+                updateStatus("錯誤", "error");
             });
         }
 
@@ -1209,7 +2422,7 @@
             a.click();
             document.body.removeChild(a);
             
-            updateStatus("下載完成", "#27ae60");
+            updateStatus("下載完成", "success");
             setTimeout(() => updateStatus("就緒", "#555"), 2000);
         }
     </script>
