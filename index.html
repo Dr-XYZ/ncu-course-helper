@@ -2154,7 +2154,7 @@
                         if (isPe) {
                             return c['課程名稱'] === "大一體育";
                         }
-                        return c.is_required && !isOwnDept;
+                        return c.is_required && !isOwnDept && !isGen;
                     }
                     if (currentFilterType === 'dept_elective') {
                         return !c.is_required && isOwnDept;
