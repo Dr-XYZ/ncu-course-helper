@@ -2129,8 +2129,11 @@
             
             const isPeOrOthers = (c) => {
                 const dept = c.dept_name || "";
-                return dept.includes("體育") || c['課程名稱'].includes("體育") ||
-                       dept.includes("軍訓") || c['課程名稱'].includes("軍訓") ||
+                const isPe = dept.includes("體育") || c['課程名稱'].includes("體育");
+                if (isPe) {
+                    return c['課程名稱'] !== "大一體育";
+                }
+                return dept.includes("軍訓") || c['課程名稱'].includes("軍訓") ||
                        dept.includes("服務學習") || c['課程名稱'].includes("服務學習") ||
                        dept.includes("語言") || c['課程名稱'].includes("英文");
             };
@@ -2146,6 +2149,11 @@
                         return c.is_required && isOwnDept;
                     }
                     if (currentFilterType === 'common_required') {
+                        const dept = c.dept_name || "";
+                        const isPe = dept.includes("體育") || c['課程名稱'].includes("體育");
+                        if (isPe) {
+                            return c['課程名稱'] === "大一體育";
+                        }
                         return c.is_required && !isOwnDept;
                     }
                     if (currentFilterType === 'dept_elective') {
