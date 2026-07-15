@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-14 17:29:15",
+  "last_update": "2026-07-15 17:32:07",
   "courses": [
     {
       "課程編號": "01001",
@@ -113658,7 +113658,7 @@
       "學分": "3",
       "必選修": "選修",
       "上課時間/教室": "三234/E1-111",
-      "分發條件": "",
+      "分發條件": "(1) 系所:限通訊工程學系。年級:限三年級、四年級。 | (2) 系所:限通訊工程學系。 | (3) 系所:限資訊電機學院學士班、雙主修-通訊工程學系。 | (4) 系所:限資訊電機學院學士班。年級:限四年級。 |",
       "dept_name": "通訊工程學系",
       "class_name": "不分類",
       "sources": [
@@ -113674,7 +113674,66 @@
           "end": 3
         }
       ],
-      "rules_parsed": [],
+      "rules_parsed": [
+        {
+          "priority": 1,
+          "rules": {
+            "dept": {
+              "mode": "include",
+              "values": [
+                "通訊工程學系"
+              ]
+            },
+            "grade": {
+              "mode": "include",
+              "values": [
+                "3",
+                "4"
+              ]
+            }
+          }
+        },
+        {
+          "priority": 2,
+          "rules": {
+            "dept": {
+              "mode": "include",
+              "values": [
+                "通訊工程學系"
+              ]
+            }
+          }
+        },
+        {
+          "priority": 3,
+          "rules": {
+            "dept": {
+              "mode": "include",
+              "values": [
+                "資訊電機學院學士班",
+                "雙主修-通訊工程學系"
+              ]
+            }
+          }
+        },
+        {
+          "priority": 4,
+          "rules": {
+            "dept": {
+              "mode": "include",
+              "values": [
+                "資訊電機學院學士班"
+              ]
+            },
+            "grade": {
+              "mode": "include",
+              "values": [
+                "4"
+              ]
+            }
+          }
+        }
+      ],
       "is_required": false
     },
     {
@@ -118147,7 +118206,7 @@
       "學分": "3",
       "必選修": "選修",
       "上課時間/教室": "四789/E1-111",
-      "分發條件": "",
+      "分發條件": "(1) 系所:限通訊工程學系碩士班、通訊工程學系博士班。 | (2) 學制:限碩士班、碩士在職專班、博士班。系所:限資訊電機學院。 | (3) 系所:限資訊電機學院學士班。年級:限四年級。 |",
       "dept_name": "通訊工程學系碩士班",
       "class_name": "不分類",
       "sources": [
@@ -118167,7 +118226,56 @@
           "end": 9
         }
       ],
-      "rules_parsed": [],
+      "rules_parsed": [
+        {
+          "priority": 1,
+          "rules": {
+            "dept": {
+              "mode": "include",
+              "values": [
+                "通訊工程學系碩士班",
+                "通訊工程學系博士班"
+              ]
+            }
+          }
+        },
+        {
+          "priority": 2,
+          "rules": {
+            "system": {
+              "mode": "include",
+              "values": [
+                "碩士班",
+                "碩士在職專班",
+                "博士班"
+              ]
+            },
+            "dept": {
+              "mode": "include",
+              "values": [
+                "資訊電機學院"
+              ]
+            }
+          }
+        },
+        {
+          "priority": 3,
+          "rules": {
+            "dept": {
+              "mode": "include",
+              "values": [
+                "資訊電機學院學士班"
+              ]
+            },
+            "grade": {
+              "mode": "include",
+              "values": [
+                "4"
+              ]
+            }
+          }
+        }
+      ],
       "is_required": false
     },
     {
