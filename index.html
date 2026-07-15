@@ -2247,8 +2247,9 @@
             }
 
             // 4. Compute eligibility
+            // When isSearchAll is true, skip eligibility checks so ALL courses are shown.
             let eligibleList = sourceFiltered.map(c => {
-                const res = checkEligibility(c, user);
+                const res = isSearchAll ? { pass: true, priority: 99 } : checkEligibility(c, user);
                 const conflict = isConflict(c, mySchedule);
                 const added = mySchedule.some(s => s['課程編號'] === c['課程編號']);
                 const wished = myWishlist.some(w => w['課程編號'] === c['課程編號']);
