@@ -1238,6 +1238,7 @@
         <div class="header-controls">
             <button class="btn btn-refresh" onclick="resetData()">重新整理</button>
             <button class="btn btn-clear" onclick="clearSchedule()">清空課表</button>
+            <button class="btn btn-download" onclick="downloadScheduleDetails()">下載詳細資料</button>
             <button class="btn btn-download" onclick="downloadImage()">下載圖片</button>
         </div>
     </header>
@@ -2506,7 +2507,36 @@
             document.body.removeChild(a);
             
             updateStatus("下載完成", "success");
-            setTimeout(() => updateStatus("就緒", "#555"), 2000);
+        }
+
+        function downloadScheduleDetails() {
+            const user = getUserProfile();
+            const total = mySchedule.reduce((sum, c) => sum + (parseFloat(c['學分']) || 0), 0);
+            const reqCredits = mySchedule.reduce((sum, c) => sum + ((c.is_required ? parseFloat(c['學分']) : 0) || 0), 0);
+            const elecCredits = total - reqCredits;
+            const payload = {
+                exported_at: new Date().toISOString(),
+                user_profile: user,
+                summary: {
+                    course_count: mySchedule.length,
+                    total_credits: total,
+                    required_credits: reqCredits,
+                    elective_credits: elecCredits,
+                    wishlist_count: myWishlist.length
+                },
+                schedule: mySchedule.map(c => ({ ...c })),
+                wishlist: myWishlist.map(c => ({ ...c }))
+            };
+            const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json;charset=utf-8' });
+            const fileName = `NCU_Schedule_Details_${new Date().toISOString().slice(0,10)}.json`;
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = fileName;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(a.href);
+            showNotify('已下載詳細資料', 'success');
         }
 
         // Mobile view toggling function
