@@ -120,6 +120,7 @@ def scrape_table_page(target):
                     "必選修": required,
                     "上課時間/教室": full_time,
                     "分發條件": c_text,
+                    "url": f"https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?serialNo={serial}",
                     # [KEY] 保留系所與班級資訊
                     "dept_name": target['dept'],
                     "class_name": target['grade']

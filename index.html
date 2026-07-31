@@ -1065,6 +1065,23 @@
             box-shadow: 0 4px 10px rgba(239, 68, 68, 0.2);
         }
 
+        .btn-link {
+            background: var(--accent-light);
+            color: var(--accent);
+            border: 1px solid rgba(59, 130, 246, 0.3) !important;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+        .btn-link:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.25);
+        }
+
         /* Choice Selectors */
         .choice-list { 
             max-height: 280px; 
@@ -1896,6 +1913,8 @@
                 ? (remainNum > 0 ? `<span style="color:var(--success); font-weight:700;">剩 ${remainNum} 人</span>` : '<span style="color:var(--danger); font-weight:700;">已滿額 (0)</span>')
                 : '<span style="color:var(--text-muted);">不限額</span>';
 
+            const courseUrl = course.url || `https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?serialNo=${course['課程編號']}`;
+
             body.innerHTML = `
                 <table class="detail-table">
                     <tr><td class="label">課程代碼</td><td>${course['課程代碼'] || ''} (編號: ${course['課程編號'] || ''})</td></tr>
@@ -1908,13 +1927,14 @@
                     <tr><td class="label">候補人數</td><td>${wait} 人</td></tr>
                     <tr><td class="label">密碼卡需求</td><td>${pwText}</td></tr>
                     <tr><td class="label">分發條件</td><td>${course['分發條件'] || '無'}</td></tr>
+                    <tr><td class="label">學校網頁</td><td><a href="${courseUrl}" target="_blank" rel="noopener noreferrer" style="color:var(--accent); font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:4px;">前往學校課務系統原始頁面 ↗</a></td></tr>
                 </table>
             `;
 
             const isAdded = mySchedule.some(s => s['課程編號'] === course['課程編號']);
             const isWished = myWishlist.some(w => w['課程編號'] === course['課程編號']);
 
-            let btnsHtml = `<button class="btn-action btn-close" onclick="document.getElementById('courseDetailModal').style.display='none'">關閉</button>`;
+            let btnsHtml = `<a href="${courseUrl}" target="_blank" rel="noopener noreferrer" class="btn-action btn-link">學校網頁 ↗</a><button class="btn-action btn-close" onclick="document.getElementById('courseDetailModal').style.display='none'">關閉</button>`;
 
             if (isAdded) {
                 btnsHtml += `<button class="btn-action btn-remove" onclick="confirmRemove('schedule')">移出課表</button>`;
@@ -2368,11 +2388,15 @@
                     sourceLabel = c['class_name'] || sourceLabel;
                 }
                 sourceLabel = sourceLabel.replace('學系', '系').replace('研究所', '所');
+                const cUrl = c.url || `https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?serialNo=${c['課程編號']}`;
                 
                 li.innerHTML = `
                     <span class="c-name"><span class="c-name-text">${c['課程名稱']}</span>${tag}${gen}${quotaTag}${pwTag}${waitTag}${wishTag}${pri}</span>
                     <div class="c-info">時間：${c['上課時間/教室'] || '時間未定'} &nbsp;|&nbsp; 教師：${c['授課教師'] || '—'}</div>
-                    <div class="c-info" style="color: var(--accent); font-weight: 600; margin-top: 2px;">開課系所：${sourceLabel}</div>
+                    <div class="c-info" style="color: var(--accent); font-weight: 600; margin-top: 2px; display: flex; justify-content: space-between; align-items: center;">
+                        <span>開課系所：${sourceLabel}</span>
+                        <a href="${cUrl}" target="_blank" rel="noopener noreferrer" title="前往中央大學課務系統原始頁面" onclick="event.stopPropagation();" style="color: var(--accent); font-size: 11px; font-weight: 600; text-decoration: none; background: var(--accent-light); padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(59, 130, 246, 0.2); transition: var(--transition-fast);">學校網頁 ↗</a>
+                    </div>
 `;
                 li.onclick = (e) => {
                     if (e.target.classList.contains('btn-wish')) return;
