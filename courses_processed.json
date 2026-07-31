@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "last_update": "2026-07-31 09:44:47",
-=======
-  "last_update": "2026-07-31 17:46:13",
->>>>>>> 0b3cee5 (perf: optimize crawler speed with thread pool executor and connection pooling)
+  "last_update": "2026-07-31 09:53:00",
   "courses": [
     {
       "課程編號": "01001",
