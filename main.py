@@ -1,20 +1,31 @@
+import html
+import json
 import re
 import time
-import random
-import requests
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import pandas as pd
-import json
+import requests
 from bs4 import BeautifulSoup
+import xml.etree.ElementTree as ET
 
 # ================= 設定區 =================
 BASE_URL = "https://cis.ncu.edu.tw"
 ENTRY_URL = "https://cis.ncu.edu.tw/Course/main/query/byClass"
 OUT_JSON = "courses_processed.json"
+MAX_WORKERS = 20  # 多線程併發數
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
-    "Accept-Language": "zh-TW,zh;q=0.9"
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Accept-Language": "zh-TW,zh;q=0.9",
+    "Connection": "keep-alive"
 }
+
+# 建立全域 Session 與 HTTPAdapter 連線池 ( Keep-Alive / TCP 連線複用 )
+session = requests.Session()
+adapter = requests.adapters.HTTPAdapter(pool_connections=MAX_WORKERS, pool_maxsize=MAX_WORKERS, max_retries=3)
+session.mount("https://", adapter)
+session.mount("http://", adapter)
+session.headers.update(HEADERS)
 
 # ================= 對照表 =================
 PERIODS = ['1', '2', '3', '4', 'Z', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D']
@@ -22,11 +33,18 @@ PERIOD_MAP = {p: i for i, p in enumerate(PERIODS)}
 DAYS_LIST = ['日', '一', '二', '三', '四', '五', '六']
 DAY_MAP_FOR_PARSER = {'一':0, '二':1, '三':2, '四':3, '五':4, '六':5, '日':6}
 
+def clean_html_text(raw_html):
+    """去除 HTML 標籤並解碼 HTML 轉義字元 (比 BeautifulSoup 子節點解析快數十倍)"""
+    if not raw_html:
+        return ""
+    text = re.sub(r'<[^>]+>', '', raw_html)
+    return html.unescape(text).strip()
+
 # ================= 第一階段：目錄解析 =================
 def get_all_class_links():
     print("1. 正在取得系所班級目錄...")
     try:
-        r = requests.get(ENTRY_URL, headers=HEADERS, timeout=15)
+        r = session.get(ENTRY_URL, timeout=15)
         soup = BeautifulSoup(r.content, "html.parser")
         links = []
         dept_uls = soup.find_all("ul", id=re.compile(r"^dept"))
@@ -59,7 +77,7 @@ def get_all_class_links():
 # ================= 第二階段：爬蟲 =================
 def scrape_table_page(target):
     try:
-        r = requests.get(target['url'], headers=HEADERS, timeout=20)
+        r = session.get(target['url'], timeout=20)
         if r.status_code != 200: return []
         soup = BeautifulSoup(r.content, "html.parser")
         table = soup.find("table", class_="t4")
@@ -75,7 +93,8 @@ def scrape_table_page(target):
 
                 course_code = tds[2].get_text(strip=True)
                 raw_name = tds[4].decode_contents()
-                name = BeautifulSoup(raw_name.split('<br')[0], "html.parser").get_text(strip=True)
+                # 使用高效純文字清理取代子 DOM 節點 BeautifulSoup 解析
+                name = clean_html_text(raw_name.split('<br')[0])
                 teacher = tds[5].get_text(strip=True)
                 required = tds[6].get_text(strip=True)
                 credits = tds[7].get_text(strip=True)
@@ -89,7 +108,7 @@ def scrape_table_page(target):
                 # 分發條件
                 c_html = tds[17].decode_contents()
                 c_clean = re.sub(r'<br\s*/?>', ' | ', c_html)
-                c_text = BeautifulSoup(c_clean, "html.parser").get_text().replace("分發條件", "").strip()
+                c_text = clean_html_text(c_clean).replace("分發條件", "").strip()
                 if c_text.startswith('|'): c_text = c_text[1:].strip()
 
                 rows.append({
@@ -105,9 +124,11 @@ def scrape_table_page(target):
                     "dept_name": target['dept'],
                     "class_name": target['grade']
                 })
-            except: continue
+            except Exception:
+                continue
         return rows
-    except: return []
+    except Exception:
+        return []
 
 # ================= 第三階段：Parser =================
 def parse_time_string(time_str):
@@ -162,7 +183,6 @@ def parse_criteria_text(text):
             k, v = k.strip(), v.strip()
             
             fk = 'other'
-            # [Fix] 加入 '院'，讓學院限制也能被歸類為 dept，這樣前端的 collegeMatch 邏輯才會生效
             if '系' in k or '院' in k: fk='dept'  
             elif '年' in k: fk='grade'
             elif '班' in k: fk='class'
@@ -184,13 +204,32 @@ def parse_criteria_text(text):
         rules.append({'priority': pri, 'rules': r_obj})
     return rules
 
+def fetch_single_xml(dept_id):
+    xml_url = f"{BASE_URL}/Course/main/support/course.xml?id={dept_id}"
+    res = {}
+    try:
+        rx = session.get(xml_url, timeout=10)
+        if rx.status_code == 200:
+            root = ET.fromstring(rx.content)
+            for c in root:
+                s_no = c.attrib.get('SerialNo')
+                if s_no:
+                    res[s_no] = {
+                        "limit_cnt": int(c.attrib.get('limitCnt', 0)),
+                        "admit_cnt": int(c.attrib.get('admitCnt', 0)),
+                        "wait_cnt": int(c.attrib.get('waitCnt', 0)),
+                        "password_card": c.attrib.get('passwordCard', 'NONE')
+                    }
+    except Exception:
+        pass
+    return res
+
 def fetch_all_xml_course_data():
-    print("1.5 正在從 course.xml 抓取即時人數與密碼卡資料...")
+    print("1.5 正在從 course.xml 並行抓取即時人數與密碼卡資料...")
     xml_map = {}
     try:
-        import xml.etree.ElementTree as ET
         url = "https://cis.ncu.edu.tw/Course/main/query/byUnion"
-        r = requests.get(url, headers=HEADERS, timeout=15)
+        r = session.get(url, timeout=15)
         soup = BeautifulSoup(r.content, "html.parser")
         dept_anchors = soup.find_all("a", href=re.compile(r"dept="))
         dept_ids = set()
@@ -199,41 +238,36 @@ def fetch_all_xml_course_data():
             if m:
                 dept_ids.add(m.group(1))
         
-        print(f"   找到 {len(dept_ids)} 個系所 XML 標籤，開始抓取數據...")
-        for dept_id in dept_ids:
-            try:
-                xml_url = f"{BASE_URL}/Course/main/support/course.xml?id={dept_id}"
-                rx = requests.get(xml_url, headers=HEADERS, timeout=10)
-                if rx.status_code == 200:
-                    root = ET.fromstring(rx.content)
-                    for c in root:
-                        s_no = c.attrib.get('SerialNo')
-                        if s_no:
-                            xml_map[s_no] = {
-                                "limit_cnt": int(c.attrib.get('limitCnt', 0)),
-                                "admit_cnt": int(c.attrib.get('admitCnt', 0)),
-                                "wait_cnt": int(c.attrib.get('waitCnt', 0)),
-                                "password_card": c.attrib.get('passwordCard', 'NONE')
-                            }
-            except Exception:
-                continue
+        print(f"   找到 {len(dept_ids)} 個系所 XML 標籤，使用 {MAX_WORKERS} 線程平行抓取數據...")
+        
+        with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+            futures = [executor.submit(fetch_single_xml, d_id) for d_id in dept_ids]
+            for future in as_completed(futures):
+                res = future.result()
+                xml_map.update(res)
+
         print(f"   共取得 {len(xml_map)} 門課程的 XML 人數與密碼卡數據。")
     except Exception as e:
         print(f"   XML 數據抓取異常: {e}")
     return xml_map
 
 def main():
+    start_time = time.time()
     links = get_all_class_links()
     if not links: return
     
     all_data = []
     total = len(links)
-    print(f"2. 開始爬取 {total} 個頁面...")
+    print(f"2. 開始平行爬取 {total} 個頁面 (多線程 MAX_WORKERS={MAX_WORKERS})...")
     
-    for i, link in enumerate(links):
-        if i % 20 == 0: print(f"   進度 {i}/{total}...")
-        all_data.extend(scrape_table_page(link))
-        time.sleep(random.uniform(0.1, 0.3))
+    completed = 0
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        results = executor.map(scrape_table_page, links)
+        for res in results:
+            all_data.extend(res)
+            completed += 1
+            if completed % 50 == 0 or completed == total:
+                print(f"   進度 {completed}/{total}...")
         
     xml_map = fetch_all_xml_course_data()
 
@@ -243,7 +277,6 @@ def main():
     for r in all_data:
         key = r['課程編號']
         
-        # 建立來源標記：這門課是在哪個系、哪個年級被找到的
         source_info = {
             "dept": r['dept_name'],
             "class": r['class_name']
@@ -256,17 +289,12 @@ def main():
         r['password_card'] = xml_info['password_card']
 
         if key not in unique_map:
-            # 第一次發現這門課，初始化 sources 列表
             r['sources'] = [source_info]
             unique_map[key] = r
         else:
-            # 這門課已經存在 (例如微積分同時出現在土木系和機械系)
-            # 1. 我們把新的來源加入列表
             unique_map[key]['sources'].append(source_info)
             
-            # 2. [Optional] 如果原本資料不是通識，但新來源是通識，則更新主顯示資訊 (為了顯示通識類別)
             if "通識" in r['dept_name'] and "通識" not in unique_map[key]['dept_name']:
-                # 更新主資料，但保留已經收集到的 sources
                 existing_sources = unique_map[key]['sources']
                 unique_map[key] = r
                 unique_map[key]['sources'] = existing_sources
@@ -276,10 +304,8 @@ def main():
     df["rules_parsed"] = df["分發條件"].apply(parse_criteria_text)
     df["is_required"] = df["必選修"].apply(lambda x: "必" in str(x))
     
-    # 輸出
     data = df.to_dict(orient="records")
     
-    # [Added] 建立包含時間戳記的最終輸出物件
     output_data = {
         "last_update": time.strftime("%Y-%m-%d %H:%M:%S"),
         "courses": data
@@ -287,7 +313,9 @@ def main():
     
     with open(OUT_JSON, "w", encoding="utf-8") as f:
         json.dump(output_data, f, ensure_ascii=False, indent=2)
-    print("完成！")
+    
+    elapsed = time.time() - start_time
+    print(f"完成！總耗時: {elapsed:.2f} 秒，共處理 {len(data)} 門獨立課程。")
 
 if __name__ == "__main__":
     main()
