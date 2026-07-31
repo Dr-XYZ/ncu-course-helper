@@ -1913,7 +1913,7 @@
                 ? (remainNum > 0 ? `<span style="color:var(--success); font-weight:700;">剩 ${remainNum} 人</span>` : '<span style="color:var(--danger); font-weight:700;">已滿額 (0)</span>')
                 : '<span style="color:var(--text-muted);">不限額</span>';
 
-            const courseUrl = course.url || `https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?serialNo=${course['課程編號']}`;
+            const courseUrl = course.url || `https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?crs=${course['課程編號']}`;
 
             body.innerHTML = `
                 <table class="detail-table">
@@ -2388,7 +2388,7 @@
                     sourceLabel = c['class_name'] || sourceLabel;
                 }
                 sourceLabel = sourceLabel.replace('學系', '系').replace('研究所', '所');
-                const cUrl = c.url || `https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?serialNo=${c['課程編號']}`;
+                const cUrl = c.url || `https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?crs=${c['課程編號']}`;
                 
                 li.innerHTML = `
                     <span class="c-name"><span class="c-name-text">${c['課程名稱']}</span>${tag}${gen}${quotaTag}${pwTag}${waitTag}${wishTag}${pri}</span>
