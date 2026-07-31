@@ -1282,10 +1282,18 @@
                 <input type="text" id="searchInput" placeholder="搜尋課名、老師、代碼..." oninput="renderCourseList()">
                 <span id="searchClearBtn" onclick="clearSearch()" style="position: absolute; right: 28px; cursor: pointer; color: var(--text-muted); font-weight: 700; display: none; font-size: 13px;">✕</span>
             </div>
-            <div style="padding: 0 16px 10px 16px; background: var(--bg-surface); display: flex; align-items: center; border-bottom: 1px solid var(--border-light);">
+            <div style="padding: 0 16px 10px 16px; background: var(--bg-surface); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; border-bottom: 1px solid var(--border-light);">
                 <label class="checkbox-item" style="padding: 0;">
                     <input type="checkbox" id="searchAllSchool" onchange="renderCourseList()">
-                    <span>搜尋全校課程 (忽略學系限制)</span>
+                    <span>全校搜尋</span>
+                </label>
+                <label class="checkbox-item" style="padding: 0;">
+                    <input type="checkbox" id="filterHasQuota" onchange="renderCourseList()">
+                    <span>尚有餘額</span>
+                </label>
+                <label class="checkbox-item" style="padding: 0;">
+                    <input type="checkbox" id="filterNoPwCard" onchange="renderCourseList()">
+                    <span>免密碼卡</span>
                 </label>
             </div>
             <div class="filter-chips">
@@ -1870,15 +1878,36 @@
             const actions = document.getElementById('detailActions');
             title.innerText = course['課程名稱'];
             
+            const limit = Number(course.limit_cnt || 0);
+            const admit = Number(course.admit_cnt || 0);
+            const wait = Number(course.wait_cnt || 0);
+            const pwCard = course.password_card || 'NONE';
+
+            let pwText = '<span style="color:var(--text-secondary);">不需密碼卡</span>';
+            if (pwCard === 'ALL') {
+                pwText = '<span style="color:var(--danger); font-weight:700;">🔒 全需密碼卡 (授權碼)</span>';
+            } else if (pwCard === 'OPTIONAL') {
+                pwText = '<span style="color:var(--warning-hover); font-weight:700;">🔑 部分/選用密碼卡</span>';
+            }
+
+            let limitText = limit > 0 ? `${limit} 人` : '無限制';
+            let remainNum = limit > 0 ? limit - admit : 999;
+            let remainText = limit > 0 
+                ? (remainNum > 0 ? `<span style="color:var(--success); font-weight:700;">剩 ${remainNum} 人</span>` : '<span style="color:var(--danger); font-weight:700;">已滿額 (0)</span>')
+                : '<span style="color:var(--text-muted);">不限額</span>';
+
             body.innerHTML = `
                 <table class="detail-table">
-                    <tr><td class="label">課程代碼</td><td>${course['課程代碼'] || ''}</td></tr>
+                    <tr><td class="label">課程代碼</td><td>${course['課程代碼'] || ''} (編號: ${course['課程編號'] || ''})</td></tr>
                     <tr><td class="label">授課教師</td><td>${course['授課教師'] || ''}</td></tr>
                     <tr><td class="label">學分</td><td>${course['學分']}</td></tr>
                     <tr><td class="label">選/必修</td><td>${course.is_required ? '必修' : '選修'}</td></tr>
                     <tr><td class="label">時間/地點</td><td>${course['上課時間/教室'] || ''}</td></tr>
-                    <tr><td class="label">限修條件</td><td>${course['限修條件'] || '無'}</td></tr>
-                    <tr><td class="label">備註</td><td>${course['備註'] || '無'}</td></tr>
+                    <tr><td class="label">人數限制</td><td>${limitText}</td></tr>
+                    <tr><td class="label">已選人數</td><td>${admit} 人 &nbsp;|&nbsp; 狀態：${remainText}</td></tr>
+                    <tr><td class="label">候補人數</td><td>${wait} 人</td></tr>
+                    <tr><td class="label">密碼卡需求</td><td>${pwText}</td></tr>
+                    <tr><td class="label">分發條件</td><td>${course['分發條件'] || '無'}</td></tr>
                 </table>
             `;
 
@@ -2196,6 +2225,20 @@
                 );
             }
 
+            // Quick Filters (尚有餘額 & 免密碼卡)
+            const filterHasQuota = document.getElementById('filterHasQuota')?.checked;
+            const filterNoPwCard = document.getElementById('filterNoPwCard')?.checked;
+            if (filterHasQuota) {
+                sourceFiltered = sourceFiltered.filter(c => {
+                    const limit = Number(c.limit_cnt || 0);
+                    const admit = Number(c.admit_cnt || 0);
+                    return limit === 0 || (limit - admit > 0);
+                });
+            }
+            if (filterNoPwCard) {
+                sourceFiltered = sourceFiltered.filter(c => !c.password_card || c.password_card === 'NONE');
+            }
+
             // Helpers to categorize courses dynamically for NCU curriculum structure
             const isGeneralCourse = (c) => {
                 const dept = c.dept_name || "";
@@ -2289,6 +2332,37 @@
                 const wishTag = c._wished ? '<span class="tag" style="background:var(--wish);">待選</span>' : '';
                 const pri = (c._p !== 99) ? `<span class="tag pri">順位${c._p}</span>` : '';
 
+                // 容量標籤 (Capacity / Quota badge)
+                const limit = Number(c.limit_cnt || 0);
+                const admit = Number(c.admit_cnt || 0);
+                const wait = Number(c.wait_cnt || 0);
+                const pwCard = c.password_card || 'NONE';
+
+                let quotaTag = '';
+                if (limit > 0) {
+                    if (admit >= limit) {
+                        quotaTag = `<span class="tag" style="background:var(--danger); color:white;">滿額 ${admit}/${limit}</span>`;
+                    } else {
+                        quotaTag = `<span class="tag" style="background:#10b981; color:white;">餘${limit - admit}人</span>`;
+                    }
+                } else if (c.admit_cnt !== undefined) {
+                    quotaTag = `<span class="tag" style="background:#64748b; color:white;">${admit}人已選</span>`;
+                }
+
+                // 密碼卡標籤 (Password Card badge)
+                let pwTag = '';
+                if (pwCard === 'ALL') {
+                    pwTag = `<span class="tag" style="background:var(--danger); color:white;">全需密碼卡</span>`;
+                } else if (pwCard === 'OPTIONAL') {
+                    pwTag = `<span class="tag" style="background:var(--warning); color:white;">選用密碼卡</span>`;
+                }
+
+                // 候補標籤 (Waiting List badge)
+                let waitTag = '';
+                if (wait > 0) {
+                    waitTag = `<span class="tag" style="background:#8b5cf6; color:white;">候補${wait}人</span>`;
+                }
+
                 let sourceLabel = c['dept_name'] || "";
                 if (sourceLabel.includes('通識') || sourceLabel.includes('體育') || sourceLabel.includes('語言')) {
                     sourceLabel = c['class_name'] || sourceLabel;
@@ -2296,7 +2370,7 @@
                 sourceLabel = sourceLabel.replace('學系', '系').replace('研究所', '所');
                 
                 li.innerHTML = `
-                    <span class="c-name"><span class="c-name-text">${c['課程名稱']}</span>${tag}${gen}${wishTag}${pri}</span>
+                    <span class="c-name"><span class="c-name-text">${c['課程名稱']}</span>${tag}${gen}${quotaTag}${pwTag}${waitTag}${wishTag}${pri}</span>
                     <div class="c-info">時間：${c['上課時間/教室'] || '時間未定'} &nbsp;|&nbsp; 教師：${c['授課教師'] || '—'}</div>
                     <div class="c-info" style="color: var(--accent); font-weight: 600; margin-top: 2px;">開課系所：${sourceLabel}</div>
 `;

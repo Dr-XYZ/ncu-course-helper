@@ -184,6 +184,44 @@ def parse_criteria_text(text):
         rules.append({'priority': pri, 'rules': r_obj})
     return rules
 
+def fetch_all_xml_course_data():
+    print("1.5 正在從 course.xml 抓取即時人數與密碼卡資料...")
+    xml_map = {}
+    try:
+        import xml.etree.ElementTree as ET
+        url = "https://cis.ncu.edu.tw/Course/main/query/byUnion"
+        r = requests.get(url, headers=HEADERS, timeout=15)
+        soup = BeautifulSoup(r.content, "html.parser")
+        dept_anchors = soup.find_all("a", href=re.compile(r"dept="))
+        dept_ids = set()
+        for a in dept_anchors:
+            m = re.search(r"dept=([^\"&]+)", a['href'])
+            if m:
+                dept_ids.add(m.group(1))
+        
+        print(f"   找到 {len(dept_ids)} 個系所 XML 標籤，開始抓取數據...")
+        for dept_id in dept_ids:
+            try:
+                xml_url = f"{BASE_URL}/Course/main/support/course.xml?id={dept_id}"
+                rx = requests.get(xml_url, headers=HEADERS, timeout=10)
+                if rx.status_code == 200:
+                    root = ET.fromstring(rx.content)
+                    for c in root:
+                        s_no = c.attrib.get('SerialNo')
+                        if s_no:
+                            xml_map[s_no] = {
+                                "limit_cnt": int(c.attrib.get('limitCnt', 0)),
+                                "admit_cnt": int(c.attrib.get('admitCnt', 0)),
+                                "wait_cnt": int(c.attrib.get('waitCnt', 0)),
+                                "password_card": c.attrib.get('passwordCard', 'NONE')
+                            }
+            except Exception:
+                continue
+        print(f"   共取得 {len(xml_map)} 門課程的 XML 人數與密碼卡數據。")
+    except Exception as e:
+        print(f"   XML 數據抓取異常: {e}")
+    return xml_map
+
 def main():
     links = get_all_class_links()
     if not links: return
@@ -197,7 +235,9 @@ def main():
         all_data.extend(scrape_table_page(link))
         time.sleep(random.uniform(0.1, 0.3))
         
-    print("3. 資料處理與去重 (保留來源資訊)...")
+    xml_map = fetch_all_xml_course_data()
+
+    print("3. 資料處理與去重 (保留來源與即時數據資訊)...")
     unique_map = {}
     
     for r in all_data:
@@ -208,6 +248,12 @@ def main():
             "dept": r['dept_name'],
             "class": r['class_name']
         }
+
+        xml_info = xml_map.get(key, {"limit_cnt": 0, "admit_cnt": 0, "wait_cnt": 0, "password_card": "NONE"})
+        r['limit_cnt'] = xml_info['limit_cnt']
+        r['admit_cnt'] = xml_info['admit_cnt']
+        r['wait_cnt'] = xml_info['wait_cnt']
+        r['password_card'] = xml_info['password_card']
 
         if key not in unique_map:
             # 第一次發現這門課，初始化 sources 列表
