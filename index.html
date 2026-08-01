@@ -765,6 +765,18 @@
             letter-spacing: 0.2px;
         }
         
+        .course-block .cb-teacher { 
+            font-size: 10px; 
+            font-weight: 600; 
+            opacity: 0.95; 
+            white-space: nowrap; 
+            overflow: hidden; 
+            text-overflow: ellipsis; 
+            max-width: 100%; 
+            margin-top: 1px; 
+            line-height: 1.2; 
+        }
+        
         .course-block .cb-room { 
             font-size: 9px; 
             opacity: 0.9; 
@@ -906,6 +918,7 @@
 
             .course-block { font-size: 9px; padding: 2px; }
             .course-block .cb-name { font-size: 9.5px; -webkit-line-clamp: 3; }
+            .course-block .cb-teacher { font-size: 8px; margin-top: 1px; }
             .course-block .cb-room { font-size: 7.5px; padding: 0px 3px; }
             
             .mobile-toggle-btn {
@@ -2174,7 +2187,10 @@
 
                     if (item.type === 'wish') {
                         div.className = `course-block wish-mode`;
-                        div.innerHTML = `<div class="cb-name" style="font-size:10px;">(待)${c['課程名稱']}</div>`;
+                        const room = getRoomForBlock(c['上課時間/教室'], item.day);
+                        const teacher = c['授課教師'] || '';
+                        let subInfo = [teacher, room].filter(Boolean).join(' · ');
+                        div.innerHTML = `<div class="cb-name" style="font-size:10px;">(待)${c['課程名稱']}</div>${subInfo ? `<div class="cb-room">${subInfo}</div>` : ''}`;
                     } else {
                         div.className = `course-block ${c.is_placeholder ? 'pending' : ''}`;
                         if (!c.is_placeholder) {
@@ -2184,8 +2200,10 @@
                             div.style.textShadow = 'none';
                         }
                         const room = getRoomForBlock(c['上課時間/教室'], item.day);
-                        let bottomText = c.is_placeholder ? '請選擇老師' : (room || c['授課教師']);
-                        div.innerHTML = `<div class="cb-name">${c['課程名稱']}</div><div class="cb-room">${bottomText}</div>`;
+                        const teacher = c.is_placeholder ? '請選擇老師' : (c['授課教師'] || '');
+                        let teacherHtml = teacher ? `<div class="cb-teacher">${teacher}</div>` : '';
+                        let roomHtml = room ? `<div class="cb-room">${room}</div>` : '';
+                        div.innerHTML = `<div class="cb-name">${c['課程名稱']}</div>${teacherHtml}${roomHtml}`;
                     }
 
                     div.onclick = () => openDetailModal(c);
