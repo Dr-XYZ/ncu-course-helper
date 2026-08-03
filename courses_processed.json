@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-08-02 17:01:56",
+  "last_update": "2026-08-03 17:53:04",
   "courses": [
     {
       "課程編號": "01001",
@@ -62694,7 +62694,7 @@
     {
       "課程編號": "26027",
       "課程代碼": "OS7102",
-      "課程名稱": "光波導設計與模擬專題",
+      "課程名稱": "光波導設計與模擬專題 [已停開]",
       "授課教師": "戴朝義",
       "學分": "3",
       "必選修": "選修",
@@ -62706,7 +62706,7 @@
       "limit_cnt": 0,
       "admit_cnt": 0,
       "wait_cnt": 0,
-      "password_card": "ALL",
+      "password_card": "NONE",
       "sources": [
         {
           "dept": "光電科學與工程學系",
@@ -63181,6 +63181,50 @@
       "admit_cnt": 0,
       "wait_cnt": 0,
       "password_card": "ALL",
+      "sources": [
+        {
+          "dept": "光電科學與工程學系",
+          "class": "不分類"
+        },
+        {
+          "dept": "光電科學與工程學系碩士班",
+          "class": "不分類"
+        },
+        {
+          "dept": "光電科學與工程學系半導體光電科技碩士班",
+          "class": "不分類"
+        },
+        {
+          "dept": "光電科學與工程學系博士班",
+          "class": "不分類"
+        }
+      ],
+      "time_parsed": [
+        {
+          "day": 3,
+          "start": 1,
+          "end": 3
+        }
+      ],
+      "rules_parsed": [],
+      "is_required": false
+    },
+    {
+      "課程編號": "26041",
+      "課程代碼": "OS7117",
+      "課程名稱": "超快光學專題",
+      "授課教師": "戴朝義",
+      "學分": "3",
+      "必選修": "選修",
+      "上課時間/教室": "四234/IL-317",
+      "分發條件": "",
+      "url": "https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?crs=26041",
+      "dept_name": "光電科學與工程學系",
+      "class_name": "不分類",
+      "limit_cnt": 0,
+      "admit_cnt": 0,
+      "wait_cnt": 0,
+      "password_card": "NONE",
       "sources": [
         {
           "dept": "光電科學與工程學系",
