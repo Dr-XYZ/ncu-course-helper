@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-08-15 16:26:38",
+  "last_update": "2026-08-16 16:27:29",
   "courses": [
     {
       "課程編號": "01001",
@@ -65061,7 +65061,7 @@
       "class_name": "不分類",
       "limit_cnt": 60,
       "admit_cnt": 0,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -136492,7 +136492,7 @@
       "class_name": "四年級",
       "limit_cnt": 0,
       "admit_cnt": 16,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
         {
