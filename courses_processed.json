@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-08-17 16:29:41",
+  "last_update": "2026-08-18 04:31:52",
   "courses": [
     {
       "課程編號": "01001",
@@ -30681,7 +30681,7 @@
       "學分": "3",
       "必選修": "選修",
       "上課時間/教室": "五234/R2-115",
-      "分發條件": "(1) 系所:限遙測科技碩士學位學程。 |",
+      "分發條件": "(1) 學制:限學士班、碩士班、碩士在職專班、博士班。系所:限遙測科技碩士學位學程、環境科技博士學位學程(台灣聯合大學系統)、土木工程學系、地球科學學院。 |",
       "url": "https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?crs=02016",
       "dept_name": "遙測科技碩士學位學程",
       "class_name": "不分類",
@@ -30706,10 +30706,22 @@
         {
           "priority": 1,
           "rules": {
+            "system": {
+              "mode": "include",
+              "values": [
+                "學士班",
+                "碩士班",
+                "碩士在職專班",
+                "博士班"
+              ]
+            },
             "dept": {
               "mode": "include",
               "values": [
-                "遙測科技碩士學位學程"
+                "遙測科技碩士學位學程",
+                "環境科技博士學位學程(台灣聯合大學系統)",
+                "土木工程學系",
+                "地球科學學院"
               ]
             }
           }
@@ -40256,7 +40268,7 @@
       "授課教師": "賀廣如",
       "學分": "2",
       "必選修": "選修",
-      "上課時間/教室": "一678/C2-111",
+      "上課時間/教室": "三567/C2-106",
       "分發條件": "(1) 系所:限中國文學系。 | (2) 系所:限非中國文學系。 |",
       "url": "https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?crs=11066",
       "dept_name": "中國文學系",
@@ -40289,9 +40301,9 @@
       ],
       "time_parsed": [
         {
-          "day": 0,
-          "start": 6,
-          "end": 8
+          "day": 2,
+          "start": 5,
+          "end": 7
         }
       ],
       "rules_parsed": [
@@ -40327,7 +40339,7 @@
       "授課教師": "賀廣如",
       "學分": "3",
       "必選修": "選修",
-      "上課時間/教室": "三567/C2-106",
+      "上課時間/教室": "一678/C2-111",
       "分發條件": "(1) 系所:限中國文學系。 | (2) 系所:限非中國文學系。 |",
       "url": "https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?crs=11067",
       "dept_name": "中國文學系",
@@ -40344,9 +40356,9 @@
       ],
       "time_parsed": [
         {
-          "day": 2,
-          "start": 5,
-          "end": 7
+          "day": 0,
+          "start": 6,
+          "end": 8
         }
       ],
       "rules_parsed": [
@@ -78681,7 +78693,7 @@
       "class_name": "一年級",
       "limit_cnt": 100,
       "admit_cnt": 0,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -89795,7 +89807,7 @@
       "url": "https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?crs=33094",
       "dept_name": "機械工程學系碩士班",
       "class_name": "不分類",
-      "limit_cnt": 0,
+      "limit_cnt": 60,
       "admit_cnt": 0,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
@@ -104190,7 +104202,7 @@
       "class_name": "三年級",
       "limit_cnt": 30,
       "admit_cnt": 30,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -134719,7 +134731,7 @@
       "課程編號": "62001",
       "課程代碼": "GP1010",
       "課程名稱": "地球系統科學概論",
-      "授課教師": "顏宏元錢樺鍾高陞陳沛芫劉正彥",
+      "授課教師": "顏宏元錢樺楊舒芝陳沛芫劉正彥",
       "學分": "2",
       "必選修": "選修",
       "上課時間/教室": "四AB/S-秉文",
@@ -135018,7 +135030,7 @@
       "dept_name": "地球科學學系",
       "class_name": "二年級",
       "limit_cnt": 50,
-      "admit_cnt": 0,
+      "admit_cnt": 32,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -138048,7 +138060,7 @@
       "課程編號": "63003",
       "課程代碼": "SS1010",
       "課程名稱": "地球系統科學概論",
-      "授課教師": "顏宏元錢樺鍾高陞陳沛芫劉正彥",
+      "授課教師": "顏宏元錢樺楊舒芝陳沛芫劉正彥",
       "學分": "2",
       "必選修": "選修",
       "上課時間/教室": "四AB/S-秉文",
