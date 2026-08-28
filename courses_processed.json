@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-08-26 16:49:30",
+  "last_update": "2026-08-28 00:47:03",
   "courses": [
     {
       "課程編號": "01001",
@@ -21079,7 +21079,7 @@
     {
       "課程編號": "07002",
       "課程代碼": "CC0129",
-      "課程名稱": "中國文明變遷",
+      "課程名稱": "中國文明變遷 [已停開]",
       "授課教師": "李孝悌",
       "學分": "2",
       "必選修": "選修",
@@ -21518,7 +21518,7 @@
       "學分": "2",
       "必選修": "選修",
       "上課時間/教室": "二56/TR-A001",
-      "分發條件": "(1) 學制:限學士班。學院:限非地球科學學院。指定課程:必須禁修AP1010、禁修GP1010。 | (2) 學制:限學士班。學院:限非地球科學學院。指定課程:必須禁修AP1010、禁修GP1010。 | (3) 學制:限學士班。學院:限非地球科學學院。指定課程:必須禁修AP1010、禁修GP1010。 | (4) 身份:限申請校學士。 |",
+      "分發條件": "(1) 學制:限學士班。學院:限非地球科學學院。指定課程:必須禁修AP1010、禁修GP1010。 | (2) 身份:限申請校學士。 |",
       "url": "https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?crs=07009",
       "dept_name": "通識教育中心",
       "class_name": "核心必修-自然科學",
@@ -21566,54 +21566,6 @@
         },
         {
           "priority": 2,
-          "rules": {
-            "system": {
-              "mode": "include",
-              "values": [
-                "學士班"
-              ]
-            },
-            "dept": {
-              "mode": "exclude",
-              "values": [
-                "地球科學學院"
-              ]
-            },
-            "prerequisite": {
-              "mode": "include",
-              "values": [
-                "必須禁修AP1010",
-                "禁修GP1010"
-              ]
-            }
-          }
-        },
-        {
-          "priority": 3,
-          "rules": {
-            "system": {
-              "mode": "include",
-              "values": [
-                "學士班"
-              ]
-            },
-            "dept": {
-              "mode": "exclude",
-              "values": [
-                "地球科學學院"
-              ]
-            },
-            "prerequisite": {
-              "mode": "include",
-              "values": [
-                "必須禁修AP1010",
-                "禁修GP1010"
-              ]
-            }
-          }
-        },
-        {
-          "priority": 4,
           "rules": {
             "identity": {
               "mode": "include",
@@ -22060,7 +22012,7 @@
       "授課教師": "李憶萱",
       "學分": "2",
       "必選修": "選修",
-      "上課時間/教室": "一78/O-214",
+      "上課時間/教室": "一56/O-214",
       "分發條件": "(1) 學制:限學士班。 | (2) 身份:限申請校學士。 |",
       "url": "https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?crs=07017",
       "dept_name": "通識教育中心",
@@ -22078,8 +22030,8 @@
       "time_parsed": [
         {
           "day": 0,
-          "start": 7,
-          "end": 8
+          "start": 5,
+          "end": 6
         }
       ],
       "rules_parsed": [
@@ -28029,7 +27981,7 @@
       "學分": "2",
       "必選修": "選修",
       "上課時間/教室": "一34/TR-A206",
-      "分發條件": "(1) 學制:限學士班。學院:限理學院。 | (2) 學制:限學士班。 |",
+      "分發條件": "(1) 學制:限學士班。學院:限理學院。 | (2) 學制:限學士班。學院:限工學院。 | (3) 學制:限學士班。 |",
       "url": "https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?crs=00091",
       "dept_name": "語言中心",
       "class_name": "不分類",
@@ -28070,6 +28022,23 @@
         },
         {
           "priority": 2,
+          "rules": {
+            "system": {
+              "mode": "include",
+              "values": [
+                "學士班"
+              ]
+            },
+            "dept": {
+              "mode": "include",
+              "values": [
+                "工學院"
+              ]
+            }
+          }
+        },
+        {
+          "priority": 3,
           "rules": {
             "system": {
               "mode": "include",
@@ -50254,7 +50223,7 @@
       "課程編號": "15004",
       "課程代碼": "HI5081",
       "課程名稱": "研究與實習",
-      "授課教師": "李孝悌皮國立",
+      "授課教師": "皮國立",
       "學分": "0",
       "必選修": "必修",
       "上課時間/教室": "一56/LS-321",
@@ -50465,7 +50434,7 @@
       "授課教師": "皮國立",
       "學分": "3",
       "必選修": "選修",
-      "上課時間/教室": "三234/LS-321",
+      "上課時間/教室": "二678/LS-321",
       "分發條件": "(1) 系所:限歷史研究所碩士班、歷史研究所碩士在職專班。 |",
       "url": "https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?crs=15008",
       "dept_name": "歷史研究所碩士班",
@@ -50486,9 +50455,9 @@
       ],
       "time_parsed": [
         {
-          "day": 2,
-          "start": 1,
-          "end": 3
+          "day": 1,
+          "start": 6,
+          "end": 8
         }
       ],
       "rules_parsed": [
@@ -50510,7 +50479,7 @@
     {
       "課程編號": "15009",
       "課程代碼": "HI6060",
-      "課程名稱": "明清社會文化史專題研究",
+      "課程名稱": "明清社會文化史專題研究 [已停開]",
       "授課教師": "李孝悌",
       "學分": "3",
       "必選修": "選修",
@@ -50519,10 +50488,10 @@
       "url": "https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?crs=15009",
       "dept_name": "歷史研究所碩士班",
       "class_name": "不分類",
-      "limit_cnt": 20,
-      "admit_cnt": 5,
+      "limit_cnt": 0,
+      "admit_cnt": 0,
       "wait_cnt": 0,
-      "password_card": "OPTIONAL",
+      "password_card": "NONE",
       "sources": [
         {
           "dept": "歷史研究所碩士班",
@@ -52133,7 +52102,7 @@
       "課程編號": "15013",
       "課程代碼": "HIA001",
       "課程名稱": "論文寫作指導(I)",
-      "授課教師": "李孝悌陳家豪賴澤涵鄭政誠蔣竹山皮國立鄭巧君吳學明李力庸齊茂吉",
+      "授課教師": "陳家豪賴澤涵鄭政誠蔣竹山皮國立鄭巧君吳學明李力庸齊茂吉",
       "學分": "3",
       "必選修": "必修",
       "上課時間/教室": "五ABC/A-311",
@@ -101163,7 +101132,7 @@
       "class_name": "一年級",
       "limit_cnt": 71,
       "admit_cnt": 0,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -118523,7 +118492,7 @@
       "dept_name": "電機工程學系",
       "class_name": "二年級",
       "limit_cnt": 100,
-      "admit_cnt": 90,
+      "admit_cnt": 96,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -118637,7 +118606,7 @@
       "dept_name": "電機工程學系",
       "class_name": "二年級",
       "limit_cnt": 80,
-      "admit_cnt": 80,
+      "admit_cnt": 86,
       "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
@@ -118740,7 +118709,7 @@
       "dept_name": "電機工程學系",
       "class_name": "二年級",
       "limit_cnt": 100,
-      "admit_cnt": 74,
+      "admit_cnt": 81,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -118843,7 +118812,7 @@
       "dept_name": "電機工程學系",
       "class_name": "二年級",
       "limit_cnt": 0,
-      "admit_cnt": 46,
+      "admit_cnt": 52,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -118965,7 +118934,7 @@
       "dept_name": "電機工程學系",
       "class_name": "二年級",
       "limit_cnt": 0,
-      "admit_cnt": 77,
+      "admit_cnt": 84,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -119079,7 +119048,7 @@
       "dept_name": "電機工程學系",
       "class_name": "二年級",
       "limit_cnt": 0,
-      "admit_cnt": 69,
+      "admit_cnt": 75,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -119199,7 +119168,7 @@
       "dept_name": "電機工程學系",
       "class_name": "二年級",
       "limit_cnt": 70,
-      "admit_cnt": 65,
+      "admit_cnt": 72,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -119297,7 +119266,7 @@
       "dept_name": "電機工程學系",
       "class_name": "二年級",
       "limit_cnt": 70,
-      "admit_cnt": 66,
+      "admit_cnt": 72,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -119395,7 +119364,7 @@
       "dept_name": "電機工程學系",
       "class_name": "二年級",
       "limit_cnt": 80,
-      "admit_cnt": 59,
+      "admit_cnt": 66,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -119498,7 +119467,7 @@
       "dept_name": "電機工程學系",
       "class_name": "二年級",
       "limit_cnt": 80,
-      "admit_cnt": 79,
+      "admit_cnt": 85,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -125359,7 +125328,7 @@
       "授課教師": "莊永裕梁德容",
       "學分": "3",
       "必選修": "選修",
-      "上課時間/教室": "一234/E6-A209",
+      "上課時間/教室": "一234/E6-A207",
       "分發條件": "(1) 系所:限資訊工程學系碩士班、資訊工程學系軟體工程碩士班、資訊工程學系AI碩士班、資訊工程學系博士班。 | (2) 系所:限資訊工程學系。年級:限三年級、四年級。 |",
       "url": "https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?crs=52073",
       "dept_name": "資訊工程學系",
@@ -136965,7 +136934,7 @@
       "課程編號": "64027",
       "課程代碼": "AG7126",
       "課程名稱": "地下水文與污染傳輸",
-      "授課教師": "王士榮",
+      "授課教師": "王士榮陳德輝",
       "學分": "3",
       "必選修": "選修",
       "上課時間/教室": "三234/S-130",
@@ -141275,7 +141244,7 @@
       "課程編號": "64028",
       "課程代碼": "AG7128",
       "課程名稱": "地下環境熱-水-力-化耦合理論與模擬軟體實務I",
-      "授課教師": "陳瑞昇",
+      "授課教師": "廖中翊陳瑞昇",
       "學分": "3",
       "必選修": "選修",
       "上課時間/教室": "三7/S-253 四34/S-253",
@@ -149150,7 +149119,7 @@
       "授課教師": "溫祖德",
       "學分": "3",
       "必選修": "選修",
-      "上課時間/教室": "四ABC/HK-513",
+      "上課時間/教室": "四ABC/HK-103",
       "分發條件": "(1) 系所:限法律與政府學系碩士在職專班。 |",
       "url": "https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?crs=74021",
       "dept_name": "法律與政府學系碩士在職專班",
