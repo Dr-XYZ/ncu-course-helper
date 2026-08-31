@@ -12,6 +12,7 @@ import xml.etree.ElementTree as ET
 BASE_URL = "https://cis.ncu.edu.tw"
 ENTRY_URL = "https://cis.ncu.edu.tw/Course/main/query/byClass"
 OUT_JSON = "courses_processed.json"
+OUT_XML = "courses_backup.xml"  # XML 備份檔名
 MAX_WORKERS = 20  # 多線程併發數
 
 HEADERS = {
@@ -55,13 +56,11 @@ def get_all_class_links():
             dept_link = parent_li.find("a")
             if not dept_link: continue
             
-            # 系所名稱 (例如: 機械工程學系)
             dept_name = re.sub(r'\(\d+\)$', '', dept_link.get_text(strip=True))
             
             class_anchors = ul.find_all("a", href=True)
             for a in class_anchors:
                 href = a['href']
-                # 班級名稱 (例如: 一年級 / 通識選修-人文...)
                 grade_name = re.sub(r'\s*\(\d+\)$', '', a.get_text(strip=True))
                 
                 if "openUnion" in href:
@@ -93,7 +92,6 @@ def scrape_table_page(target):
 
                 course_code = tds[2].get_text(strip=True)
                 raw_name = tds[4].decode_contents()
-                # 使用高效純文字清理取代子 DOM 節點 BeautifulSoup 解析
                 name = clean_html_text(raw_name.split('<br')[0])
                 teacher = tds[5].get_text(strip=True)
                 required = tds[6].get_text(strip=True)
@@ -105,7 +103,6 @@ def scrape_table_page(target):
                     if txt: time_parts.append(f"{DAYS_LIST[i]}{txt.replace(' ', '/')}")
                 full_time = " ".join(time_parts)
 
-                # 分發條件
                 c_html = tds[17].decode_contents()
                 c_clean = re.sub(r'<br\s*/?>', ' | ', c_html)
                 c_text = clean_html_text(c_clean).replace("分發條件", "").strip()
@@ -121,7 +118,6 @@ def scrape_table_page(target):
                     "上課時間/教室": full_time,
                     "分發條件": c_text,
                     "url": f"https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?crs={serial}",
-                    # [KEY] 保留系所與班級資訊
                     "dept_name": target['dept'],
                     "class_name": target['grade']
                 })
@@ -208,11 +204,13 @@ def parse_criteria_text(text):
 def fetch_single_xml(dept_id):
     xml_url = f"{BASE_URL}/Course/main/support/course.xml?id={dept_id}"
     res = {}
+    raw_nodes = []
     try:
         rx = session.get(xml_url, timeout=10)
         if rx.status_code == 200:
             root = ET.fromstring(rx.content)
             for c in root:
+                raw_nodes.append(c)
                 s_no = c.attrib.get('SerialNo')
                 if s_no:
                     res[s_no] = {
@@ -223,11 +221,12 @@ def fetch_single_xml(dept_id):
                     }
     except Exception:
         pass
-    return res
+    return res, raw_nodes
 
 def fetch_all_xml_course_data():
-    print("1.5 正在從 course.xml 並行抓取即時人數與密碼卡資料...")
+    print("1.5 正在從 course.xml 並行抓取即時人數與密碼卡資料，並建立 XML 備份...")
     xml_map = {}
+    all_raw_nodes = []
     try:
         url = "https://cis.ncu.edu.tw/Course/main/query/byUnion"
         r = session.get(url, timeout=15)
@@ -244,12 +243,28 @@ def fetch_all_xml_course_data():
         with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
             futures = [executor.submit(fetch_single_xml, d_id) for d_id in dept_ids]
             for future in as_completed(futures):
-                res = future.result()
+                res, raw_nodes = future.result()
                 xml_map.update(res)
+                all_raw_nodes.extend(raw_nodes)
 
-        print(f"   共取得 {len(xml_map)} 門課程的 XML 人數與密碼卡數據。")
+        # 建立彙整後的完整 XML 樹並去重備份
+        root_backup = ET.Element("Courses", attrib={"last_update": time.strftime("%Y-%m-%d %H:%M:%S")})
+        seen_serials = set()
+        for node in all_raw_nodes:
+            s_no = node.attrib.get('SerialNo')
+            if s_no and s_no not in seen_serials:
+                seen_serials.add(s_no)
+                root_backup.append(node)
+            elif not s_no:
+                root_backup.append(node)
+        
+        ET.indent(root_backup, space="  ")
+        tree = ET.ElementTree(root_backup)
+        tree.write(OUT_XML, encoding="utf-8", xml_declaration=True)
+
+        print(f"   共取得 {len(xml_map)} 門課程的 XML 人數數據，並已儲存完整 XML 至 {OUT_XML}。")
     except Exception as e:
-        print(f"   XML 數據抓取異常: {e}")
+        print(f"   XML 數據抓取/備份異常: {e}")
     return xml_map
 
 def main():
