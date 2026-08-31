@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-08-30 19:07:15",
+  "last_update": "2026-08-31 09:16:04",
   "courses": [
     {
       "課程編號": "01001",
@@ -50807,7 +50807,7 @@
       "class_name": "不分類",
       "limit_cnt": 0,
       "admit_cnt": 0,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -125576,7 +125576,7 @@
       "url": "https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?crs=52044",
       "dept_name": "資訊工程學系",
       "class_name": "四年級",
-      "limit_cnt": 30,
+      "limit_cnt": 80,
       "admit_cnt": 30,
       "wait_cnt": 1,
       "password_card": "OPTIONAL",
