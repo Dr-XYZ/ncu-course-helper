@@ -48,8 +48,9 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "docs: Automatically update course data"
-          file_pattern: courses_processed.json
-    # 可選：避免同時多個執行衝突
+          # 同時提交處理後的 JSON 與原始 XML 備份檔
+          file_pattern: 'courses_processed.json courses_backup.xml'
+
     concurrency:
       group: weekly-python-job
       cancel-in-progress: true
