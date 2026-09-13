@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-09-12 18:11:40",
+  "last_update": "2026-09-13 18:36:12",
   "courses": [
     {
       "課程編號": "01001",
@@ -17299,8 +17299,8 @@
       "dept_name": "通識教育中心",
       "class_name": "外系專業課程採計通識學分(98學年後入學新生適用)",
       "limit_cnt": 50,
-      "admit_cnt": 48,
-      "wait_cnt": 0,
+      "admit_cnt": 47,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -17410,7 +17410,7 @@
       "dept_name": "通識教育中心",
       "class_name": "外系專業課程採計通識學分(98學年後入學新生適用)",
       "limit_cnt": 60,
-      "admit_cnt": 27,
+      "admit_cnt": 25,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -29194,7 +29194,7 @@
       "dept_name": "總教學中心",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 27,
+      "admit_cnt": 25,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -29428,8 +29428,8 @@
       "dept_name": "臺灣大專院校人工智慧學程聯盟",
       "class_name": "不分類",
       "limit_cnt": 35,
-      "admit_cnt": 34,
-      "wait_cnt": 1,
+      "admit_cnt": 33,
+      "wait_cnt": 3,
       "password_card": "NONE",
       "sources": [
         {
@@ -29483,8 +29483,8 @@
       "dept_name": "臺灣大專院校人工智慧學程聯盟",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 29,
-      "wait_cnt": 1,
+      "admit_cnt": 28,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -29527,7 +29527,7 @@
       "dept_name": "臺灣大專院校人工智慧學程聯盟",
       "class_name": "不分類",
       "limit_cnt": 35,
-      "admit_cnt": 16,
+      "admit_cnt": 15,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -29626,7 +29626,7 @@
       "dept_name": "臺灣大專院校人工智慧學程聯盟",
       "class_name": "不分類",
       "limit_cnt": 35,
-      "admit_cnt": 18,
+      "admit_cnt": 17,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -29692,8 +29692,8 @@
       "dept_name": "臺灣大專院校人工智慧學程聯盟",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 11,
-      "wait_cnt": 1,
+      "admit_cnt": 8,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -29765,8 +29765,8 @@
       "dept_name": "臺灣大專院校人工智慧學程聯盟",
       "class_name": "不分類",
       "limit_cnt": 35,
-      "admit_cnt": 34,
-      "wait_cnt": 1,
+      "admit_cnt": 32,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -29842,8 +29842,8 @@
       "dept_name": "臺灣大專院校人工智慧學程聯盟",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 50,
-      "wait_cnt": 8,
+      "admit_cnt": 49,
+      "wait_cnt": 14,
       "password_card": "NONE",
       "sources": [
         {
@@ -29898,7 +29898,7 @@
       "dept_name": "臺灣大專院校人工智慧學程聯盟",
       "class_name": "不分類",
       "limit_cnt": 35,
-      "admit_cnt": 19,
+      "admit_cnt": 17,
       "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
@@ -30095,7 +30095,7 @@
       "dept_name": "臺灣大專院校人工智慧學程聯盟",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 25,
+      "admit_cnt": 24,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -30948,7 +30948,7 @@
       "class_name": "不分類",
       "limit_cnt": 0,
       "admit_cnt": 6,
-      "wait_cnt": 1,
+      "wait_cnt": 2,
       "password_card": "NONE",
       "sources": [
         {
@@ -31770,7 +31770,7 @@
       "dept_name": "文學院",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 49,
+      "admit_cnt": 50,
       "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
@@ -31848,7 +31848,7 @@
       "class_name": "不分類",
       "limit_cnt": 58,
       "admit_cnt": 57,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -32042,7 +32042,7 @@
       "class_name": "不分類",
       "limit_cnt": 58,
       "admit_cnt": 58,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -32236,7 +32236,7 @@
       "class_name": "不分類",
       "limit_cnt": 58,
       "admit_cnt": 57,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -32430,7 +32430,7 @@
       "class_name": "不分類",
       "limit_cnt": 58,
       "admit_cnt": 59,
-      "wait_cnt": 5,
+      "wait_cnt": 6,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -32624,7 +32624,7 @@
       "class_name": "不分類",
       "limit_cnt": 58,
       "admit_cnt": 58,
-      "wait_cnt": 4,
+      "wait_cnt": 5,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -32772,8 +32772,8 @@
       "dept_name": "中國文學系",
       "class_name": "不分類",
       "limit_cnt": 58,
-      "admit_cnt": 54,
-      "wait_cnt": 1,
+      "admit_cnt": 53,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -32967,7 +32967,7 @@
       "class_name": "不分類",
       "limit_cnt": 58,
       "admit_cnt": 58,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -33161,7 +33161,7 @@
       "class_name": "不分類",
       "limit_cnt": 58,
       "admit_cnt": 58,
-      "wait_cnt": 5,
+      "wait_cnt": 7,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -33355,7 +33355,7 @@
       "class_name": "不分類",
       "limit_cnt": 58,
       "admit_cnt": 58,
-      "wait_cnt": 6,
+      "wait_cnt": 7,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -33743,7 +33743,7 @@
       "class_name": "不分類",
       "limit_cnt": 58,
       "admit_cnt": 58,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -33937,7 +33937,7 @@
       "class_name": "不分類",
       "limit_cnt": 58,
       "admit_cnt": 58,
-      "wait_cnt": 3,
+      "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -34086,7 +34086,7 @@
       "class_name": "不分類",
       "limit_cnt": 29,
       "admit_cnt": 29,
-      "wait_cnt": 2,
+      "wait_cnt": 3,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -34178,7 +34178,7 @@
       "class_name": "不分類",
       "limit_cnt": 29,
       "admit_cnt": 29,
-      "wait_cnt": 2,
+      "wait_cnt": 3,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -34270,7 +34270,7 @@
       "class_name": "不分類",
       "limit_cnt": 29,
       "admit_cnt": 29,
-      "wait_cnt": 2,
+      "wait_cnt": 3,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -34362,7 +34362,7 @@
       "class_name": "不分類",
       "limit_cnt": 29,
       "admit_cnt": 30,
-      "wait_cnt": 2,
+      "wait_cnt": 3,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -34454,7 +34454,7 @@
       "class_name": "不分類",
       "limit_cnt": 29,
       "admit_cnt": 29,
-      "wait_cnt": 2,
+      "wait_cnt": 3,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -34546,7 +34546,7 @@
       "class_name": "不分類",
       "limit_cnt": 29,
       "admit_cnt": 29,
-      "wait_cnt": 2,
+      "wait_cnt": 3,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -34638,7 +34638,7 @@
       "class_name": "不分類",
       "limit_cnt": 29,
       "admit_cnt": 29,
-      "wait_cnt": 2,
+      "wait_cnt": 3,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -34730,7 +34730,7 @@
       "class_name": "不分類",
       "limit_cnt": 29,
       "admit_cnt": 29,
-      "wait_cnt": 2,
+      "wait_cnt": 3,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -34822,7 +34822,7 @@
       "class_name": "不分類",
       "limit_cnt": 29,
       "admit_cnt": 29,
-      "wait_cnt": 2,
+      "wait_cnt": 3,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -39159,7 +39159,7 @@
       "class_name": "不分類",
       "limit_cnt": 30,
       "admit_cnt": 27,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
         {
@@ -39401,7 +39401,7 @@
       "dept_name": "中國文學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 22,
+      "admit_cnt": 23,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -39472,7 +39472,7 @@
       "dept_name": "中國文學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 43,
+      "admit_cnt": 41,
       "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
@@ -39543,8 +39543,8 @@
       "dept_name": "中國文學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 43,
-      "wait_cnt": 2,
+      "admit_cnt": 44,
+      "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
         {
@@ -39614,7 +39614,7 @@
       "dept_name": "中國文學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 39,
+      "admit_cnt": 37,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -39685,8 +39685,8 @@
       "dept_name": "中國文學系",
       "class_name": "不分類",
       "limit_cnt": 60,
-      "admit_cnt": 60,
-      "wait_cnt": 12,
+      "admit_cnt": 59,
+      "wait_cnt": 13,
       "password_card": "NONE",
       "sources": [
         {
@@ -39972,7 +39972,7 @@
       "dept_name": "中國文學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 17,
+      "admit_cnt": 16,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -40043,7 +40043,7 @@
       "dept_name": "中國文學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 54,
+      "admit_cnt": 53,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -40114,8 +40114,8 @@
       "dept_name": "中國文學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 30,
-      "wait_cnt": 0,
+      "admit_cnt": 28,
+      "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
         {
@@ -40313,7 +40313,7 @@
       "dept_name": "中國文學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 24,
+      "admit_cnt": 23,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -40439,8 +40439,8 @@
       "dept_name": "中國文學系",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 17,
-      "wait_cnt": 0,
+      "admit_cnt": 13,
+      "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
         {
@@ -40619,7 +40619,7 @@
       "class_name": "不分類",
       "limit_cnt": 50,
       "admit_cnt": 3,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
         {
@@ -40761,8 +40761,8 @@
       "dept_name": "中國文學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 29,
-      "wait_cnt": 2,
+      "admit_cnt": 30,
+      "wait_cnt": 3,
       "password_card": "NONE",
       "sources": [
         {
@@ -40843,7 +40843,7 @@
       "dept_name": "中國文學系",
       "class_name": "不分類",
       "limit_cnt": 20,
-      "admit_cnt": 18,
+      "admit_cnt": 17,
       "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
@@ -41704,7 +41704,7 @@
       "class_name": "一年級",
       "limit_cnt": 60,
       "admit_cnt": 60,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -42376,7 +42376,7 @@
       "dept_name": "中國文學系",
       "class_name": "二年級",
       "limit_cnt": 50,
-      "admit_cnt": 8,
+      "admit_cnt": 7,
       "wait_cnt": 0,
       "password_card": "ALL",
       "sources": [
@@ -42478,7 +42478,7 @@
       "dept_name": "中國文學系",
       "class_name": "三年級",
       "limit_cnt": 55,
-      "admit_cnt": 48,
+      "admit_cnt": 46,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -42655,7 +42655,7 @@
       "class_name": "一年級",
       "limit_cnt": 20,
       "admit_cnt": 9,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -42715,7 +42715,7 @@
       "dept_name": "英美語文學系",
       "class_name": "一年級",
       "limit_cnt": 20,
-      "admit_cnt": 17,
+      "admit_cnt": 16,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -42776,7 +42776,7 @@
       "dept_name": "英美語文學系",
       "class_name": "一年級",
       "limit_cnt": 50,
-      "admit_cnt": 53,
+      "admit_cnt": 52,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -42948,7 +42948,7 @@
       "dept_name": "英美語文學系",
       "class_name": "一年級",
       "limit_cnt": 50,
-      "admit_cnt": 52,
+      "admit_cnt": 53,
       "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
@@ -43009,7 +43009,7 @@
       "dept_name": "英美語文學系",
       "class_name": "一年級",
       "limit_cnt": 50,
-      "admit_cnt": 49,
+      "admit_cnt": 47,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -43060,7 +43060,7 @@
       "class_name": "一年級",
       "limit_cnt": 50,
       "admit_cnt": 46,
-      "wait_cnt": 1,
+      "wait_cnt": 4,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -43204,8 +43204,8 @@
       "dept_name": "英美語文學系",
       "class_name": "二年級",
       "limit_cnt": 50,
-      "admit_cnt": 43,
-      "wait_cnt": 0,
+      "admit_cnt": 34,
+      "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -43360,7 +43360,7 @@
       "dept_name": "英美語文學系",
       "class_name": "二年級",
       "limit_cnt": 25,
-      "admit_cnt": 23,
+      "admit_cnt": 22,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -43445,7 +43445,7 @@
       "class_name": "二年級",
       "limit_cnt": 20,
       "admit_cnt": 31,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -43590,7 +43590,7 @@
       "dept_name": "英美語文學系",
       "class_name": "二年級",
       "limit_cnt": 20,
-      "admit_cnt": 15,
+      "admit_cnt": 13,
       "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
@@ -43663,7 +43663,7 @@
       "dept_name": "英美語文學系",
       "class_name": "二年級",
       "limit_cnt": 50,
-      "admit_cnt": 40,
+      "admit_cnt": 35,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -43734,8 +43734,8 @@
       "dept_name": "英美語文學系",
       "class_name": "二年級",
       "limit_cnt": 50,
-      "admit_cnt": 49,
-      "wait_cnt": 0,
+      "admit_cnt": 48,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -43815,8 +43815,8 @@
       "dept_name": "英美語文學系",
       "class_name": "二年級",
       "limit_cnt": 50,
-      "admit_cnt": 35,
-      "wait_cnt": 0,
+      "admit_cnt": 34,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -43967,8 +43967,8 @@
       "dept_name": "英美語文學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 38,
-      "wait_cnt": 1,
+      "admit_cnt": 37,
+      "wait_cnt": 4,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -44122,7 +44122,7 @@
       "class_name": "三年級",
       "limit_cnt": 20,
       "admit_cnt": 23,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -44275,7 +44275,7 @@
       "dept_name": "英美語文學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 14,
+      "admit_cnt": 10,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -44341,7 +44341,7 @@
       "dept_name": "英美語文學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 30,
+      "admit_cnt": 27,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -44418,7 +44418,7 @@
       "dept_name": "英美語文學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 18,
+      "admit_cnt": 16,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -44495,7 +44495,7 @@
       "dept_name": "英美語文學系",
       "class_name": "三年級",
       "limit_cnt": 20,
-      "admit_cnt": 18,
+      "admit_cnt": 16,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -44572,8 +44572,8 @@
       "dept_name": "英美語文學系",
       "class_name": "三年級",
       "limit_cnt": 20,
-      "admit_cnt": 40,
-      "wait_cnt": 0,
+      "admit_cnt": 39,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -44661,7 +44661,7 @@
       "dept_name": "英美語文學系",
       "class_name": "三年級",
       "limit_cnt": 20,
-      "admit_cnt": 21,
+      "admit_cnt": 19,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -44750,8 +44750,8 @@
       "dept_name": "英美語文學系",
       "class_name": "四年級",
       "limit_cnt": 50,
-      "admit_cnt": 12,
-      "wait_cnt": 1,
+      "admit_cnt": 11,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -44960,7 +44960,7 @@
       "dept_name": "英美語文學系",
       "class_name": "四年級",
       "limit_cnt": 20,
-      "admit_cnt": 15,
+      "admit_cnt": 12,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -45485,7 +45485,7 @@
       "class_name": "一年級",
       "limit_cnt": 50,
       "admit_cnt": 33,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -45535,7 +45535,7 @@
       "class_name": "一年級",
       "limit_cnt": 50,
       "admit_cnt": 38,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -45690,8 +45690,8 @@
       "dept_name": "法國語文學系",
       "class_name": "二年級",
       "limit_cnt": 50,
-      "admit_cnt": 34,
-      "wait_cnt": 1,
+      "admit_cnt": 33,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -45942,7 +45942,7 @@
       "dept_name": "法國語文學系",
       "class_name": "二年級",
       "limit_cnt": 50,
-      "admit_cnt": 20,
+      "admit_cnt": 19,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -46125,7 +46125,7 @@
       "dept_name": "法國語文學系",
       "class_name": "二年級",
       "limit_cnt": 50,
-      "admit_cnt": 22,
+      "admit_cnt": 21,
       "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
@@ -46314,7 +46314,7 @@
       "dept_name": "法國語文學系",
       "class_name": "二年級",
       "limit_cnt": 50,
-      "admit_cnt": 21,
+      "admit_cnt": 20,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -46480,7 +46480,7 @@
       "dept_name": "法國語文學系",
       "class_name": "二年級",
       "limit_cnt": 50,
-      "admit_cnt": 22,
+      "admit_cnt": 21,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -46593,7 +46593,7 @@
       "dept_name": "法國語文學系",
       "class_name": "二年級",
       "limit_cnt": 50,
-      "admit_cnt": 31,
+      "admit_cnt": 29,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -46760,7 +46760,7 @@
       "dept_name": "法國語文學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 26,
+      "admit_cnt": 25,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -47497,7 +47497,7 @@
       "dept_name": "法國語文學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 27,
+      "admit_cnt": 26,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -47607,7 +47607,7 @@
       "dept_name": "法國語文學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 23,
+      "admit_cnt": 22,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -47722,7 +47722,7 @@
       "dept_name": "法國語文學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 16,
+      "admit_cnt": 13,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -47778,7 +47778,7 @@
       "dept_name": "法國語文學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 31,
+      "admit_cnt": 30,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -47849,7 +47849,7 @@
       "class_name": "四年級",
       "limit_cnt": 50,
       "admit_cnt": 9,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -47898,7 +47898,7 @@
       "dept_name": "法國語文學系",
       "class_name": "四年級",
       "limit_cnt": 50,
-      "admit_cnt": 13,
+      "admit_cnt": 11,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -48129,7 +48129,7 @@
       "class_name": "不分類",
       "limit_cnt": 50,
       "admit_cnt": 59,
-      "wait_cnt": 2,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -48198,8 +48198,8 @@
       "dept_name": "文學院學士班",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 37,
-      "wait_cnt": 1,
+      "admit_cnt": 36,
+      "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -48257,7 +48257,7 @@
       "dept_name": "文學院學士班",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 44,
+      "admit_cnt": 42,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -48516,7 +48516,7 @@
       "class_name": "不分類",
       "limit_cnt": 50,
       "admit_cnt": 30,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -48596,7 +48596,7 @@
       "dept_name": "文學院學士班",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 42,
+      "admit_cnt": 40,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -48667,7 +48667,7 @@
       "class_name": "不分類",
       "limit_cnt": 50,
       "admit_cnt": 38,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -48737,7 +48737,7 @@
       "class_name": "不分類",
       "limit_cnt": 25,
       "admit_cnt": 9,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -48898,8 +48898,8 @@
       "dept_name": "文學院學士班",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 28,
-      "wait_cnt": 0,
+      "admit_cnt": 26,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -49039,7 +49039,7 @@
       "dept_name": "文學院學士班",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 17,
+      "admit_cnt": 16,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -49157,8 +49157,8 @@
       "dept_name": "文學院學士班",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 9,
-      "wait_cnt": 1,
+      "admit_cnt": 8,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -50835,7 +50835,7 @@
       "class_name": "不分類",
       "limit_cnt": 12,
       "admit_cnt": 6,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -51016,7 +51016,7 @@
       "dept_name": "藝術學研究所碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 15,
+      "admit_cnt": 16,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -51196,7 +51196,7 @@
       "class_name": "不分類",
       "limit_cnt": 0,
       "admit_cnt": 14,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -51529,7 +51529,7 @@
       "class_name": "不分類",
       "limit_cnt": 0,
       "admit_cnt": 8,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -52220,7 +52220,7 @@
       "class_name": "不分類",
       "limit_cnt": 0,
       "admit_cnt": 4,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
         {
@@ -52320,7 +52320,7 @@
       "dept_name": "哲學研究所碩士在職專班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 28,
+      "admit_cnt": 27,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -52414,7 +52414,7 @@
       "dept_name": "哲學研究所碩士在職專班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 29,
+      "admit_cnt": 28,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -52552,8 +52552,8 @@
       "dept_name": "歷史研究所碩士在職專班",
       "class_name": "不分類",
       "limit_cnt": 20,
-      "admit_cnt": 17,
-      "wait_cnt": 2,
+      "admit_cnt": 18,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -52709,8 +52709,8 @@
       "dept_name": "理學院",
       "class_name": "不分類",
       "limit_cnt": 80,
-      "admit_cnt": 97,
-      "wait_cnt": 13,
+      "admit_cnt": 98,
+      "wait_cnt": 12,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -54038,7 +54038,7 @@
       "class_name": "不分類",
       "limit_cnt": 110,
       "admit_cnt": 139,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -54158,8 +54158,8 @@
       "dept_name": "數學系",
       "class_name": "不分類",
       "limit_cnt": 60,
-      "admit_cnt": 64,
-      "wait_cnt": 1,
+      "admit_cnt": 65,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -54280,7 +54280,7 @@
       "class_name": "不分類",
       "limit_cnt": 75,
       "admit_cnt": 48,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -54581,7 +54581,7 @@
       "dept_name": "數學系",
       "class_name": "不分類",
       "limit_cnt": 90,
-      "admit_cnt": 124,
+      "admit_cnt": 123,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -54863,7 +54863,7 @@
       "class_name": "不分類",
       "limit_cnt": 100,
       "admit_cnt": 120,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -54998,8 +54998,8 @@
       "dept_name": "數學系",
       "class_name": "不分類",
       "limit_cnt": 100,
-      "admit_cnt": 82,
-      "wait_cnt": 0,
+      "admit_cnt": 81,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -55271,7 +55271,7 @@
       "class_name": "不分類",
       "limit_cnt": 60,
       "admit_cnt": 60,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -55618,7 +55618,7 @@
       "dept_name": "數學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 45,
+      "admit_cnt": 44,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -55784,8 +55784,8 @@
       "dept_name": "數學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 33,
-      "wait_cnt": 1,
+      "admit_cnt": 34,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -55908,7 +55908,7 @@
       "dept_name": "數學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 16,
+      "admit_cnt": 15,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -55971,7 +55971,7 @@
       "dept_name": "數學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 15,
+      "admit_cnt": 14,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -56023,7 +56023,7 @@
       "class_name": "不分類",
       "limit_cnt": 0,
       "admit_cnt": 5,
-      "wait_cnt": 1,
+      "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -56186,7 +56186,7 @@
       "class_name": "不分類",
       "limit_cnt": 50,
       "admit_cnt": 11,
-      "wait_cnt": 4,
+      "wait_cnt": 5,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -56546,7 +56546,7 @@
       "dept_name": "數學系",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 17,
+      "admit_cnt": 16,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -56766,7 +56766,7 @@
       "dept_name": "數學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 12,
+      "admit_cnt": 11,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -57519,7 +57519,7 @@
       "class_name": "一年級",
       "limit_cnt": 150,
       "admit_cnt": 149,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -58970,7 +58970,7 @@
       "class_name": "三年級",
       "limit_cnt": 50,
       "admit_cnt": 31,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -59044,7 +59044,7 @@
       "dept_name": "數學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 29,
+      "admit_cnt": 28,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -59294,7 +59294,7 @@
       "dept_name": "數學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 38,
+      "admit_cnt": 37,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -59393,7 +59393,7 @@
       "dept_name": "數學系",
       "class_name": "三年級",
       "limit_cnt": 45,
-      "admit_cnt": 34,
+      "admit_cnt": 32,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -59486,7 +59486,7 @@
       "dept_name": "數學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 13,
+      "admit_cnt": 12,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -59807,7 +59807,7 @@
       "dept_name": "數學系",
       "class_name": "四年級",
       "limit_cnt": 50,
-      "admit_cnt": 39,
+      "admit_cnt": 38,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -60648,7 +60648,7 @@
       "dept_name": "物理學系",
       "class_name": "二年級",
       "limit_cnt": 0,
-      "admit_cnt": 29,
+      "admit_cnt": 30,
       "wait_cnt": 0,
       "password_card": "ALL",
       "sources": [
@@ -62587,7 +62587,7 @@
       "dept_name": "化學學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 19,
+      "admit_cnt": 18,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -62816,7 +62816,7 @@
       "dept_name": "化學學系",
       "class_name": "四年級",
       "limit_cnt": 50,
-      "admit_cnt": 26,
+      "admit_cnt": 25,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -63444,7 +63444,7 @@
       "class_name": "不分類",
       "limit_cnt": 0,
       "admit_cnt": 45,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
         {
@@ -63601,8 +63601,8 @@
       "dept_name": "光電科學與工程學系",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 91,
-      "wait_cnt": 2,
+      "admit_cnt": 92,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -63715,7 +63715,7 @@
       "class_name": "不分類",
       "limit_cnt": 103,
       "admit_cnt": 84,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -63917,7 +63917,7 @@
       "dept_name": "光電科學與工程學系",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 18,
+      "admit_cnt": 17,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -64157,7 +64157,7 @@
       "dept_name": "光電科學與工程學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 66,
+      "admit_cnt": 65,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -64318,7 +64318,7 @@
       "class_name": "不分類",
       "limit_cnt": 80,
       "admit_cnt": 80,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -65812,7 +65812,7 @@
       "dept_name": "理學院學士班",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 5,
+      "admit_cnt": 4,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -66296,7 +66296,7 @@
       "dept_name": "理學院學士班",
       "class_name": "二年級",
       "limit_cnt": 0,
-      "admit_cnt": 11,
+      "admit_cnt": 12,
       "wait_cnt": 0,
       "password_card": "ALL",
       "sources": [
@@ -68094,8 +68094,8 @@
       "dept_name": "物理學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 60,
-      "admit_cnt": 49,
-      "wait_cnt": 1,
+      "admit_cnt": 50,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -68161,7 +68161,7 @@
       "dept_name": "物理學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 60,
-      "admit_cnt": 17,
+      "admit_cnt": 16,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -68649,7 +68649,7 @@
       "dept_name": "物理學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 26,
+      "admit_cnt": 25,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -70149,7 +70149,7 @@
       "class_name": "不分類",
       "limit_cnt": 50,
       "admit_cnt": 22,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -70189,7 +70189,7 @@
       "dept_name": "化學學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 19,
+      "admit_cnt": 18,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -70239,7 +70239,7 @@
       "class_name": "不分類",
       "limit_cnt": 15,
       "admit_cnt": 5,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -70341,7 +70341,7 @@
       "dept_name": "化學學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 65,
+      "admit_cnt": 64,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -70689,7 +70689,7 @@
       "dept_name": "統計研究所碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 27,
+      "admit_cnt": 28,
       "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
@@ -71720,7 +71720,7 @@
       "dept_name": "天文研究所碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 12,
+      "admit_cnt": 11,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -71784,8 +71784,8 @@
       "dept_name": "光電科學與工程學系碩士在職專班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 26,
-      "wait_cnt": 1,
+      "admit_cnt": 27,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -71873,7 +71873,7 @@
       "class_name": "不分類",
       "limit_cnt": 0,
       "admit_cnt": 13,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -72330,7 +72330,7 @@
       "dept_name": "工學院",
       "class_name": "不分類",
       "limit_cnt": 40,
-      "admit_cnt": 9,
+      "admit_cnt": 7,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -72460,7 +72460,7 @@
       "class_name": "不分類",
       "limit_cnt": 54,
       "admit_cnt": 63,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -73044,7 +73044,7 @@
       "class_name": "不分類",
       "limit_cnt": 86,
       "admit_cnt": 76,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -73142,8 +73142,8 @@
       "dept_name": "工學院",
       "class_name": "不分類",
       "limit_cnt": 70,
-      "admit_cnt": 30,
-      "wait_cnt": 0,
+      "admit_cnt": 29,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -73207,8 +73207,8 @@
       "dept_name": "工學院",
       "class_name": "不分類",
       "limit_cnt": 65,
-      "admit_cnt": 86,
-      "wait_cnt": 3,
+      "admit_cnt": 87,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -73470,7 +73470,7 @@
       "dept_name": "工學院",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 91,
+      "admit_cnt": 90,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -73562,8 +73562,8 @@
       "dept_name": "工學院",
       "class_name": "不分類",
       "limit_cnt": 80,
-      "admit_cnt": 65,
-      "wait_cnt": 3,
+      "admit_cnt": 64,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -73655,7 +73655,7 @@
       "dept_name": "工學院",
       "class_name": "不分類",
       "limit_cnt": 40,
-      "admit_cnt": 38,
+      "admit_cnt": 37,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -73688,7 +73688,7 @@
       "class_name": "不分類",
       "limit_cnt": 0,
       "admit_cnt": 27,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -73908,7 +73908,7 @@
       "dept_name": "土木工程學系",
       "class_name": "一年級",
       "limit_cnt": 50,
-      "admit_cnt": 41,
+      "admit_cnt": 40,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -74053,7 +74053,7 @@
       "class_name": "一年級",
       "limit_cnt": 60,
       "admit_cnt": 65,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -74334,7 +74334,7 @@
       "dept_name": "土木工程學系",
       "class_name": "一年級",
       "limit_cnt": 0,
-      "admit_cnt": 71,
+      "admit_cnt": 72,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -74976,7 +74976,7 @@
       "class_name": "二年級",
       "limit_cnt": 0,
       "admit_cnt": 36,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -75187,7 +75187,7 @@
       "dept_name": "土木工程學系",
       "class_name": "二年級",
       "limit_cnt": 0,
-      "admit_cnt": 54,
+      "admit_cnt": 55,
       "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
@@ -75300,7 +75300,7 @@
       "class_name": "二年級",
       "limit_cnt": 0,
       "admit_cnt": 48,
-      "wait_cnt": 0,
+      "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -75658,7 +75658,7 @@
       "class_name": "二年級",
       "limit_cnt": 0,
       "admit_cnt": 22,
-      "wait_cnt": 0,
+      "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -75802,7 +75802,7 @@
       "dept_name": "土木工程學系",
       "class_name": "二年級",
       "limit_cnt": 100,
-      "admit_cnt": 56,
+      "admit_cnt": 55,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -75878,7 +75878,7 @@
       "dept_name": "土木工程學系",
       "class_name": "三年級",
       "limit_cnt": 0,
-      "admit_cnt": 35,
+      "admit_cnt": 34,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -76452,8 +76452,8 @@
       "dept_name": "土木工程學系",
       "class_name": "三年級",
       "limit_cnt": 0,
-      "admit_cnt": 6,
-      "wait_cnt": 0,
+      "admit_cnt": 5,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -76511,8 +76511,8 @@
       "dept_name": "土木工程學系",
       "class_name": "三年級",
       "limit_cnt": 0,
-      "admit_cnt": 55,
-      "wait_cnt": 0,
+      "admit_cnt": 54,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -77009,7 +77009,7 @@
       "dept_name": "土木工程學系",
       "class_name": "三年級",
       "limit_cnt": 0,
-      "admit_cnt": 15,
+      "admit_cnt": 14,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -77083,7 +77083,7 @@
       "class_name": "三年級",
       "limit_cnt": 50,
       "admit_cnt": 28,
-      "wait_cnt": 0,
+      "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -77380,8 +77380,8 @@
       "dept_name": "土木工程學系",
       "class_name": "三年級",
       "limit_cnt": 0,
-      "admit_cnt": 19,
-      "wait_cnt": 7,
+      "admit_cnt": 20,
+      "wait_cnt": 6,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -77847,7 +77847,7 @@
       "class_name": "三年級",
       "limit_cnt": 0,
       "admit_cnt": 40,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -77925,7 +77925,7 @@
       "dept_name": "土木工程學系",
       "class_name": "三年級",
       "limit_cnt": 0,
-      "admit_cnt": 5,
+      "admit_cnt": 4,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -78080,7 +78080,7 @@
       "dept_name": "土木工程學系",
       "class_name": "三年級",
       "limit_cnt": 0,
-      "admit_cnt": 42,
+      "admit_cnt": 41,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -78130,7 +78130,7 @@
       "class_name": "三年級",
       "limit_cnt": 0,
       "admit_cnt": 18,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -79006,7 +79006,7 @@
       "class_name": "不分類",
       "limit_cnt": 90,
       "admit_cnt": 84,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -79378,7 +79378,7 @@
       "class_name": "二年級",
       "limit_cnt": 100,
       "admit_cnt": 88,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -79480,7 +79480,7 @@
       "dept_name": "機械工程學系",
       "class_name": "二年級",
       "limit_cnt": 100,
-      "admit_cnt": 105,
+      "admit_cnt": 104,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -79583,7 +79583,7 @@
       "dept_name": "機械工程學系",
       "class_name": "二年級",
       "limit_cnt": 60,
-      "admit_cnt": 67,
+      "admit_cnt": 66,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -79908,7 +79908,7 @@
       "class_name": "二年級",
       "limit_cnt": 90,
       "admit_cnt": 97,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -80113,7 +80113,7 @@
       "dept_name": "機械工程學系",
       "class_name": "二年級",
       "limit_cnt": 100,
-      "admit_cnt": 70,
+      "admit_cnt": 69,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -80319,7 +80319,7 @@
       "dept_name": "機械工程學系",
       "class_name": "二年級",
       "limit_cnt": 60,
-      "admit_cnt": 54,
+      "admit_cnt": 53,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -80596,8 +80596,8 @@
       "dept_name": "機械工程學系",
       "class_name": "二年級",
       "limit_cnt": 48,
-      "admit_cnt": 47,
-      "wait_cnt": 0,
+      "admit_cnt": 46,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -80788,7 +80788,7 @@
       "dept_name": "機械工程學系",
       "class_name": "三年級",
       "limit_cnt": 100,
-      "admit_cnt": 73,
+      "admit_cnt": 71,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -81058,7 +81058,7 @@
       "dept_name": "機械工程學系",
       "class_name": "三年級",
       "limit_cnt": 90,
-      "admit_cnt": 76,
+      "admit_cnt": 75,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -81170,7 +81170,7 @@
       "dept_name": "機械工程學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 58,
+      "admit_cnt": 59,
       "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
@@ -81251,7 +81251,7 @@
       "dept_name": "機械工程學系",
       "class_name": "三年級",
       "limit_cnt": 60,
-      "admit_cnt": 61,
+      "admit_cnt": 60,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -81428,8 +81428,8 @@
       "dept_name": "機械工程學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 49,
-      "wait_cnt": 0,
+      "admit_cnt": 47,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -81744,7 +81744,7 @@
       "dept_name": "機械工程學系",
       "class_name": "三年級",
       "limit_cnt": 0,
-      "admit_cnt": 16,
+      "admit_cnt": 15,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -81800,7 +81800,7 @@
       "class_name": "三年級",
       "limit_cnt": 100,
       "admit_cnt": 83,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -81891,7 +81891,7 @@
       "class_name": "三年級",
       "limit_cnt": 75,
       "admit_cnt": 83,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -82029,7 +82029,7 @@
       "dept_name": "機械工程學系",
       "class_name": "三年級",
       "limit_cnt": 0,
-      "admit_cnt": 2,
+      "admit_cnt": 3,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -82059,7 +82059,7 @@
       "dept_name": "機械工程學系",
       "class_name": "三年級",
       "limit_cnt": 0,
-      "admit_cnt": 2,
+      "admit_cnt": 3,
       "wait_cnt": 0,
       "password_card": "ALL",
       "sources": [
@@ -82089,7 +82089,7 @@
       "dept_name": "機械工程學系",
       "class_name": "三年級",
       "limit_cnt": 30,
-      "admit_cnt": 31,
+      "admit_cnt": 32,
       "wait_cnt": 4,
       "password_card": "OPTIONAL",
       "sources": [
@@ -82303,7 +82303,7 @@
       "dept_name": "機械工程學系",
       "class_name": "三年級",
       "limit_cnt": 70,
-      "admit_cnt": 56,
+      "admit_cnt": 55,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -82390,7 +82390,7 @@
       "dept_name": "機械工程學系",
       "class_name": "三年級",
       "limit_cnt": 24,
-      "admit_cnt": 24,
+      "admit_cnt": 23,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -82537,7 +82537,7 @@
       "dept_name": "機械工程學系",
       "class_name": "三年級",
       "limit_cnt": 48,
-      "admit_cnt": 23,
+      "admit_cnt": 21,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -82629,8 +82629,8 @@
       "dept_name": "機械工程學系",
       "class_name": "三年級",
       "limit_cnt": 60,
-      "admit_cnt": 55,
-      "wait_cnt": 1,
+      "admit_cnt": 56,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -82716,7 +82716,7 @@
       "dept_name": "機械工程學系",
       "class_name": "三年級",
       "limit_cnt": 25,
-      "admit_cnt": 19,
+      "admit_cnt": 18,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -82923,8 +82923,8 @@
       "dept_name": "機械工程學系",
       "class_name": "三年級",
       "limit_cnt": 48,
-      "admit_cnt": 48,
-      "wait_cnt": 7,
+      "admit_cnt": 47,
+      "wait_cnt": 10,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -83305,7 +83305,7 @@
       "dept_name": "機械工程學系",
       "class_name": "三年級",
       "limit_cnt": 45,
-      "admit_cnt": 38,
+      "admit_cnt": 34,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -83492,8 +83492,8 @@
       "dept_name": "機械工程學系",
       "class_name": "三年級",
       "limit_cnt": 40,
-      "admit_cnt": 44,
-      "wait_cnt": 0,
+      "admit_cnt": 43,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -83587,7 +83587,7 @@
       "dept_name": "機械工程學系",
       "class_name": "三年級",
       "limit_cnt": 35,
-      "admit_cnt": 18,
+      "admit_cnt": 16,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -84335,7 +84335,7 @@
       "dept_name": "機械工程學系",
       "class_name": "四年級",
       "limit_cnt": 70,
-      "admit_cnt": 23,
+      "admit_cnt": 22,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -84482,8 +84482,8 @@
       "dept_name": "機械工程學系",
       "class_name": "四年級",
       "limit_cnt": 40,
-      "admit_cnt": 39,
-      "wait_cnt": 1,
+      "admit_cnt": 40,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -84569,8 +84569,8 @@
       "dept_name": "機械工程學系",
       "class_name": "四年級",
       "limit_cnt": 60,
-      "admit_cnt": 60,
-      "wait_cnt": 2,
+      "admit_cnt": 58,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -84646,7 +84646,7 @@
       "dept_name": "機械工程學系",
       "class_name": "四年級",
       "limit_cnt": 60,
-      "admit_cnt": 49,
+      "admit_cnt": 48,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -84778,7 +84778,7 @@
       "dept_name": "機械工程學系",
       "class_name": "四年級",
       "limit_cnt": 70,
-      "admit_cnt": 49,
+      "admit_cnt": 47,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -84968,8 +84968,8 @@
       "dept_name": "機械工程學系",
       "class_name": "四年級",
       "limit_cnt": 48,
-      "admit_cnt": 48,
-      "wait_cnt": 8,
+      "admit_cnt": 47,
+      "wait_cnt": 12,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -85062,7 +85062,7 @@
       "dept_name": "機械工程學系",
       "class_name": "四年級",
       "limit_cnt": 60,
-      "admit_cnt": 53,
+      "admit_cnt": 52,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -85128,8 +85128,8 @@
       "dept_name": "機械工程學系",
       "class_name": "四年級",
       "limit_cnt": 50,
-      "admit_cnt": 60,
-      "wait_cnt": 5,
+      "admit_cnt": 59,
+      "wait_cnt": 4,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -85354,8 +85354,8 @@
       "dept_name": "機械工程學系",
       "class_name": "四年級",
       "limit_cnt": 50,
-      "admit_cnt": 28,
-      "wait_cnt": 0,
+      "admit_cnt": 27,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -87066,7 +87066,7 @@
       "dept_name": "化學工程與材料工程學系",
       "class_name": "三年級",
       "limit_cnt": 0,
-      "admit_cnt": 27,
+      "admit_cnt": 26,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -87356,8 +87356,8 @@
       "dept_name": "化學工程與材料工程學系",
       "class_name": "四年級",
       "limit_cnt": 65,
-      "admit_cnt": 40,
-      "wait_cnt": 1,
+      "admit_cnt": 41,
+      "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -87743,7 +87743,7 @@
       "dept_name": "工學院學士班",
       "class_name": "三年級",
       "limit_cnt": 24,
-      "admit_cnt": 33,
+      "admit_cnt": 32,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -87895,8 +87895,8 @@
       "dept_name": "化學工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 30,
-      "wait_cnt": 0,
+      "admit_cnt": 29,
+      "wait_cnt": 2,
       "password_card": "NONE",
       "sources": [
         {
@@ -88395,8 +88395,8 @@
       "dept_name": "土木工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 17,
-      "wait_cnt": 3,
+      "admit_cnt": 18,
+      "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -89565,7 +89565,7 @@
       "dept_name": "土木工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 27,
+      "admit_cnt": 25,
       "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
@@ -89720,7 +89720,7 @@
       "dept_name": "機械工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 36,
+      "admit_cnt": 34,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -90083,8 +90083,8 @@
       "dept_name": "機械工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 12,
-      "wait_cnt": 0,
+      "admit_cnt": 11,
+      "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
         {
@@ -90119,8 +90119,8 @@
       "dept_name": "機械工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 60,
-      "admit_cnt": 35,
-      "wait_cnt": 0,
+      "admit_cnt": 34,
+      "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
         {
@@ -90171,7 +90171,7 @@
       "dept_name": "機械工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 70,
-      "admit_cnt": 40,
+      "admit_cnt": 39,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -90295,8 +90295,8 @@
       "dept_name": "機械工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 60,
-      "admit_cnt": 51,
-      "wait_cnt": 1,
+      "admit_cnt": 50,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -91018,7 +91018,7 @@
       "class_name": "不分類",
       "limit_cnt": 65,
       "admit_cnt": 58,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
         {
@@ -91378,7 +91378,7 @@
       "dept_name": "環境工程研究所碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 40,
+      "admit_cnt": 37,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -91678,8 +91678,8 @@
       "dept_name": "環境工程研究所碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 27,
-      "wait_cnt": 1,
+      "admit_cnt": 28,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -92213,7 +92213,7 @@
       "class_name": "不分類",
       "limit_cnt": 30,
       "admit_cnt": 30,
-      "wait_cnt": 4,
+      "wait_cnt": 6,
       "password_card": "NONE",
       "sources": [
         {
@@ -92269,7 +92269,7 @@
       "dept_name": "材料科學與工程研究所碩士班",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 46,
+      "admit_cnt": 45,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -92930,7 +92930,7 @@
       "dept_name": "土木工程學系碩士在職專班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 17,
+      "admit_cnt": 13,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -92974,7 +92974,7 @@
       "dept_name": "土木工程學系碩士在職專班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 20,
+      "admit_cnt": 21,
       "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
@@ -93150,8 +93150,8 @@
       "dept_name": "土木工程學系碩士在職專班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 43,
-      "wait_cnt": 1,
+      "admit_cnt": 44,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -93422,8 +93422,8 @@
       "dept_name": "機械工程學系碩士在職專班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 37,
-      "wait_cnt": 1,
+      "admit_cnt": 38,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -93472,7 +93472,7 @@
       "dept_name": "機械工程學系碩士在職專班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 20,
+      "admit_cnt": 17,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -93516,8 +93516,8 @@
       "dept_name": "機械工程學系碩士在職專班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 34,
-      "wait_cnt": 1,
+      "admit_cnt": 32,
+      "wait_cnt": 4,
       "password_card": "NONE",
       "sources": [
         {
@@ -93560,8 +93560,8 @@
       "dept_name": "機械工程學系碩士在職專班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 4,
-      "wait_cnt": 1,
+      "admit_cnt": 5,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -93604,7 +93604,7 @@
       "dept_name": "機械工程學系碩士在職專班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 21,
+      "admit_cnt": 18,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -93648,7 +93648,7 @@
       "dept_name": "機械工程學系碩士在職專班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 18,
+      "admit_cnt": 16,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -93935,7 +93935,7 @@
       "dept_name": "環境工程研究所碩士在職專班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 13,
+      "admit_cnt": 12,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -94413,7 +94413,7 @@
       "dept_name": "管理學院",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 4,
+      "admit_cnt": 3,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -94494,7 +94494,7 @@
       "dept_name": "管理學院",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 36,
+      "admit_cnt": 37,
       "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
@@ -94562,8 +94562,8 @@
       "dept_name": "管理學院",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 34,
-      "wait_cnt": 1,
+      "admit_cnt": 33,
+      "wait_cnt": 3,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -95135,8 +95135,8 @@
       "dept_name": "管理學院",
       "class_name": "不分類",
       "limit_cnt": 65,
-      "admit_cnt": 58,
-      "wait_cnt": 0,
+      "admit_cnt": 53,
+      "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
         {
@@ -95350,7 +95350,7 @@
       "class_name": "不分類",
       "limit_cnt": 100,
       "admit_cnt": 119,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -95390,7 +95390,7 @@
       "class_name": "不分類",
       "limit_cnt": 60,
       "admit_cnt": 17,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -97361,8 +97361,8 @@
       "dept_name": "企業管理學系",
       "class_name": "三年級",
       "limit_cnt": 130,
-      "admit_cnt": 147,
-      "wait_cnt": 0,
+      "admit_cnt": 144,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -97493,7 +97493,7 @@
       "dept_name": "企業管理學系",
       "class_name": "三年級",
       "limit_cnt": 30,
-      "admit_cnt": 60,
+      "admit_cnt": 58,
       "wait_cnt": 0,
       "password_card": "ALL",
       "sources": [
@@ -97612,8 +97612,8 @@
       "dept_name": "企業管理學系",
       "class_name": "三年級",
       "limit_cnt": 65,
-      "admit_cnt": 26,
-      "wait_cnt": 1,
+      "admit_cnt": 25,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -97844,8 +97844,8 @@
       "dept_name": "企業管理學系",
       "class_name": "三年級",
       "limit_cnt": 80,
-      "admit_cnt": 67,
-      "wait_cnt": 1,
+      "admit_cnt": 66,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -98000,7 +98000,7 @@
       "class_name": "三年級",
       "limit_cnt": 190,
       "admit_cnt": 224,
-      "wait_cnt": 2,
+      "wait_cnt": 3,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -98139,7 +98139,7 @@
       "dept_name": "企業管理學系",
       "class_name": "三年級",
       "limit_cnt": 35,
-      "admit_cnt": 14,
+      "admit_cnt": 12,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -98268,7 +98268,7 @@
       "dept_name": "企業管理學系",
       "class_name": "三年級",
       "limit_cnt": 70,
-      "admit_cnt": 26,
+      "admit_cnt": 25,
       "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
@@ -98393,7 +98393,7 @@
       "dept_name": "企業管理學系",
       "class_name": "三年級",
       "limit_cnt": 20,
-      "admit_cnt": 17,
+      "admit_cnt": 16,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -98613,7 +98613,7 @@
       "class_name": "不分類",
       "limit_cnt": 50,
       "admit_cnt": 42,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -98656,7 +98656,7 @@
       "dept_name": "資訊管理學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 48,
+      "admit_cnt": 45,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -98700,8 +98700,8 @@
       "dept_name": "資訊管理學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 43,
-      "wait_cnt": 0,
+      "admit_cnt": 42,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -98818,8 +98818,8 @@
       "dept_name": "資訊管理學系",
       "class_name": "一年級",
       "limit_cnt": 120,
-      "admit_cnt": 137,
-      "wait_cnt": 1,
+      "admit_cnt": 138,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -98986,8 +98986,8 @@
       "dept_name": "資訊管理學系",
       "class_name": "一年級",
       "limit_cnt": 60,
-      "admit_cnt": 60,
-      "wait_cnt": 1,
+      "admit_cnt": 62,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -99065,8 +99065,8 @@
       "dept_name": "資訊管理學系",
       "class_name": "一年級",
       "limit_cnt": 120,
-      "admit_cnt": 120,
-      "wait_cnt": 2,
+      "admit_cnt": 139,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -99168,7 +99168,7 @@
       "class_name": "一年級",
       "limit_cnt": 120,
       "admit_cnt": 132,
-      "wait_cnt": 0,
+      "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -99471,7 +99471,7 @@
       "dept_name": "資訊管理學系",
       "class_name": "二年級",
       "limit_cnt": 130,
-      "admit_cnt": 128,
+      "admit_cnt": 129,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -99562,7 +99562,7 @@
       "class_name": "二年級",
       "limit_cnt": 130,
       "admit_cnt": 144,
-      "wait_cnt": 1,
+      "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -99655,7 +99655,7 @@
       "class_name": "二年級",
       "limit_cnt": 120,
       "admit_cnt": 148,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -99747,8 +99747,8 @@
       "dept_name": "資訊管理學系",
       "class_name": "三年級",
       "limit_cnt": 60,
-      "admit_cnt": 82,
-      "wait_cnt": 1,
+      "admit_cnt": 80,
+      "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -99825,8 +99825,8 @@
       "dept_name": "資訊管理學系",
       "class_name": "三年級",
       "limit_cnt": 130,
-      "admit_cnt": 112,
-      "wait_cnt": 0,
+      "admit_cnt": 111,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -99933,8 +99933,8 @@
       "dept_name": "資訊管理學系",
       "class_name": "三年級",
       "limit_cnt": 120,
-      "admit_cnt": 136,
-      "wait_cnt": 4,
+      "admit_cnt": 137,
+      "wait_cnt": 3,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -100026,7 +100026,7 @@
       "class_name": "三年級",
       "limit_cnt": 120,
       "admit_cnt": 115,
-      "wait_cnt": 2,
+      "wait_cnt": 3,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -100211,7 +100211,7 @@
       "dept_name": "資訊管理學系",
       "class_name": "三年級",
       "limit_cnt": 30,
-      "admit_cnt": 32,
+      "admit_cnt": 31,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -100298,7 +100298,7 @@
       "dept_name": "資訊管理學系",
       "class_name": "三年級",
       "limit_cnt": 80,
-      "admit_cnt": 75,
+      "admit_cnt": 70,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -101068,7 +101068,7 @@
       "dept_name": "資訊管理學系",
       "class_name": "四年級",
       "limit_cnt": 130,
-      "admit_cnt": 114,
+      "admit_cnt": 113,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -101165,8 +101165,8 @@
       "dept_name": "資訊管理學系",
       "class_name": "四年級",
       "limit_cnt": 40,
-      "admit_cnt": 37,
-      "wait_cnt": 1,
+      "admit_cnt": 36,
+      "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -101246,7 +101246,7 @@
       "dept_name": "財務金融學系",
       "class_name": "不分類",
       "limit_cnt": 70,
-      "admit_cnt": 80,
+      "admit_cnt": 77,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -101358,7 +101358,7 @@
       "dept_name": "財務金融學系",
       "class_name": "不分類",
       "limit_cnt": 70,
-      "admit_cnt": 44,
+      "admit_cnt": 42,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -101425,8 +101425,8 @@
       "dept_name": "財務金融學系",
       "class_name": "一年級",
       "limit_cnt": 80,
-      "admit_cnt": 95,
-      "wait_cnt": 3,
+      "admit_cnt": 94,
+      "wait_cnt": 4,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -101642,7 +101642,7 @@
       "class_name": "一年級",
       "limit_cnt": 90,
       "admit_cnt": 91,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -101888,7 +101888,7 @@
       "class_name": "二年級",
       "limit_cnt": 70,
       "admit_cnt": 74,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -101979,7 +101979,7 @@
       "class_name": "二年級",
       "limit_cnt": 80,
       "admit_cnt": 92,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -102064,8 +102064,8 @@
       "dept_name": "財務金融學系",
       "class_name": "二年級",
       "limit_cnt": 90,
-      "admit_cnt": 77,
-      "wait_cnt": 1,
+      "admit_cnt": 74,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -102184,7 +102184,7 @@
       "dept_name": "財務金融學系",
       "class_name": "二年級",
       "limit_cnt": 70,
-      "admit_cnt": 42,
+      "admit_cnt": 39,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -102415,7 +102415,7 @@
       "class_name": "三年級",
       "limit_cnt": 100,
       "admit_cnt": 101,
-      "wait_cnt": 3,
+      "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -102651,7 +102651,7 @@
       "class_name": "三年級",
       "limit_cnt": 85,
       "admit_cnt": 61,
-      "wait_cnt": 2,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -102821,8 +102821,8 @@
       "dept_name": "財務金融學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 36,
-      "wait_cnt": 1,
+      "admit_cnt": 32,
+      "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -102959,7 +102959,7 @@
       "dept_name": "財務金融學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 49,
+      "admit_cnt": 48,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -103098,8 +103098,8 @@
       "dept_name": "財務金融學系",
       "class_name": "三年級",
       "limit_cnt": 70,
-      "admit_cnt": 49,
-      "wait_cnt": 0,
+      "admit_cnt": 45,
+      "wait_cnt": 4,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -103162,8 +103162,8 @@
       "dept_name": "財務金融學系",
       "class_name": "三年級",
       "limit_cnt": 40,
-      "admit_cnt": 46,
-      "wait_cnt": 1,
+      "admit_cnt": 44,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -103248,7 +103248,7 @@
       "dept_name": "財務金融學系",
       "class_name": "三年級",
       "limit_cnt": 20,
-      "admit_cnt": 23,
+      "admit_cnt": 21,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -103364,8 +103364,8 @@
       "dept_name": "財務金融學系",
       "class_name": "四年級",
       "limit_cnt": 80,
-      "admit_cnt": 72,
-      "wait_cnt": 1,
+      "admit_cnt": 71,
+      "wait_cnt": 4,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -103648,7 +103648,7 @@
       "dept_name": "財務金融學系",
       "class_name": "四年級",
       "limit_cnt": 30,
-      "admit_cnt": 18,
+      "admit_cnt": 16,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -103788,8 +103788,8 @@
       "dept_name": "財務金融學系",
       "class_name": "四年級",
       "limit_cnt": 70,
-      "admit_cnt": 49,
-      "wait_cnt": 0,
+      "admit_cnt": 45,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -103937,7 +103937,7 @@
       "dept_name": "經濟學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 15,
+      "admit_cnt": 14,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -104086,8 +104086,8 @@
       "dept_name": "經濟學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 63,
-      "wait_cnt": 1,
+      "admit_cnt": 60,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -104173,8 +104173,8 @@
       "dept_name": "經濟學系",
       "class_name": "一年級",
       "limit_cnt": 70,
-      "admit_cnt": 102,
-      "wait_cnt": 1,
+      "admit_cnt": 101,
+      "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -104269,7 +104269,7 @@
       "class_name": "一年級",
       "limit_cnt": 83,
       "admit_cnt": 84,
-      "wait_cnt": 1,
+      "wait_cnt": 4,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -104365,7 +104365,7 @@
       "class_name": "一年級",
       "limit_cnt": 70,
       "admit_cnt": 84,
-      "wait_cnt": 0,
+      "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -104447,8 +104447,8 @@
       "dept_name": "經濟學系",
       "class_name": "二年級",
       "limit_cnt": 100,
-      "admit_cnt": 109,
-      "wait_cnt": 3,
+      "admit_cnt": 108,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -104566,8 +104566,8 @@
       "dept_name": "經濟學系",
       "class_name": "二年級",
       "limit_cnt": 80,
-      "admit_cnt": 97,
-      "wait_cnt": 1,
+      "admit_cnt": 95,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -104695,7 +104695,7 @@
       "dept_name": "經濟學系",
       "class_name": "二年級",
       "limit_cnt": 65,
-      "admit_cnt": 55,
+      "admit_cnt": 54,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -104796,7 +104796,7 @@
       "dept_name": "經濟學系",
       "class_name": "三年級",
       "limit_cnt": 30,
-      "admit_cnt": 34,
+      "admit_cnt": 33,
       "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
@@ -104880,7 +104880,7 @@
       "class_name": "三年級",
       "limit_cnt": 80,
       "admit_cnt": 94,
-      "wait_cnt": 2,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -104969,8 +104969,8 @@
       "dept_name": "經濟學系",
       "class_name": "三年級",
       "limit_cnt": 60,
-      "admit_cnt": 66,
-      "wait_cnt": 2,
+      "admit_cnt": 65,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -105068,8 +105068,8 @@
       "dept_name": "經濟學系",
       "class_name": "三年級",
       "limit_cnt": 60,
-      "admit_cnt": 62,
-      "wait_cnt": 1,
+      "admit_cnt": 58,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -105182,7 +105182,7 @@
       "class_name": "三年級",
       "limit_cnt": 50,
       "admit_cnt": 59,
-      "wait_cnt": 5,
+      "wait_cnt": 9,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -105410,7 +105410,7 @@
       "dept_name": "經濟學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 46,
+      "admit_cnt": 42,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -105484,8 +105484,8 @@
       "dept_name": "經濟學系",
       "class_name": "三年級",
       "limit_cnt": 30,
-      "admit_cnt": 33,
-      "wait_cnt": 9,
+      "admit_cnt": 35,
+      "wait_cnt": 8,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -105559,7 +105559,7 @@
       "class_name": "三年級",
       "limit_cnt": 20,
       "admit_cnt": 20,
-      "wait_cnt": 2,
+      "wait_cnt": 3,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -105613,8 +105613,8 @@
       "dept_name": "經濟學系",
       "class_name": "三年級",
       "limit_cnt": 40,
-      "admit_cnt": 47,
-      "wait_cnt": 3,
+      "admit_cnt": 48,
+      "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -105701,7 +105701,7 @@
       "dept_name": "經濟學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 21,
+      "admit_cnt": 19,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -105871,8 +105871,8 @@
       "dept_name": "經濟學系",
       "class_name": "三年級",
       "limit_cnt": 20,
-      "admit_cnt": 16,
-      "wait_cnt": 1,
+      "admit_cnt": 15,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -105940,7 +105940,7 @@
       "dept_name": "經濟學系",
       "class_name": "四年級",
       "limit_cnt": 15,
-      "admit_cnt": 15,
+      "admit_cnt": 14,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -106011,7 +106011,7 @@
       "class_name": "不分類",
       "limit_cnt": 0,
       "admit_cnt": 51,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
         {
@@ -106508,8 +106508,8 @@
       "dept_name": "企業管理學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 18,
-      "wait_cnt": 1,
+      "admit_cnt": 15,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -106678,7 +106678,7 @@
       "class_name": "不分類",
       "limit_cnt": 0,
       "admit_cnt": 3,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -106726,8 +106726,8 @@
       "dept_name": "企業管理學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 70,
-      "admit_cnt": 53,
-      "wait_cnt": 2,
+      "admit_cnt": 52,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -107259,7 +107259,7 @@
       "dept_name": "資訊管理學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 19,
+      "admit_cnt": 17,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -107464,7 +107464,7 @@
       "dept_name": "資訊管理學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 57,
+      "admit_cnt": 54,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -107586,7 +107586,7 @@
       "dept_name": "資訊管理學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 80,
-      "admit_cnt": 17,
+      "admit_cnt": 15,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -107798,7 +107798,7 @@
       "dept_name": "資訊管理學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 33,
+      "admit_cnt": 32,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -108369,7 +108369,7 @@
       "class_name": "不分類",
       "limit_cnt": 0,
       "admit_cnt": 8,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -108618,7 +108618,7 @@
       "class_name": "不分類",
       "limit_cnt": 10,
       "admit_cnt": 13,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -108892,7 +108892,7 @@
       "dept_name": "工業管理研究所碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 9,
+      "admit_cnt": 10,
       "wait_cnt": 0,
       "password_card": "ALL",
       "sources": [
@@ -109268,8 +109268,8 @@
       "dept_name": "工業管理研究所碩士班",
       "class_name": "不分類",
       "limit_cnt": 35,
-      "admit_cnt": 22,
-      "wait_cnt": 1,
+      "admit_cnt": 23,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -109433,8 +109433,8 @@
       "dept_name": "人力資源管理研究所碩士班",
       "class_name": "不分類",
       "limit_cnt": 33,
-      "admit_cnt": 28,
-      "wait_cnt": 0,
+      "admit_cnt": 29,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -109533,7 +109533,7 @@
       "dept_name": "人力資源管理研究所碩士班",
       "class_name": "不分類",
       "limit_cnt": 33,
-      "admit_cnt": 21,
+      "admit_cnt": 20,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -109901,7 +109901,7 @@
       "class_name": "不分類",
       "limit_cnt": 25,
       "admit_cnt": 4,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
         {
@@ -110101,7 +110101,7 @@
       "dept_name": "財務金融學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 20,
+      "admit_cnt": 19,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -110409,7 +110409,7 @@
       "class_name": "一年級",
       "limit_cnt": 40,
       "admit_cnt": 39,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -110909,7 +110909,7 @@
       "dept_name": "經濟學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 10,
-      "admit_cnt": 12,
+      "admit_cnt": 11,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -110955,7 +110955,7 @@
       "class_name": "不分類",
       "limit_cnt": 20,
       "admit_cnt": 22,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -111232,7 +111232,7 @@
       "class_name": "不分類",
       "limit_cnt": 20,
       "admit_cnt": 14,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -111615,7 +111615,7 @@
       "class_name": "不分類",
       "limit_cnt": 0,
       "admit_cnt": 15,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -111658,7 +111658,7 @@
       "dept_name": "國際經營管理碩士學位學程",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 2,
+      "admit_cnt": 3,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -111703,7 +111703,7 @@
       "class_name": "不分類",
       "limit_cnt": 0,
       "admit_cnt": 29,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
         {
@@ -111824,8 +111824,8 @@
       "dept_name": "國際經營管理碩士學位學程",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 6,
-      "wait_cnt": 1,
+      "admit_cnt": 7,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -112720,7 +112720,7 @@
       "class_name": "不分類",
       "limit_cnt": 0,
       "admit_cnt": 0,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -113637,8 +113637,8 @@
       "dept_name": "資訊管理學系碩士在職專班",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 11,
-      "wait_cnt": 1,
+      "admit_cnt": 12,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -115202,7 +115202,7 @@
       "class_name": "不分類",
       "limit_cnt": 24,
       "admit_cnt": 24,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -115263,7 +115263,7 @@
       "class_name": "不分類",
       "limit_cnt": 24,
       "admit_cnt": 24,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -116355,7 +116355,7 @@
       "dept_name": "企業管理學系博士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 17,
+      "admit_cnt": 16,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -117722,8 +117722,8 @@
       "dept_name": "電機工程學系",
       "class_name": "不分類",
       "limit_cnt": 70,
-      "admit_cnt": 83,
-      "wait_cnt": 6,
+      "admit_cnt": 84,
+      "wait_cnt": 8,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -117754,7 +117754,7 @@
       "dept_name": "電機工程學系",
       "class_name": "不分類",
       "limit_cnt": 70,
-      "admit_cnt": 34,
+      "admit_cnt": 31,
       "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
@@ -117851,8 +117851,8 @@
       "dept_name": "電機工程學系",
       "class_name": "不分類",
       "limit_cnt": 70,
-      "admit_cnt": 61,
-      "wait_cnt": 0,
+      "admit_cnt": 59,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -118470,8 +118470,8 @@
       "dept_name": "電機工程學系",
       "class_name": "一年級",
       "limit_cnt": 0,
-      "admit_cnt": 90,
-      "wait_cnt": 0,
+      "admit_cnt": 89,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -118598,7 +118598,7 @@
       "class_name": "一年級",
       "limit_cnt": 0,
       "admit_cnt": 79,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -119074,7 +119074,7 @@
       "dept_name": "電機工程學系",
       "class_name": "二年級",
       "limit_cnt": 100,
-      "admit_cnt": 83,
+      "admit_cnt": 82,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -119188,7 +119188,7 @@
       "dept_name": "電機工程學系",
       "class_name": "二年級",
       "limit_cnt": 80,
-      "admit_cnt": 82,
+      "admit_cnt": 81,
       "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
@@ -119517,7 +119517,7 @@
       "class_name": "二年級",
       "limit_cnt": 0,
       "admit_cnt": 79,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -119630,7 +119630,7 @@
       "dept_name": "電機工程學系",
       "class_name": "二年級",
       "limit_cnt": 0,
-      "admit_cnt": 64,
+      "admit_cnt": 62,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -119750,7 +119750,7 @@
       "dept_name": "電機工程學系",
       "class_name": "二年級",
       "limit_cnt": 70,
-      "admit_cnt": 66,
+      "admit_cnt": 65,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -120153,7 +120153,7 @@
       "class_name": "三年級",
       "limit_cnt": 120,
       "admit_cnt": 149,
-      "wait_cnt": 4,
+      "wait_cnt": 10,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -120239,7 +120239,7 @@
       "class_name": "三年級",
       "limit_cnt": 140,
       "admit_cnt": 136,
-      "wait_cnt": 1,
+      "wait_cnt": 3,
       "password_card": "NONE",
       "sources": [
         {
@@ -120342,8 +120342,8 @@
       "dept_name": "電機工程學系",
       "class_name": "三年級",
       "limit_cnt": 70,
-      "admit_cnt": 28,
-      "wait_cnt": 2,
+      "admit_cnt": 25,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -120426,8 +120426,8 @@
       "dept_name": "電機工程學系",
       "class_name": "三年級",
       "limit_cnt": 120,
-      "admit_cnt": 117,
-      "wait_cnt": 0,
+      "admit_cnt": 113,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -120512,8 +120512,8 @@
       "dept_name": "電機工程學系",
       "class_name": "三年級",
       "limit_cnt": 75,
-      "admit_cnt": 28,
-      "wait_cnt": 0,
+      "admit_cnt": 25,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -120620,8 +120620,8 @@
       "dept_name": "電機工程學系",
       "class_name": "三年級",
       "limit_cnt": 80,
-      "admit_cnt": 95,
-      "wait_cnt": 2,
+      "admit_cnt": 96,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -120656,8 +120656,8 @@
       "dept_name": "電機工程學系",
       "class_name": "三年級",
       "limit_cnt": 80,
-      "admit_cnt": 66,
-      "wait_cnt": 1,
+      "admit_cnt": 59,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -120865,7 +120865,7 @@
       "dept_name": "電機工程學系",
       "class_name": "三年級",
       "limit_cnt": 70,
-      "admit_cnt": 63,
+      "admit_cnt": 61,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -120983,7 +120983,7 @@
       "dept_name": "電機工程學系",
       "class_name": "三年級",
       "limit_cnt": 0,
-      "admit_cnt": 42,
+      "admit_cnt": 43,
       "wait_cnt": 0,
       "password_card": "ALL",
       "sources": [
@@ -121015,7 +121015,7 @@
       "dept_name": "電機工程學系",
       "class_name": "三年級",
       "limit_cnt": 0,
-      "admit_cnt": 41,
+      "admit_cnt": 45,
       "wait_cnt": 0,
       "password_card": "ALL",
       "sources": [
@@ -121047,8 +121047,8 @@
       "dept_name": "電機工程學系",
       "class_name": "三年級",
       "limit_cnt": 40,
-      "admit_cnt": 36,
-      "wait_cnt": 1,
+      "admit_cnt": 32,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -121121,8 +121121,8 @@
       "dept_name": "電機工程學系",
       "class_name": "三年級",
       "limit_cnt": 20,
-      "admit_cnt": 29,
-      "wait_cnt": 2,
+      "admit_cnt": 30,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -121330,8 +121330,8 @@
       "dept_name": "電機工程學系",
       "class_name": "四年級",
       "limit_cnt": 120,
-      "admit_cnt": 83,
-      "wait_cnt": 2,
+      "admit_cnt": 79,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -121471,7 +121471,7 @@
       "dept_name": "資訊工程學系",
       "class_name": "一年級",
       "limit_cnt": 60,
-      "admit_cnt": 81,
+      "admit_cnt": 82,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -121596,8 +121596,8 @@
       "dept_name": "資訊工程學系",
       "class_name": "一年級",
       "limit_cnt": 80,
-      "admit_cnt": 78,
-      "wait_cnt": 0,
+      "admit_cnt": 77,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -121728,7 +121728,7 @@
       "class_name": "一年級",
       "limit_cnt": 60,
       "admit_cnt": 77,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -121840,7 +121840,7 @@
       "dept_name": "資訊工程學系",
       "class_name": "一年級",
       "limit_cnt": 60,
-      "admit_cnt": 62,
+      "admit_cnt": 61,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -121952,7 +121952,7 @@
       "dept_name": "資訊工程學系",
       "class_name": "二年級",
       "limit_cnt": 60,
-      "admit_cnt": 71,
+      "admit_cnt": 70,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -122178,7 +122178,7 @@
       "class_name": "二年級",
       "limit_cnt": 60,
       "admit_cnt": 62,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -122288,8 +122288,8 @@
       "dept_name": "資訊工程學系",
       "class_name": "二年級",
       "limit_cnt": 60,
-      "admit_cnt": 67,
-      "wait_cnt": 1,
+      "admit_cnt": 66,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -122400,7 +122400,7 @@
       "dept_name": "資訊工程學系",
       "class_name": "二年級",
       "limit_cnt": 65,
-      "admit_cnt": 86,
+      "admit_cnt": 84,
       "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
@@ -122522,8 +122522,8 @@
       "dept_name": "資訊工程學系",
       "class_name": "二年級",
       "limit_cnt": 65,
-      "admit_cnt": 59,
-      "wait_cnt": 1,
+      "admit_cnt": 58,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -122720,8 +122720,8 @@
       "dept_name": "資訊工程學系",
       "class_name": "二年級",
       "limit_cnt": 50,
-      "admit_cnt": 42,
-      "wait_cnt": 0,
+      "admit_cnt": 39,
+      "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -122795,7 +122795,7 @@
       "dept_name": "資訊工程學系",
       "class_name": "二年級",
       "limit_cnt": 20,
-      "admit_cnt": 28,
+      "admit_cnt": 26,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -122885,7 +122885,7 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 130,
-      "admit_cnt": 126,
+      "admit_cnt": 125,
       "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
@@ -122979,7 +122979,7 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 67,
-      "admit_cnt": 69,
+      "admit_cnt": 65,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -123081,7 +123081,7 @@
       "class_name": "三年級",
       "limit_cnt": 67,
       "admit_cnt": 72,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -123442,7 +123442,7 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 0,
-      "admit_cnt": 16,
+      "admit_cnt": 17,
       "wait_cnt": 0,
       "password_card": "ALL",
       "sources": [
@@ -123564,8 +123564,8 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 40,
-      "admit_cnt": 77,
-      "wait_cnt": 2,
+      "admit_cnt": 79,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -123696,8 +123696,8 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 60,
-      "admit_cnt": 50,
-      "wait_cnt": 0,
+      "admit_cnt": 49,
+      "wait_cnt": 3,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -123815,8 +123815,8 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 40,
-      "admit_cnt": 51,
-      "wait_cnt": 9,
+      "admit_cnt": 52,
+      "wait_cnt": 8,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -123918,7 +123918,7 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 40,
-      "admit_cnt": 30,
+      "admit_cnt": 26,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -124003,8 +124003,8 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 40,
-      "admit_cnt": 15,
-      "wait_cnt": 0,
+      "admit_cnt": 13,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -124088,8 +124088,8 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 40,
-      "admit_cnt": 32,
-      "wait_cnt": 2,
+      "admit_cnt": 30,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -124188,7 +124188,7 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 40,
-      "admit_cnt": 26,
+      "admit_cnt": 25,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -124307,7 +124307,7 @@
       "class_name": "三年級",
       "limit_cnt": 40,
       "admit_cnt": 36,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -124406,7 +124406,7 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 40,
-      "admit_cnt": 44,
+      "admit_cnt": 45,
       "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
@@ -124634,8 +124634,8 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 40,
-      "admit_cnt": 30,
-      "wait_cnt": 1,
+      "admit_cnt": 28,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -124719,8 +124719,8 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 60,
-      "admit_cnt": 52,
-      "wait_cnt": 5,
+      "admit_cnt": 53,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -124857,7 +124857,7 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 60,
-      "admit_cnt": 40,
+      "admit_cnt": 38,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -124957,8 +124957,8 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 60,
-      "admit_cnt": 68,
-      "wait_cnt": 2,
+      "admit_cnt": 67,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -125078,8 +125078,8 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 60,
-      "admit_cnt": 58,
-      "wait_cnt": 10,
+      "admit_cnt": 66,
+      "wait_cnt": 5,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -125327,8 +125327,8 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 40,
-      "admit_cnt": 55,
-      "wait_cnt": 2,
+      "admit_cnt": 57,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -125412,8 +125412,8 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 52,
-      "wait_cnt": 1,
+      "admit_cnt": 48,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -125512,8 +125512,8 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 40,
-      "admit_cnt": 46,
-      "wait_cnt": 2,
+      "admit_cnt": 48,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -125597,8 +125597,8 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 75,
-      "wait_cnt": 2,
+      "admit_cnt": 78,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -125726,7 +125726,7 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 28,
+      "admit_cnt": 25,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -125807,7 +125807,7 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 41,
+      "admit_cnt": 39,
       "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
@@ -125916,8 +125916,8 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 60,
-      "admit_cnt": 127,
-      "wait_cnt": 1,
+      "admit_cnt": 125,
+      "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -126051,8 +126051,8 @@
       "dept_name": "資訊工程學系",
       "class_name": "四年級",
       "limit_cnt": 80,
-      "admit_cnt": 189,
-      "wait_cnt": 3,
+      "admit_cnt": 187,
+      "wait_cnt": 4,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -126159,7 +126159,7 @@
       "dept_name": "資訊工程學系",
       "class_name": "四年級",
       "limit_cnt": 80,
-      "admit_cnt": 58,
+      "admit_cnt": 53,
       "wait_cnt": 6,
       "password_card": "OPTIONAL",
       "sources": [
@@ -126311,8 +126311,8 @@
       "dept_name": "資訊工程學系",
       "class_name": "四年級",
       "limit_cnt": 40,
-      "admit_cnt": 34,
-      "wait_cnt": 1,
+      "admit_cnt": 35,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -126756,7 +126756,7 @@
       "class_name": "一年級",
       "limit_cnt": 100,
       "admit_cnt": 95,
-      "wait_cnt": 0,
+      "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -126858,7 +126858,7 @@
       "class_name": "一年級",
       "limit_cnt": 50,
       "admit_cnt": 47,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -126980,8 +126980,8 @@
       "dept_name": "通訊工程學系",
       "class_name": "一年級",
       "limit_cnt": 70,
-      "admit_cnt": 65,
-      "wait_cnt": 0,
+      "admit_cnt": 63,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -127061,7 +127061,7 @@
       "class_name": "二年級",
       "limit_cnt": 70,
       "admit_cnt": 50,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -127236,7 +127236,7 @@
       "dept_name": "通訊工程學系",
       "class_name": "二年級",
       "limit_cnt": 70,
-      "admit_cnt": 31,
+      "admit_cnt": 30,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -127641,7 +127641,7 @@
       "dept_name": "通訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 70,
-      "admit_cnt": 70,
+      "admit_cnt": 69,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -127876,7 +127876,7 @@
       "dept_name": "通訊工程學系",
       "class_name": "四年級",
       "limit_cnt": 50,
-      "admit_cnt": 50,
+      "admit_cnt": 49,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -127955,7 +127955,7 @@
       "dept_name": "資訊電機學院學士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 18,
+      "admit_cnt": 19,
       "wait_cnt": 0,
       "password_card": "ALL",
       "sources": [
@@ -127999,8 +127999,8 @@
       "dept_name": "資訊電機學院學士班",
       "class_name": "不分類",
       "limit_cnt": 120,
-      "admit_cnt": 55,
-      "wait_cnt": 0,
+      "admit_cnt": 54,
+      "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -128220,8 +128220,8 @@
       "dept_name": "電機工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 36,
-      "wait_cnt": 1,
+      "admit_cnt": 35,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -128364,8 +128364,8 @@
       "dept_name": "電機工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 31,
-      "wait_cnt": 2,
+      "admit_cnt": 30,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -128396,8 +128396,8 @@
       "dept_name": "電機工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 100,
-      "admit_cnt": 104,
-      "wait_cnt": 1,
+      "admit_cnt": 100,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -128467,7 +128467,7 @@
       "dept_name": "電機工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 90,
-      "admit_cnt": 42,
+      "admit_cnt": 41,
       "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
@@ -128499,8 +128499,8 @@
       "dept_name": "電機工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 70,
-      "admit_cnt": 84,
-      "wait_cnt": 1,
+      "admit_cnt": 82,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -128607,8 +128607,8 @@
       "dept_name": "電機工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 59,
-      "wait_cnt": 2,
+      "admit_cnt": 58,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -128984,8 +128984,8 @@
       "dept_name": "電機工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 90,
-      "admit_cnt": 66,
-      "wait_cnt": 0,
+      "admit_cnt": 64,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -129016,8 +129016,8 @@
       "dept_name": "電機工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 46,
-      "wait_cnt": 1,
+      "admit_cnt": 44,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -129053,7 +129053,7 @@
       "class_name": "不分類",
       "limit_cnt": 50,
       "admit_cnt": 34,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -129089,8 +129089,8 @@
       "dept_name": "電機工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 42,
-      "wait_cnt": 0,
+      "admit_cnt": 41,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -129151,7 +129151,7 @@
       "dept_name": "電機工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 75,
-      "admit_cnt": 69,
+      "admit_cnt": 67,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -129220,7 +129220,7 @@
       "class_name": "不分類",
       "limit_cnt": 40,
       "admit_cnt": 23,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -129256,7 +129256,7 @@
       "dept_name": "電機工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 90,
-      "admit_cnt": 30,
+      "admit_cnt": 27,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -129329,7 +129329,7 @@
       "class_name": "不分類",
       "limit_cnt": 66,
       "admit_cnt": 30,
-      "wait_cnt": 0,
+      "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -129364,8 +129364,8 @@
       "dept_name": "電機工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 38,
-      "wait_cnt": 1,
+      "admit_cnt": 37,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -129482,7 +129482,7 @@
       "class_name": "不分類",
       "limit_cnt": 40,
       "admit_cnt": 12,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -129577,7 +129577,7 @@
       "class_name": "不分類",
       "limit_cnt": 50,
       "admit_cnt": 29,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -129625,8 +129625,8 @@
       "dept_name": "電機工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 70,
-      "admit_cnt": 77,
-      "wait_cnt": 16,
+      "admit_cnt": 75,
+      "wait_cnt": 15,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -129770,7 +129770,7 @@
       "class_name": "不分類",
       "limit_cnt": 15,
       "admit_cnt": 10,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -129828,7 +129828,7 @@
       "dept_name": "資訊工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 35,
-      "admit_cnt": 36,
+      "admit_cnt": 35,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -129922,7 +129922,7 @@
       "dept_name": "資訊工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 41,
+      "admit_cnt": 40,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -129996,7 +129996,7 @@
       "dept_name": "資訊工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 46,
+      "admit_cnt": 45,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -130067,7 +130067,7 @@
       "dept_name": "資訊工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 40,
-      "admit_cnt": 18,
+      "admit_cnt": 16,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -130478,7 +130478,7 @@
       "dept_name": "資訊工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 40,
-      "admit_cnt": 29,
+      "admit_cnt": 27,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -130573,8 +130573,8 @@
       "dept_name": "通訊工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 28,
-      "wait_cnt": 2,
+      "admit_cnt": 29,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -130738,7 +130738,7 @@
       "dept_name": "通訊工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 24,
+      "admit_cnt": 23,
       "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
@@ -131103,7 +131103,7 @@
       "dept_name": "通訊工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 25,
-      "admit_cnt": 25,
+      "admit_cnt": 24,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -131171,7 +131171,7 @@
       "dept_name": "通訊工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 13,
+      "admit_cnt": 12,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -131543,8 +131543,8 @@
       "dept_name": "通訊工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 12,
-      "wait_cnt": 2,
+      "admit_cnt": 13,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -131634,7 +131634,7 @@
       "class_name": "不分類",
       "limit_cnt": 0,
       "admit_cnt": 30,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
         {
@@ -131731,7 +131731,7 @@
       "dept_name": "網路學習科技研究所碩士班",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 33,
+      "admit_cnt": 34,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -131797,7 +131797,7 @@
       "class_name": "不分類",
       "limit_cnt": 30,
       "admit_cnt": 22,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -131875,7 +131875,7 @@
       "class_name": "不分類",
       "limit_cnt": 30,
       "admit_cnt": 17,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -132150,7 +132150,7 @@
       "dept_name": "網路學習科技研究所碩士班",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 25,
+      "admit_cnt": 24,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -132604,7 +132604,7 @@
       "dept_name": "資訊工程學系碩士在職專班",
       "class_name": "不分類",
       "limit_cnt": 40,
-      "admit_cnt": 39,
+      "admit_cnt": 40,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -132880,7 +132880,7 @@
       "dept_name": "通訊工程學系碩士在職專班",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 37,
+      "admit_cnt": 36,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -132935,8 +132935,8 @@
       "dept_name": "通訊工程學系碩士在職專班",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 23,
-      "wait_cnt": 1,
+      "admit_cnt": 24,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -133039,7 +133039,7 @@
       "class_name": "不分類",
       "limit_cnt": 40,
       "admit_cnt": 25,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -133154,7 +133154,7 @@
       "dept_name": "通訊工程學系碩士在職專班",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 32,
+      "admit_cnt": 31,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -133590,7 +133590,7 @@
       "class_name": "不分類",
       "limit_cnt": 40,
       "admit_cnt": 2,
-      "wait_cnt": 2,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -133728,8 +133728,8 @@
       "dept_name": "大氣科學學系",
       "class_name": "一年級",
       "limit_cnt": 60,
-      "admit_cnt": 39,
-      "wait_cnt": 0,
+      "admit_cnt": 38,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -133810,7 +133810,7 @@
       "dept_name": "大氣科學學系",
       "class_name": "一年級",
       "limit_cnt": 50,
-      "admit_cnt": 34,
+      "admit_cnt": 33,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -134024,7 +134024,7 @@
       "class_name": "一年級",
       "limit_cnt": 0,
       "admit_cnt": 38,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -134338,7 +134338,7 @@
       "dept_name": "大氣科學學系",
       "class_name": "二年級",
       "limit_cnt": 0,
-      "admit_cnt": 55,
+      "admit_cnt": 54,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -134490,8 +134490,8 @@
       "dept_name": "大氣科學學系",
       "class_name": "二年級",
       "limit_cnt": 0,
-      "admit_cnt": 12,
-      "wait_cnt": 1,
+      "admit_cnt": 13,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -134582,7 +134582,7 @@
       "dept_name": "大氣科學學系",
       "class_name": "三年級",
       "limit_cnt": 0,
-      "admit_cnt": 42,
+      "admit_cnt": 40,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -134659,8 +134659,8 @@
       "dept_name": "大氣科學學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 37,
-      "wait_cnt": 0,
+      "admit_cnt": 34,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -134859,7 +134859,7 @@
       "class_name": "四年級",
       "limit_cnt": 0,
       "admit_cnt": 32,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -135177,7 +135177,7 @@
       "class_name": "一年級",
       "limit_cnt": 70,
       "admit_cnt": 68,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -135604,8 +135604,8 @@
       "dept_name": "地球科學學系",
       "class_name": "二年級",
       "limit_cnt": 118,
-      "admit_cnt": 77,
-      "wait_cnt": 0,
+      "admit_cnt": 75,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -135855,7 +135855,7 @@
       "dept_name": "地球科學學系",
       "class_name": "二年級",
       "limit_cnt": 50,
-      "admit_cnt": 28,
+      "admit_cnt": 27,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -135987,7 +135987,7 @@
       "dept_name": "地球科學學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 24,
+      "admit_cnt": 23,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -136305,8 +136305,8 @@
       "dept_name": "地球科學學系",
       "class_name": "三年級",
       "limit_cnt": 0,
-      "admit_cnt": 23,
-      "wait_cnt": 3,
+      "admit_cnt": 24,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -136500,8 +136500,8 @@
       "dept_name": "地球科學學系",
       "class_name": "三年級",
       "limit_cnt": 0,
-      "admit_cnt": 17,
-      "wait_cnt": 1,
+      "admit_cnt": 16,
+      "wait_cnt": 2,
       "password_card": "NONE",
       "sources": [
         {
@@ -137591,8 +137591,8 @@
       "dept_name": "地球科學學院學士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 13,
-      "wait_cnt": 1,
+      "admit_cnt": 14,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -138076,7 +138076,7 @@
       "class_name": "三年級",
       "limit_cnt": 0,
       "admit_cnt": 35,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -138182,7 +138182,7 @@
       "class_name": "三年級",
       "limit_cnt": 0,
       "admit_cnt": 32,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -138330,7 +138330,7 @@
       "class_name": "不分類",
       "limit_cnt": 30,
       "admit_cnt": 40,
-      "wait_cnt": 5,
+      "wait_cnt": 4,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -138409,7 +138409,7 @@
       "class_name": "不分類",
       "limit_cnt": 0,
       "admit_cnt": 15,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -138485,8 +138485,8 @@
       "dept_name": "太空科學與工程學系",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 31,
-      "wait_cnt": 2,
+      "admit_cnt": 30,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -138852,7 +138852,7 @@
       "class_name": "二年級",
       "limit_cnt": 0,
       "admit_cnt": 44,
-      "wait_cnt": 1,
+      "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -139227,7 +139227,7 @@
       "class_name": "三年級",
       "limit_cnt": 40,
       "admit_cnt": 31,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -139475,7 +139475,7 @@
       "dept_name": "太空科學與工程學系",
       "class_name": "三年級",
       "limit_cnt": 0,
-      "admit_cnt": 13,
+      "admit_cnt": 12,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -139512,8 +139512,8 @@
       "dept_name": "太空科學與工程學系",
       "class_name": "三年級",
       "limit_cnt": 60,
-      "admit_cnt": 59,
-      "wait_cnt": 2,
+      "admit_cnt": 60,
+      "wait_cnt": 4,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -139722,7 +139722,7 @@
       "dept_name": "太空科學與工程學系",
       "class_name": "三年級",
       "limit_cnt": 20,
-      "admit_cnt": 20,
+      "admit_cnt": 19,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -140924,7 +140924,7 @@
       "dept_name": "地球科學學系地球物理碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 7,
+      "admit_cnt": 6,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -141148,7 +141148,7 @@
       "dept_name": "地球科學學系地球物理碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 8,
+      "admit_cnt": 7,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -141212,7 +141212,7 @@
       "dept_name": "地球科學學系地球物理碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 13,
+      "admit_cnt": 12,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -141466,7 +141466,7 @@
       "dept_name": "地球科學學系地球物理碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 14,
+      "admit_cnt": 13,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -144301,7 +144301,7 @@
       "dept_name": "太空科學與工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 21,
+      "admit_cnt": 20,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -144559,7 +144559,7 @@
       "class_name": "不分類",
       "limit_cnt": 0,
       "admit_cnt": 1,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -145136,7 +145136,7 @@
       "class_name": "不分類",
       "limit_cnt": 0,
       "admit_cnt": 2,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -145577,8 +145577,8 @@
       "dept_name": "客家語文暨社會科學學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 46,
-      "wait_cnt": 0,
+      "admit_cnt": 44,
+      "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
         {
@@ -145643,7 +145643,7 @@
       "dept_name": "客家語文暨社會科學學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 22,
+      "admit_cnt": 21,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -145888,8 +145888,8 @@
       "dept_name": "客家語文暨社會科學學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 46,
-      "wait_cnt": 0,
+      "admit_cnt": 45,
+      "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
         {
@@ -146123,7 +146123,7 @@
       "dept_name": "客家語文暨社會科學學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 11,
+      "admit_cnt": 10,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -146182,8 +146182,8 @@
       "dept_name": "客家語文暨社會科學學系",
       "class_name": "一年級",
       "limit_cnt": 50,
-      "admit_cnt": 26,
-      "wait_cnt": 1,
+      "admit_cnt": 27,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -146338,7 +146338,7 @@
       "dept_name": "客家語文暨社會科學學系",
       "class_name": "一年級",
       "limit_cnt": 50,
-      "admit_cnt": 45,
+      "admit_cnt": 44,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -146427,7 +146427,7 @@
       "dept_name": "客家語文暨社會科學學系",
       "class_name": "一年級",
       "limit_cnt": 50,
-      "admit_cnt": 46,
+      "admit_cnt": 45,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -146728,7 +146728,7 @@
       "class_name": "二年級",
       "limit_cnt": 50,
       "admit_cnt": 49,
-      "wait_cnt": 1,
+      "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -146805,7 +146805,7 @@
       "dept_name": "客家語文暨社會科學學系",
       "class_name": "二年級",
       "limit_cnt": 50,
-      "admit_cnt": 27,
+      "admit_cnt": 26,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -146883,8 +146883,8 @@
       "dept_name": "客家語文暨社會科學學系",
       "class_name": "二年級",
       "limit_cnt": 50,
-      "admit_cnt": 54,
-      "wait_cnt": 1,
+      "admit_cnt": 55,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -146977,7 +146977,7 @@
       "class_name": "二年級",
       "limit_cnt": 50,
       "admit_cnt": 42,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -147054,8 +147054,8 @@
       "dept_name": "客家語文暨社會科學學系",
       "class_name": "二年級",
       "limit_cnt": 50,
-      "admit_cnt": 37,
-      "wait_cnt": 2,
+      "admit_cnt": 38,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -147119,8 +147119,8 @@
       "dept_name": "客家語文暨社會科學學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 48,
-      "wait_cnt": 1,
+      "admit_cnt": 46,
+      "wait_cnt": 4,
       "password_card": "NONE",
       "sources": [
         {
@@ -147191,7 +147191,7 @@
       "dept_name": "客家語文暨社會科學學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 18,
+      "admit_cnt": 17,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -147563,7 +147563,7 @@
       "class_name": "一年級",
       "limit_cnt": 50,
       "admit_cnt": 25,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -147731,7 +147731,7 @@
       "class_name": "一年級",
       "limit_cnt": 50,
       "admit_cnt": 22,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -148433,7 +148433,7 @@
       "dept_name": "客家語文暨社會科學學系客家語文碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 4,
+      "admit_cnt": 3,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -148572,8 +148572,8 @@
       "dept_name": "法律與政府學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 15,
-      "wait_cnt": 0,
+      "admit_cnt": 14,
+      "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
         {
@@ -149175,7 +149175,7 @@
       "dept_name": "客家語文暨社會科學學系客家研究碩士在職專班",
       "class_name": "不分類",
       "limit_cnt": 20,
-      "admit_cnt": 16,
+      "admit_cnt": 14,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -149311,8 +149311,8 @@
       "dept_name": "客家語文暨社會科學學系客家研究碩士在職專班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 18,
-      "wait_cnt": 1,
+      "admit_cnt": 19,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -149378,8 +149378,8 @@
       "dept_name": "客家語文暨社會科學學系客家研究碩士在職專班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 15,
-      "wait_cnt": 1,
+      "admit_cnt": 16,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -149445,7 +149445,7 @@
       "dept_name": "客家語文暨社會科學學系客家研究碩士在職專班",
       "class_name": "不分類",
       "limit_cnt": 20,
-      "admit_cnt": 6,
+      "admit_cnt": 5,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -149512,8 +149512,8 @@
       "dept_name": "客家語文暨社會科學學系客家研究碩士在職專班",
       "class_name": "不分類",
       "limit_cnt": 20,
-      "admit_cnt": 15,
-      "wait_cnt": 1,
+      "admit_cnt": 16,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -149623,8 +149623,8 @@
       "dept_name": "法律與政府學系碩士在職專班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 19,
-      "wait_cnt": 2,
+      "admit_cnt": 20,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -149893,7 +149893,7 @@
       "dept_name": "法律與政府學系碩士在職專班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 32,
+      "admit_cnt": 31,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -149938,7 +149938,7 @@
       "class_name": "不分類",
       "limit_cnt": 0,
       "admit_cnt": 13,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
         {
@@ -150412,8 +150412,8 @@
       "dept_name": "生醫理工學院",
       "class_name": "不分類",
       "limit_cnt": 60,
-      "admit_cnt": 44,
-      "wait_cnt": 0,
+      "admit_cnt": 43,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -150544,7 +150544,7 @@
       "dept_name": "生命科學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 49,
+      "admit_cnt": 48,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -150589,7 +150589,7 @@
       "class_name": "不分類",
       "limit_cnt": 60,
       "admit_cnt": 12,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -150749,7 +150749,7 @@
       "class_name": "不分類",
       "limit_cnt": 45,
       "admit_cnt": 51,
-      "wait_cnt": 6,
+      "wait_cnt": 7,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -151217,7 +151217,7 @@
       "class_name": "一年級",
       "limit_cnt": 50,
       "admit_cnt": 50,
-      "wait_cnt": 1,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -151599,7 +151599,7 @@
       "class_name": "三年級",
       "limit_cnt": 50,
       "admit_cnt": 30,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
         {
@@ -152316,7 +152316,7 @@
       "dept_name": "生醫科學與工程學系",
       "class_name": "不分類",
       "limit_cnt": 15,
-      "admit_cnt": 18,
+      "admit_cnt": 17,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -153269,7 +153269,7 @@
       "class_name": "二年級",
       "limit_cnt": 0,
       "admit_cnt": 39,
-      "wait_cnt": 0,
+      "wait_cnt": 3,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -154097,7 +154097,7 @@
       "class_name": "三年級",
       "limit_cnt": 0,
       "admit_cnt": 11,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -154360,7 +154360,7 @@
       "dept_name": "生命科學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 22,
+      "admit_cnt": 21,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -154553,7 +154553,7 @@
       "dept_name": "生命科學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 40,
-      "admit_cnt": 16,
+      "admit_cnt": 15,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -156663,7 +156663,7 @@
       "class_name": "不分類",
       "limit_cnt": 30,
       "admit_cnt": 19,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -156864,7 +156864,7 @@
       "dept_name": "生醫科學與工程學系生物醫學工程碩士班",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 17,
+      "admit_cnt": 15,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -157234,7 +157234,7 @@
       "dept_name": "生醫科學與工程學系生物醫學工程碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 33,
+      "admit_cnt": 34,
       "wait_cnt": 0,
       "password_card": "ALL",
       "sources": [
@@ -157364,7 +157364,7 @@
       "class_name": "不分類",
       "limit_cnt": 0,
       "admit_cnt": 14,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
         {
@@ -157496,7 +157496,7 @@
       "class_name": "不分類",
       "limit_cnt": 0,
       "admit_cnt": 20,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
         {
@@ -157540,7 +157540,7 @@
       "class_name": "不分類",
       "limit_cnt": 0,
       "admit_cnt": 20,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "NONE",
       "sources": [
         {
@@ -158056,7 +158056,7 @@
       "class_name": "不分類",
       "limit_cnt": 50,
       "admit_cnt": 10,
-      "wait_cnt": 0,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -158415,8 +158415,8 @@
       "dept_name": "永續與綠能科技研究學院",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 81,
-      "wait_cnt": 1,
+      "admit_cnt": 82,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -158476,8 +158476,8 @@
       "dept_name": "永續與綠能科技研究學院",
       "class_name": "不分類",
       "limit_cnt": 20,
-      "admit_cnt": 15,
-      "wait_cnt": 1,
+      "admit_cnt": 16,
+      "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -158897,8 +158897,8 @@
       "dept_name": "永續與綠能科技研究學院",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 24,
-      "wait_cnt": 2,
+      "admit_cnt": 26,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
@@ -159088,7 +159088,7 @@
       "class_name": "不分類",
       "limit_cnt": 20,
       "admit_cnt": 18,
-      "wait_cnt": 0,
+      "wait_cnt": 2,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -159207,8 +159207,8 @@
       "dept_name": "永續去碳科技碩士學位學程",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 26,
-      "wait_cnt": 0,
+      "admit_cnt": 25,
+      "wait_cnt": 1,
       "password_card": "OPTIONAL",
       "sources": [
         {
@@ -160047,7 +160047,7 @@
       "dept_name": "永續領導力碩士學位學程",
       "class_name": "不分類",
       "limit_cnt": 35,
-      "admit_cnt": 18,
+      "admit_cnt": 17,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -160403,7 +160403,7 @@
       "dept_name": "永續領導力碩士學位學程",
       "class_name": "不分類",
       "limit_cnt": 35,
-      "admit_cnt": 23,
+      "admit_cnt": 22,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
