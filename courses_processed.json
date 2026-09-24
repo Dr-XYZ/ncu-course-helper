@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-09-23 19:32:22",
+  "last_update": "2026-09-24 19:51:57",
   "courses": [
     {
       "課程編號": "01001",
@@ -23145,7 +23145,7 @@
     {
       "課程編號": "00010",
       "課程代碼": "LN0025",
-      "課程名稱": "日文(一)A",
+      "課程名稱": "日文(一)A [已停開]",
       "授課教師": "張恆如",
       "學分": "3",
       "必選修": "選修",
@@ -42211,7 +42211,7 @@
       "dept_name": "中國文學系",
       "class_name": "一年級",
       "limit_cnt": 20,
-      "admit_cnt": 2,
+      "admit_cnt": 1,
       "wait_cnt": 0,
       "password_card": "ALL",
       "sources": [
@@ -87207,7 +87207,7 @@
       "dept_name": "化學工程與材料工程學系",
       "class_name": "三年級",
       "limit_cnt": 0,
-      "admit_cnt": 23,
+      "admit_cnt": 24,
       "wait_cnt": 0,
       "password_card": "ALL",
       "sources": [
@@ -123674,7 +123674,7 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 0,
-      "admit_cnt": 20,
+      "admit_cnt": 21,
       "wait_cnt": 0,
       "password_card": "ALL",
       "sources": [
@@ -135836,7 +135836,7 @@
       "dept_name": "地球科學學系",
       "class_name": "二年級",
       "limit_cnt": 118,
-      "admit_cnt": 73,
+      "admit_cnt": 72,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -136665,7 +136665,7 @@
       "dept_name": "地球科學學系",
       "class_name": "三年級",
       "limit_cnt": 0,
-      "admit_cnt": 19,
+      "admit_cnt": 20,
       "wait_cnt": 0,
       "password_card": "ALL",
       "sources": [
@@ -144374,7 +144374,7 @@
     {
       "課程編號": "63029",
       "課程代碼": "SS6053",
-      "課程名稱": "太空遙測原理",
+      "課程名稱": "太空遙測原理 [已停開]",
       "授課教師": "任玄林唐煌",
       "學分": "3",
       "必選修": "選修",
@@ -156967,7 +156967,7 @@
       "class_name": "不分類",
       "limit_cnt": 30,
       "admit_cnt": 1,
-      "wait_cnt": 18,
+      "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
         {
