@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-09-24 19:51:57",
+  "last_update": "2026-09-25 19:54:02",
   "courses": [
     {
       "課程編號": "01001",
@@ -76680,7 +76680,7 @@
       "課程編號": "32022",
       "課程代碼": "CI3024",
       "課程名稱": "結構學Ⅱ",
-      "授課教師": "莊德興",
+      "授課教師": "莊德興蔡仁傑",
       "學分": "3",
       "必選修": "選修",
       "上課時間/教室": "四234/E-250",
@@ -106298,7 +106298,7 @@
     {
       "課程編號": "41018",
       "課程代碼": "BA5059",
-      "課程名稱": "訓練與發展專題",
+      "課程名稱": "訓練與發展專題 [已停開]",
       "授課教師": "李憶萱",
       "學分": "3",
       "必選修": "選修",
@@ -106307,10 +106307,10 @@
       "url": "https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?crs=41018",
       "dept_name": "企業管理學系碩士班",
       "class_name": "不分類",
-      "limit_cnt": 10,
-      "admit_cnt": 1,
+      "limit_cnt": 0,
+      "admit_cnt": 0,
       "wait_cnt": 0,
-      "password_card": "ALL",
+      "password_card": "NONE",
       "sources": [
         {
           "dept": "企業管理學系碩士班",
@@ -112090,7 +112090,7 @@
     {
       "課程編號": "42010",
       "課程代碼": "MB5059",
-      "課程名稱": "人力資源管理",
+      "課程名稱": "人力資源管理 [已停開]",
       "授課教師": "杜可婷",
       "學分": "3",
       "必選修": "選修",
@@ -112100,7 +112100,7 @@
       "dept_name": "國際經營管理碩士學位學程",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 11,
+      "admit_cnt": 0,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -123413,7 +123413,7 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 0,
-      "admit_cnt": 11,
+      "admit_cnt": 12,
       "wait_cnt": 0,
       "password_card": "ALL",
       "sources": [
@@ -160147,7 +160147,7 @@
       "dept_name": "永續綠能科技碩士學位學程",
       "class_name": "不分類",
       "limit_cnt": 10,
-      "admit_cnt": 5,
+      "admit_cnt": 6,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
