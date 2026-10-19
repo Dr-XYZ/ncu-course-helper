@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-10-12 22:39:01",
+  "last_update": "2026-10-19 20:47:00",
   "courses": [
     {
       "課程編號": "01001",
@@ -39774,7 +39774,7 @@
       "授課教師": "莊宜文",
       "學分": "3",
       "必選修": "選修",
-      "上課時間/教室": "二678/C2-107",
+      "上課時間/教室": "二678/C2-110",
       "分發條件": "(1) 系所:限中國文學系。 | (2) 系所:限非中國文學系。 |",
       "url": "https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?crs=11057",
       "dept_name": "中國文學系",
@@ -83207,7 +83207,7 @@
     {
       "課程編號": "33053",
       "課程代碼": "ME5301",
-      "課程名稱": "深度學習專案設計 [已停開]",
+      "課程名稱": "深度學習專案設計",
       "授課教師": "廖昭仰",
       "學分": "3",
       "必選修": "選修",
@@ -83216,10 +83216,10 @@
       "url": "https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?crs=33053",
       "dept_name": "機械工程學系",
       "class_name": "三年級",
-      "limit_cnt": 0,
-      "admit_cnt": 0,
+      "limit_cnt": 10,
+      "admit_cnt": 16,
       "wait_cnt": 0,
-      "password_card": "NONE",
+      "password_card": "OPTIONAL",
       "sources": [
         {
           "dept": "機械工程學系",
@@ -94014,7 +94014,7 @@
       "課程編號": "36015",
       "課程代碼": "ENA009",
       "課程名稱": "專題討論（1）",
-      "授課教師": "江康鈺鄭明敏林居慶林進榮林伯勳",
+      "授課教師": "江康鈺林居慶林進榮林伯勳",
       "學分": "1",
       "必選修": "選修",
       "上課時間/教室": "五ABC/E3-107",
@@ -146115,7 +146115,7 @@
       "dept_name": "客家語文暨社會科學學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 43,
+      "admit_cnt": 42,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -149739,7 +149739,7 @@
       "dept_name": "客家語文暨社會科學學系客家研究碩士在職專班",
       "class_name": "不分類",
       "limit_cnt": 20,
-      "admit_cnt": 17,
+      "admit_cnt": 16,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -160708,7 +160708,7 @@
       "dept_name": "永續領導力碩士學位學程",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 44,
+      "admit_cnt": 45,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -160915,7 +160915,7 @@
       "dept_name": "永續領導力博士學位學程",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 4,
+      "admit_cnt": 5,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
