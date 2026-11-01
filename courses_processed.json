@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-10-26 20:48:09",
+  "last_update": "2026-11-01 20:19:41",
   "courses": [
     {
       "課程編號": "01001",
@@ -17522,6 +17522,58 @@
         }
       ],
       "is_required": true
+    },
+    {
+      "課程編號": "09064",
+      "課程代碼": "GS0076",
+      "課程名稱": "自主學習微學分(一)",
+      "授課教師": "鄭芳祥",
+      "學分": "1",
+      "必選修": "選修",
+      "上課時間/教室": "",
+      "分發條件": "",
+      "url": "https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?crs=09064",
+      "dept_name": "通識教育中心",
+      "class_name": "不分類",
+      "limit_cnt": 0,
+      "admit_cnt": 0,
+      "wait_cnt": 0,
+      "password_card": "NONE",
+      "sources": [
+        {
+          "dept": "通識教育中心",
+          "class": "不分類"
+        }
+      ],
+      "time_parsed": [],
+      "rules_parsed": [],
+      "is_required": false
+    },
+    {
+      "課程編號": "09063",
+      "課程代碼": "GS0077",
+      "課程名稱": "自主學習微學分(二) [已停開]",
+      "授課教師": "",
+      "學分": "1",
+      "必選修": "選修",
+      "上課時間/教室": "",
+      "分發條件": "",
+      "url": "https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?crs=09063",
+      "dept_name": "通識教育中心",
+      "class_name": "不分類",
+      "limit_cnt": 0,
+      "admit_cnt": 0,
+      "wait_cnt": 0,
+      "password_card": "NONE",
+      "sources": [
+        {
+          "dept": "通識教育中心",
+          "class": "不分類"
+        }
+      ],
+      "time_parsed": [],
+      "rules_parsed": [],
+      "is_required": false
     },
     {
       "課程編號": "32014",
@@ -40351,7 +40403,7 @@
       "dept_name": "中國文學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 21,
+      "admit_cnt": 20,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -44281,7 +44333,7 @@
       "dept_name": "英美語文學系",
       "class_name": "三年級",
       "limit_cnt": 25,
-      "admit_cnt": 27,
+      "admit_cnt": 26,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -48667,7 +48719,7 @@
       "dept_name": "文學院學士班",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 20,
+      "admit_cnt": 19,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -57722,7 +57774,7 @@
       "dept_name": "數學系",
       "class_name": "一年級",
       "limit_cnt": 50,
-      "admit_cnt": 66,
+      "admit_cnt": 65,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -58686,7 +58738,7 @@
       "dept_name": "數學系",
       "class_name": "二年級",
       "limit_cnt": 70,
-      "admit_cnt": 63,
+      "admit_cnt": 62,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -59340,7 +59392,7 @@
       "dept_name": "數學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 29,
+      "admit_cnt": 28,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -59902,7 +59954,7 @@
       "dept_name": "數學系",
       "class_name": "四年級",
       "limit_cnt": 50,
-      "admit_cnt": 15,
+      "admit_cnt": 14,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -68678,7 +68730,7 @@
       "dept_name": "物理學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 10,
+      "admit_cnt": 9,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -75964,7 +76016,7 @@
       "dept_name": "土木工程學系",
       "class_name": "二年級",
       "limit_cnt": 0,
-      "admit_cnt": 42,
+      "admit_cnt": 40,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -97978,7 +98030,7 @@
       "dept_name": "企業管理學系",
       "class_name": "三年級",
       "limit_cnt": 80,
-      "admit_cnt": 81,
+      "admit_cnt": 80,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -101483,7 +101535,7 @@
       "dept_name": "財務金融學系",
       "class_name": "不分類",
       "limit_cnt": 70,
-      "admit_cnt": 66,
+      "admit_cnt": 64,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -101784,7 +101836,7 @@
       "dept_name": "財務金融學系",
       "class_name": "一年級",
       "limit_cnt": 70,
-      "admit_cnt": 70,
+      "admit_cnt": 69,
       "wait_cnt": 0,
       "password_card": "ALL",
       "sources": [
@@ -119862,7 +119914,7 @@
       "dept_name": "電機工程學系",
       "class_name": "二年級",
       "limit_cnt": 0,
-      "admit_cnt": 61,
+      "admit_cnt": 60,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -120658,7 +120710,7 @@
       "dept_name": "電機工程學系",
       "class_name": "三年級",
       "limit_cnt": 120,
-      "admit_cnt": 93,
+      "admit_cnt": 92,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -122184,7 +122236,7 @@
       "dept_name": "資訊工程學系",
       "class_name": "二年級",
       "limit_cnt": 60,
-      "admit_cnt": 64,
+      "admit_cnt": 63,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -122409,7 +122461,7 @@
       "dept_name": "資訊工程學系",
       "class_name": "二年級",
       "limit_cnt": 60,
-      "admit_cnt": 61,
+      "admit_cnt": 60,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -123117,7 +123169,7 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 130,
-      "admit_cnt": 124,
+      "admit_cnt": 122,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -129321,7 +129373,7 @@
       "dept_name": "電機工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 38,
+      "admit_cnt": 37,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -130656,7 +130708,7 @@
       "dept_name": "資訊工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 8,
+      "admit_cnt": 9,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -141369,7 +141421,7 @@
       "dept_name": "地球科學學系地球物理碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 7,
+      "admit_cnt": 6,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -146954,7 +147006,7 @@
       "dept_name": "客家語文暨社會科學學系",
       "class_name": "二年級",
       "limit_cnt": 50,
-      "admit_cnt": 45,
+      "admit_cnt": 44,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -147789,7 +147841,7 @@
       "dept_name": "法律與政府學系",
       "class_name": "一年級",
       "limit_cnt": 50,
-      "admit_cnt": 28,
+      "admit_cnt": 27,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -159254,7 +159306,7 @@
       "dept_name": "永續去碳科技碩士學位學程",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 24,
+      "admit_cnt": 23,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -159314,7 +159366,7 @@
       "dept_name": "永續去碳科技碩士學位學程",
       "class_name": "不分類",
       "limit_cnt": 20,
-      "admit_cnt": 20,
+      "admit_cnt": 19,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
