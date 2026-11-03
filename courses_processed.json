@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-11-02 23:20:52",
+  "last_update": "2026-11-03 21:36:03",
   "courses": [
     {
       "課程編號": "01001",
@@ -39761,7 +39761,7 @@
       "dept_name": "中國文學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 32,
+      "admit_cnt": 31,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -55090,7 +55090,7 @@
       "dept_name": "數學系",
       "class_name": "不分類",
       "limit_cnt": 70,
-      "admit_cnt": 47,
+      "admit_cnt": 46,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -55827,7 +55827,7 @@
       "dept_name": "數學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 61,
+      "admit_cnt": 60,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -59816,7 +59816,7 @@
       "dept_name": "數學系",
       "class_name": "三年級",
       "limit_cnt": 45,
-      "admit_cnt": 26,
+      "admit_cnt": 25,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -62539,7 +62539,7 @@
       "dept_name": "化學學系",
       "class_name": "三年級",
       "limit_cnt": 80,
-      "admit_cnt": 36,
+      "admit_cnt": 35,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -64498,7 +64498,7 @@
       "dept_name": "光電科學與工程學系",
       "class_name": "不分類",
       "limit_cnt": 70,
-      "admit_cnt": 58,
+      "admit_cnt": 57,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -72009,7 +72009,7 @@
       "dept_name": "天文研究所碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 9,
+      "admit_cnt": 8,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -89408,7 +89408,7 @@
       "dept_name": "土木工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 0,
+      "admit_cnt": 1,
       "wait_cnt": 0,
       "password_card": "ALL",
       "sources": [
@@ -126895,7 +126895,7 @@
       "dept_name": "通訊工程學系",
       "class_name": "一年級",
       "limit_cnt": 100,
-      "admit_cnt": 97,
+      "admit_cnt": 96,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -138845,7 +138845,7 @@
       "dept_name": "太空科學與工程學系",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 29,
+      "admit_cnt": 27,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -145712,8 +145712,8 @@
     {
       "課程編號": "97001",
       "課程代碼": "HC9980",
-      "課程名稱": "客家學院自主學習微課程(一) [已停開]",
-      "授課教師": "",
+      "課程名稱": "客家學院自主學習微課程(一)",
+      "授課教師": "王保鍵陳秀琪",
       "學分": "1",
       "必選修": "選修",
       "上課時間/教室": "",
@@ -145724,7 +145724,7 @@
       "limit_cnt": 0,
       "admit_cnt": 0,
       "wait_cnt": 0,
-      "password_card": "NONE",
+      "password_card": "ALL",
       "sources": [
         {
           "dept": "客家學院",
