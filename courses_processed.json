@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-11-03 21:36:03",
+  "last_update": "2026-11-04 21:45:27",
   "courses": [
     {
       "課程編號": "01001",
@@ -55494,7 +55494,7 @@
       "dept_name": "數學系",
       "class_name": "不分類",
       "limit_cnt": 100,
-      "admit_cnt": 100,
+      "admit_cnt": 99,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -60524,7 +60524,7 @@
       "dept_name": "物理學系",
       "class_name": "一年級",
       "limit_cnt": 0,
-      "admit_cnt": 13,
+      "admit_cnt": 12,
       "wait_cnt": 0,
       "password_card": "ALL",
       "sources": [
@@ -83531,7 +83531,7 @@
       "dept_name": "機械工程學系",
       "class_name": "三年級",
       "limit_cnt": 30,
-      "admit_cnt": 18,
+      "admit_cnt": 16,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -89335,7 +89335,7 @@
       "dept_name": "土木工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 166,
+      "admit_cnt": 165,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -98945,7 +98945,7 @@
       "dept_name": "資訊管理學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 38,
+      "admit_cnt": 36,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -119800,7 +119800,7 @@
       "dept_name": "電機工程學系",
       "class_name": "二年級",
       "limit_cnt": 0,
-      "admit_cnt": 79,
+      "admit_cnt": 76,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -128680,7 +128680,7 @@
       "dept_name": "電機工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 100,
-      "admit_cnt": 88,
+      "admit_cnt": 87,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -129373,7 +129373,7 @@
       "dept_name": "電機工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 37,
+      "admit_cnt": 36,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -136271,7 +136271,7 @@
       "dept_name": "地球科學學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 23,
+      "admit_cnt": 22,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -145722,7 +145722,7 @@
       "dept_name": "客家學院",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 0,
+      "admit_cnt": 16,
       "wait_cnt": 0,
       "password_card": "ALL",
       "sources": [
