@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-11-04 21:45:27",
+  "last_update": "2026-11-05 21:49:35",
   "courses": [
     {
       "課程編號": "01001",
@@ -29772,7 +29772,7 @@
       "dept_name": "臺灣大專院校人工智慧學程聯盟",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 27,
+      "admit_cnt": 26,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -59467,7 +59467,7 @@
       "dept_name": "數學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 26,
+      "admit_cnt": 25,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -90741,7 +90741,7 @@
       "dept_name": "機械工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 17,
+      "admit_cnt": 16,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -96900,7 +96900,7 @@
       "dept_name": "企業管理學系",
       "class_name": "二年級",
       "limit_cnt": 110,
-      "admit_cnt": 115,
+      "admit_cnt": 114,
       "wait_cnt": 0,
       "password_card": "ALL",
       "sources": [
@@ -110390,7 +110390,7 @@
       "dept_name": "財務金融學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 16,
+      "admit_cnt": 15,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -127120,7 +127120,7 @@
       "dept_name": "通訊工程學系",
       "class_name": "一年級",
       "limit_cnt": 70,
-      "admit_cnt": 60,
+      "admit_cnt": 59,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -134736,7 +134736,7 @@
       "dept_name": "大氣科學學系",
       "class_name": "二年級",
       "limit_cnt": 0,
-      "admit_cnt": 32,
+      "admit_cnt": 31,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -136589,7 +136589,7 @@
       "dept_name": "地球科學學系",
       "class_name": "三年級",
       "limit_cnt": 0,
-      "admit_cnt": 22,
+      "admit_cnt": 21,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
