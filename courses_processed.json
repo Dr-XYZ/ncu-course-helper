@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-11-05 21:49:35",
+  "last_update": "2026-11-06 21:22:25",
   "courses": [
     {
       "課程編號": "01001",
@@ -48579,7 +48579,7 @@
       "dept_name": "文學院學士班",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 31,
+      "admit_cnt": 30,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -57774,7 +57774,7 @@
       "dept_name": "數學系",
       "class_name": "一年級",
       "limit_cnt": 50,
-      "admit_cnt": 65,
+      "admit_cnt": 63,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -58419,7 +58419,7 @@
       "dept_name": "數學系",
       "class_name": "二年級",
       "limit_cnt": 50,
-      "admit_cnt": 56,
+      "admit_cnt": 55,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -58738,7 +58738,7 @@
       "dept_name": "數學系",
       "class_name": "二年級",
       "limit_cnt": 70,
-      "admit_cnt": 62,
+      "admit_cnt": 61,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -60166,7 +60166,7 @@
       "dept_name": "物理學系",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 28,
+      "admit_cnt": 27,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -101535,7 +101535,7 @@
       "dept_name": "財務金融學系",
       "class_name": "不分類",
       "limit_cnt": 70,
-      "admit_cnt": 64,
+      "admit_cnt": 61,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -102811,7 +102811,7 @@
       "dept_name": "財務金融學系",
       "class_name": "三年級",
       "limit_cnt": 105,
-      "admit_cnt": 89,
+      "admit_cnt": 88,
       "wait_cnt": 0,
       "password_card": "ALL",
       "sources": [
@@ -118038,7 +118038,7 @@
       "dept_name": "電機工程學系",
       "class_name": "不分類",
       "limit_cnt": 70,
-      "admit_cnt": 27,
+      "admit_cnt": 26,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -136589,7 +136589,7 @@
       "dept_name": "地球科學學系",
       "class_name": "三年級",
       "limit_cnt": 0,
-      "admit_cnt": 21,
+      "admit_cnt": 20,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
