@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-11-06 21:22:25",
+  "last_update": "2026-11-07 19:59:07",
   "courses": [
     {
       "課程編號": "01001",
@@ -59816,7 +59816,7 @@
       "dept_name": "數學系",
       "class_name": "三年級",
       "limit_cnt": 45,
-      "admit_cnt": 25,
+      "admit_cnt": 24,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -79769,7 +79769,7 @@
       "dept_name": "機械工程學系",
       "class_name": "二年級",
       "limit_cnt": 100,
-      "admit_cnt": 102,
+      "admit_cnt": 101,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -79872,7 +79872,7 @@
       "dept_name": "機械工程學系",
       "class_name": "二年級",
       "limit_cnt": 60,
-      "admit_cnt": 66,
+      "admit_cnt": 64,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -80089,7 +80089,7 @@
       "dept_name": "機械工程學系",
       "class_name": "二年級",
       "limit_cnt": 80,
-      "admit_cnt": 86,
+      "admit_cnt": 85,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -119800,7 +119800,7 @@
       "dept_name": "電機工程學系",
       "class_name": "二年級",
       "limit_cnt": 0,
-      "admit_cnt": 76,
+      "admit_cnt": 74,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -121880,7 +121880,7 @@
       "dept_name": "資訊工程學系",
       "class_name": "一年級",
       "limit_cnt": 80,
-      "admit_cnt": 77,
+      "admit_cnt": 75,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -122684,7 +122684,7 @@
       "dept_name": "資訊工程學系",
       "class_name": "二年級",
       "limit_cnt": 65,
-      "admit_cnt": 81,
+      "admit_cnt": 80,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
