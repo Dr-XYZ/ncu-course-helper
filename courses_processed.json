@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-11-11 22:31:50",
+  "last_update": "2026-11-12 22:07:30",
   "courses": [
     {
       "課程編號": "01001",
@@ -40592,7 +40592,7 @@
     {
       "課程編號": "11066",
       "課程代碼": "CL3122",
-      "課程名稱": "周易",
+      "課程名稱": "周易 [已停開]",
       "授課教師": "賀廣如",
       "學分": "2",
       "必選修": "選修",
@@ -40601,8 +40601,8 @@
       "url": "https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?crs=11066",
       "dept_name": "中國文學系",
       "class_name": "不分類",
-      "limit_cnt": 50,
-      "admit_cnt": 19,
+      "limit_cnt": 0,
+      "admit_cnt": 0,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -40687,6 +40687,77 @@
           "day": 0,
           "start": 6,
           "end": 8
+        }
+      ],
+      "rules_parsed": [
+        {
+          "priority": 1,
+          "rules": {
+            "dept": {
+              "mode": "include",
+              "values": [
+                "中國文學系"
+              ]
+            }
+          }
+        },
+        {
+          "priority": 2,
+          "rules": {
+            "dept": {
+              "mode": "exclude",
+              "values": [
+                "中國文學系"
+              ]
+            }
+          }
+        }
+      ],
+      "is_required": false
+    },
+    {
+      "課程編號": "11089",
+      "課程代碼": "CL3133",
+      "課程名稱": "周易",
+      "授課教師": "賀廣如",
+      "學分": "3",
+      "必選修": "選修",
+      "上課時間/教室": "三567/C2-106",
+      "分發條件": "(1) 系所:限中國文學系。 | (2) 系所:限非中國文學系。 |",
+      "url": "https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?crs=11089",
+      "dept_name": "中國文學系",
+      "class_name": "不分類",
+      "limit_cnt": 50,
+      "admit_cnt": 19,
+      "wait_cnt": 0,
+      "password_card": "NONE",
+      "sources": [
+        {
+          "dept": "中國文學系",
+          "class": "不分類"
+        },
+        {
+          "dept": "中國文學系",
+          "class": "一年級"
+        },
+        {
+          "dept": "中國文學系",
+          "class": "二年級"
+        },
+        {
+          "dept": "中國文學系",
+          "class": "三年級"
+        },
+        {
+          "dept": "中國文學系",
+          "class": "四年級"
+        }
+      ],
+      "time_parsed": [
+        {
+          "day": 2,
+          "start": 5,
+          "end": 7
         }
       ],
       "rules_parsed": [
@@ -125611,7 +125682,7 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 40,
-      "admit_cnt": 52,
+      "admit_cnt": 51,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -159366,7 +159437,7 @@
       "dept_name": "永續去碳科技碩士學位學程",
       "class_name": "不分類",
       "limit_cnt": 20,
-      "admit_cnt": 19,
+      "admit_cnt": 18,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
