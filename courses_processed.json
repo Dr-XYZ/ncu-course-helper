@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-11-15 20:53:10",
+  "last_update": "2026-11-17 00:02:09",
   "courses": [
     {
       "課程編號": "01001",
@@ -45676,7 +45676,7 @@
       "dept_name": "法國語文學系",
       "class_name": "一年級",
       "limit_cnt": 50,
-      "admit_cnt": 26,
+      "admit_cnt": 25,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -57509,7 +57509,7 @@
       "dept_name": "數學系",
       "class_name": "一年級",
       "limit_cnt": 120,
-      "admit_cnt": 92,
+      "admit_cnt": 91,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -57665,7 +57665,7 @@
       "dept_name": "數學系",
       "class_name": "一年級",
       "limit_cnt": 50,
-      "admit_cnt": 50,
+      "admit_cnt": 46,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -60907,7 +60907,7 @@
       "dept_name": "物理學系",
       "class_name": "二年級",
       "limit_cnt": 0,
-      "admit_cnt": 45,
+      "admit_cnt": 44,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -70811,7 +70811,7 @@
       "dept_name": "化學學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 15,
-      "admit_cnt": 14,
+      "admit_cnt": 13,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -73031,7 +73031,7 @@
       "dept_name": "工學院",
       "class_name": "不分類",
       "limit_cnt": 70,
-      "admit_cnt": 57,
+      "admit_cnt": 56,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -79365,7 +79365,7 @@
       "dept_name": "機械工程學系",
       "class_name": "不分類",
       "limit_cnt": 90,
-      "admit_cnt": 76,
+      "admit_cnt": 74,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -100658,7 +100658,7 @@
       "dept_name": "資訊管理學系",
       "class_name": "三年級",
       "limit_cnt": 80,
-      "admit_cnt": 63,
+      "admit_cnt": 62,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -105239,7 +105239,7 @@
       "dept_name": "經濟學系",
       "class_name": "三年級",
       "limit_cnt": 80,
-      "admit_cnt": 92,
+      "admit_cnt": 91,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -119871,7 +119871,7 @@
       "dept_name": "電機工程學系",
       "class_name": "二年級",
       "limit_cnt": 0,
-      "admit_cnt": 72,
+      "admit_cnt": 70,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -120507,7 +120507,7 @@
       "dept_name": "電機工程學系",
       "class_name": "三年級",
       "limit_cnt": 120,
-      "admit_cnt": 148,
+      "admit_cnt": 147,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -135904,7 +135904,7 @@
       "dept_name": "地球科學學系",
       "class_name": "二年級",
       "limit_cnt": 50,
-      "admit_cnt": 28,
+      "admit_cnt": 26,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -136342,7 +136342,7 @@
       "dept_name": "地球科學學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 22,
+      "admit_cnt": 21,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -138040,7 +138040,7 @@
       "dept_name": "地球科學學院學士班",
       "class_name": "一年級",
       "limit_cnt": 55,
-      "admit_cnt": 51,
+      "admit_cnt": 49,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -140890,7 +140890,7 @@
       "dept_name": "大氣科學學系大氣物理碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 18,
+      "admit_cnt": 17,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -143319,7 +143319,7 @@
       "dept_name": "應用地質研究所碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 10,
+      "admit_cnt": 9,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -153009,7 +153009,7 @@
       "dept_name": "生醫科學與工程學系",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 30,
+      "admit_cnt": 29,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -154580,7 +154580,7 @@
       "dept_name": "生命科學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 30,
-      "admit_cnt": 11,
+      "admit_cnt": 9,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
