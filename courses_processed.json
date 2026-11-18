@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-11-17 23:23:44",
+  "last_update": "2026-11-18 22:52:38",
   "courses": [
     {
       "課程編號": "01001",
@@ -57509,7 +57509,7 @@
       "dept_name": "數學系",
       "class_name": "一年級",
       "limit_cnt": 120,
-      "admit_cnt": 91,
+      "admit_cnt": 90,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -57665,7 +57665,7 @@
       "dept_name": "數學系",
       "class_name": "一年級",
       "limit_cnt": 50,
-      "admit_cnt": 46,
+      "admit_cnt": 45,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -61257,7 +61257,7 @@
       "dept_name": "物理學系",
       "class_name": "三年級",
       "limit_cnt": 25,
-      "admit_cnt": 24,
+      "admit_cnt": 23,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -100014,7 +100014,7 @@
       "dept_name": "資訊管理學系",
       "class_name": "二年級",
       "limit_cnt": 120,
-      "admit_cnt": 148,
+      "admit_cnt": 147,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -101606,7 +101606,7 @@
       "dept_name": "財務金融學系",
       "class_name": "不分類",
       "limit_cnt": 70,
-      "admit_cnt": 59,
+      "admit_cnt": 58,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -124761,7 +124761,7 @@
       "dept_name": "資訊工程學系",
       "class_name": "三年級",
       "limit_cnt": 40,
-      "admit_cnt": 39,
+      "admit_cnt": 38,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
