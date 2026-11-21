@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-11-20 22:31:52",
+  "last_update": "2026-11-21 21:30:01",
   "courses": [
     {
       "課程編號": "01001",
@@ -39761,7 +39761,7 @@
       "dept_name": "中國文學系",
       "class_name": "不分類",
       "limit_cnt": 50,
-      "admit_cnt": 31,
+      "admit_cnt": 29,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -61090,7 +61090,7 @@
       "dept_name": "物理學系",
       "class_name": "三年級",
       "limit_cnt": 0,
-      "admit_cnt": 24,
+      "admit_cnt": 23,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -62947,7 +62947,7 @@
       "dept_name": "化學學系",
       "class_name": "三年級",
       "limit_cnt": 50,
-      "admit_cnt": 18,
+      "admit_cnt": 17,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -86877,7 +86877,7 @@
       "dept_name": "化學工程與材料工程學系",
       "class_name": "二年級",
       "limit_cnt": 0,
-      "admit_cnt": 59,
+      "admit_cnt": 58,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -90812,7 +90812,7 @@
       "dept_name": "機械工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 0,
-      "admit_cnt": 16,
+      "admit_cnt": 15,
       "wait_cnt": 0,
       "password_card": "NONE",
       "sources": [
@@ -96971,7 +96971,7 @@
       "dept_name": "企業管理學系",
       "class_name": "二年級",
       "limit_cnt": 110,
-      "admit_cnt": 108,
+      "admit_cnt": 104,
       "wait_cnt": 0,
       "password_card": "ALL",
       "sources": [
@@ -100658,7 +100658,7 @@
       "dept_name": "資訊管理學系",
       "class_name": "三年級",
       "limit_cnt": 80,
-      "admit_cnt": 62,
+      "admit_cnt": 61,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -110701,7 +110701,7 @@
       "dept_name": "財務金融學系碩士班",
       "class_name": "一年級",
       "limit_cnt": 40,
-      "admit_cnt": 38,
+      "admit_cnt": 37,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -118232,7 +118232,7 @@
       "dept_name": "電機工程學系",
       "class_name": "不分類",
       "limit_cnt": 70,
-      "admit_cnt": 53,
+      "admit_cnt": 52,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -119871,7 +119871,7 @@
       "dept_name": "電機工程學系",
       "class_name": "二年級",
       "limit_cnt": 0,
-      "admit_cnt": 69,
+      "admit_cnt": 67,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -120781,7 +120781,7 @@
       "dept_name": "電機工程學系",
       "class_name": "三年級",
       "limit_cnt": 120,
-      "admit_cnt": 90,
+      "admit_cnt": 89,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -121826,7 +121826,7 @@
       "dept_name": "資訊工程學系",
       "class_name": "一年級",
       "limit_cnt": 60,
-      "admit_cnt": 81,
+      "admit_cnt": 79,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -122307,7 +122307,7 @@
       "dept_name": "資訊工程學系",
       "class_name": "二年級",
       "limit_cnt": 60,
-      "admit_cnt": 60,
+      "admit_cnt": 58,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -128751,7 +128751,7 @@
       "dept_name": "電機工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 100,
-      "admit_cnt": 87,
+      "admit_cnt": 86,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -128854,7 +128854,7 @@
       "dept_name": "電機工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 70,
-      "admit_cnt": 85,
+      "admit_cnt": 83,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -129339,7 +129339,7 @@
       "dept_name": "電機工程學系碩士班",
       "class_name": "不分類",
       "limit_cnt": 90,
-      "admit_cnt": 57,
+      "admit_cnt": 56,
       "wait_cnt": 0,
       "password_card": "OPTIONAL",
       "sources": [
@@ -135745,7 +135745,7 @@
       "dept_name": "地球科學學系",
       "class_name": "一年級",
       "limit_cnt": 0,
-      "admit_cnt": 81,
+      "admit_cnt": 80,
       "wait_cnt": 0,
       "password_card": "ALL",
       "sources": [
